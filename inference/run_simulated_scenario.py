@@ -37,6 +37,7 @@ from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_t
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_ENV = ROOT / ".env"
+load_dotenv(DEFAULT_ENV)
 
 # ---------------------------------------------------------------------------
 # Config
@@ -47,6 +48,8 @@ DEFAULT_ENV = ROOT / ".env"
 # use, each time.
 GEMMA_BASE_URL = os.environ["SCENARIO_GEMMA_BASE_URL"]
 GEMMA_MODEL = os.environ["SCENARIO_GEMMA_MODEL"]
+# Virtual key for the LiteLLM proxy. Direct vLLM accepts "dummy".
+GEMMA_API_KEY = os.environ.get("LITELLM_API_KEY", "dummy")
 
 INPUT_CSV  = Path(os.environ.get("SCENARIO_INPUT_CSV", ROOT / "benchmark_questions.csv"))
 OUTPUT_DIR = Path(os.environ.get("SCENARIO_OUTPUT_DIR", ROOT / "output" / "simulated_scenario"))
@@ -260,7 +263,7 @@ STRICT RULES:
             model=GEMMA_MODEL,
             messages=[{"role": "system", "content": system}] + history,
             api_base=GEMMA_BASE_URL,
-            api_key="dummy",
+            api_key=GEMMA_API_KEY,
             temperature=0.5,
             max_tokens=150,
         )

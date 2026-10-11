@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 from datetime import date
+from decimal import Decimal
 from typing import Callable
 
 from helpers.language_utils import (
@@ -39,14 +40,14 @@ REASONING_LEAK = re.compile(
 DAIRY_ABBREV = re.compile(r"^(?:AI|PD|SNF|FAT|CVCC|BIS|TMR|LSD|HS|BQ|IVF|ET|MSP|CLR)$", re.I)
 
 BUFFALO_WORDS = re.compile(r"\bbuffalo(?:es|s)?\b|ભેંસ|ભેસ|પાડી", re.I)
-COW_WORDS = re.compile(r"\bcows?\b|\bheifers?\b|ગાય|વાછરડી", re.I)
+COW_WORDS = re.compile(r"\bcows?\b|ગાય|વાછરડી", re.I)
 URGENT_WORDS = re.compile(r"\b(?:urgent|emergency|immediately|serious|critical)\b|તાત્કાલિક|ઇમરજન્સી|ગંભીર", re.I)
 MAX_MILK_RANGE_DAYS = 31
 _MILK_ROW = re.compile(
-    r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*[^|]+\|\s*([\d.]+)\s*\|\s*[\d.]+\s*\|\s*[\d.]+\s*\|\s*([\d.]+)\s*\|"
+    r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+)\|\s*([\d.]+)\s*\|\s*[\d.]+\s*\|\s*[\d.]+\s*\|\s*([\d.]+)\s*\|"
 )
-_LITRES = re.compile(r"(\d+(?:\.\d+)?)\s*lit(?:er|re)?s?\b", re.I)
-_RUPEES = re.compile(r"(?:₹|rs\.?)\s*(\d[\d,]*(?:\.\d+)?)", re.I)
+_LITRES = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s*(?:lit(?:er|re)?s?\b|લીટર|લિટર)", re.I)
+_RUPEES = re.compile(r"(?:₹|rs\.?|INR|રૂપિયા)\s*(\d[\d,]*(?:\.\d+)?)|(\d[\d,]*(?:\.\d+)?)\s*(?:રૂપિયા|રૂ\.)", re.I)
 _TOTAL_WORD = re.compile(r"\btotal\b|કુલ", re.I)
 _MONEY_ASK = re.compile(r"earning|money|rupee|payment|કમાણી|પૈસા", re.I)
 _LITRE_ASK = re.compile(r"lit(?:er|re)|લીટર|લિટર", re.I)
@@ -55,6 +56,8 @@ _LITRE_ASK = re.compile(r"lit(?:er|re)|લીટર|લિટર", re.I)
 def _session_tickets(turn: dict, session: list[dict]) -> set[str]:
     found: set[str] = set()
     for t in session:
+        if t.get('turn_index', 0) > turn.get('turn_index', 0):
+            continue
         if t["timestamp"] and turn["timestamp"] and t["timestamp"] > turn["timestamp"]:
             continue
         for call in t["tool_calls"]:
@@ -96,7 +99,9 @@ def output_hygiene(turn: dict, session: list[dict]) -> Result:
     answer = turn["answer_gu"] or ""
     if not answer:
         return None
-    tool_names = {c["name"] for t in session for c in t["tool_calls"] + t["api_calls"] if c.get("name")}
+    earlier = [t for t in session if t["turn_index"] <= turn["turn_index"]]
+    tool_names = {c["name"] for t in earlier for c in t.get("tool_calls", []) + t.get("api_calls", []) if c.get("name")}
+    tool_names.update({"search_documents", "create_ai_call", "create_health_call", "get_farmer_milk_collection_details", "get_union_scheme_data", "get_vistaar_scheme_info"})
     problems = []
     leaked_tools = sorted(name for name in tool_names if name in answer)
     if leaked_tools:
@@ -108,20 +113,41 @@ def output_hygiene(turn: dict, session: list[dict]) -> Result:
         problems.append("raw JSON")
     if INTERNAL_HOST.search(answer):
         problems.append("internal URL")
-    english = turn.get("answer_en") or ""
-    files = sorted(set(FILE_NAME.findall(answer)) | set(FILE_NAME.findall(english)))
+    files = sorted(set(FILE_NAME.findall(answer)))
     if files:
         problems.append(f"file names {files[:3]}")
     tech_ids = {
         str((c.get("input") or {}).get("user_id"))
-        for t in session
+        for t in earlier
         for c in t["tool_calls"]
         if isinstance(c.get("input"), dict) and (c.get("input") or {}).get("user_id")
     } | {tech["userId"] for tech in TECHNICIANS}
-    leaked_ids = sorted(i for i in tech_ids if i in answer or i in english)
+    leaked_ids = sorted(i for i in tech_ids if i in answer)
     if leaked_ids:
         problems.append(f"technician user IDs {leaked_ids}")
-    leaks = sorted({m.group(0) for m in REASONING_LEAK.finditer(english)})
+    internal_codes = {FARMER['farmerCode'], FARMER['unionCode']}
+    scheme_codes = set()
+    for t in earlier:
+        for call in t.get('tool_calls', []):
+            args = call.get('input') or {}
+            if not isinstance(args, dict):
+                continue
+            if call.get('name') in ('create_ai_call', 'create_health_call'):
+                for key in ('farmer_code', 'union_code', 'society_code'):
+                    value = args.get(key)
+                    # The farmer's own society code is explicitly permitted by the final rubric.
+                    if value and str(value) != FARMER['societyCode']:
+                        internal_codes.add(str(value))
+            if call.get('name') == 'get_vistaar_scheme_info':
+                scheme_codes.update(str(v) for v in args.values() if str(v).lower() in ('kcc', 'pmkisan', 'pmfby'))
+    leaked_codes = sorted(code for code in internal_codes if code in answer)
+    if leaked_codes:
+        problems.append(f"internal booking codes {leaked_codes}")
+    for code in scheme_codes | {'kcc', 'pmkisan', 'pmfby'}:
+        # Ordinary uppercase scheme abbreviations are farmer-facing names; lower-case raw codes or code formatting are not.
+        if re.search(rf'(?<![\w]){re.escape(code.lower())}(?![\w])', answer) or re.search(rf'`{re.escape(code)}`', answer, re.I):
+            problems.append(f"internal scheme code {code}")
+    leaks = sorted({m.group(0) for m in REASONING_LEAK.finditer(answer)})
     if leaks:
         problems.append(f"reasoning/instruction words {leaks[:3]}")
     if problems:
@@ -148,19 +174,26 @@ def language_mixing(turn: dict, session: list[dict]) -> Result:
     elif english.get("parens_english"):
         score = 3.0
     elif english.get("technical_abbrevs"):
-        score = 4.0
+        score = 5.0
     else:
         score = 5.0
-    return score, build_reason(config, foreign, english) + " (1 = other script, 2 = English words inline, 3 = English in brackets, 4 = only abbreviations like AI/PD, 5 = clean)"
+    return score, build_reason(config, foreign, english) + " (heuristic: 1 = other script, 2 = English words inline, 3 = English in brackets, 5 = clean or allowed abbreviations; judge checks names and meaning)"
 
 
 def _species_said(turn: dict, session: list[dict]) -> str | None:
     """Species in the farmer's latest message (this turn or earlier) that names exactly one."""
     for t in sorted((t for t in session if t["turn_index"] <= turn["turn_index"]), key=lambda t: -t["turn_index"]):
+        original=t.get('question_gu') or ''
+        buffalo_gu,cow_gu=bool(BUFFALO_WORDS.search(original)),bool(COW_WORDS.search(original))
+        if buffalo_gu != cow_gu:return 'buffalo' if buffalo_gu else 'cow'
+        if buffalo_gu and cow_gu:return None  # Both named: do not silently reuse an older selection.
         text = f"{t.get('question_en') or ''} {t.get('question_gu') or ''}"
+        if re.search(r'\bheifer\b',t.get('question_en') or '',re.I) and not re.search(r'\bcow\b|\bbuffalo\b|ગાય|ભેંસ|ભેસ',text,re.I):
+            return None  # Generic heifer does not uniquely identify cow versus buffalo.
         buffalo, cow = bool(BUFFALO_WORDS.search(text)), bool(COW_WORDS.search(text))
         if buffalo != cow:
             return "buffalo" if buffalo else "cow"
+        if buffalo and cow:return None
     return None
 
 
@@ -182,6 +215,8 @@ def tool_arguments(turn: dict, session: list[dict]) -> Result:
                 if str(args.get(key) or "") != expected:
                     problems.append(f"{name} {key}={args.get(key)!r}, profile has {expected!r}")
             said = _species_said(turn, session)
+            if said is None:
+                problems.append(f"{name} species is unconfirmed: fixture has cow and buffalo and farmer has not uniquely selected one")
             if said and str(args.get("species") or "").lower() != said:
                 problems.append(f"{name} species={args.get('species')!r}, farmer said {said}")
             if name == "create_ai_call":
@@ -203,7 +238,7 @@ def tool_arguments(turn: dict, session: list[dict]) -> Result:
             asked_on = date.fromisoformat((turn.get("timestamp") or "")[:10]) if turn.get("timestamp") else None
             if end < start:
                 problems.append(f"milk range ends before it starts ({start}..{end})")
-            elif (end - start).days > MAX_MILK_RANGE_DAYS:
+            elif (end - start).days + 1 > MAX_MILK_RANGE_DAYS:
                 problems.append(f"milk range {start}..{end} exceeds the tool's {MAX_MILK_RANGE_DAYS}-day limit; it should be split")
             if asked_on and end > asked_on:
                 problems.append(f"milk range ends {end}, after the question date {asked_on}")
@@ -211,24 +246,28 @@ def tool_arguments(turn: dict, session: list[dict]) -> Result:
         return None
     if problems:
         return 0.0, "; ".join(problems) + "."
-    return 1.0, f"Arguments of {', '.join(dict.fromkeys(checked))} match the farmer profile, technician list and the farmer's words."
+    return 1.0, f"Checked profile codes, confirmed species, technician membership and date validity for {', '.join(dict.fromkeys(checked))}; relative date interpretation requires semantic review."
 
 
-def _milk_rows_so_far(turn: dict, session: list[dict]) -> list[tuple[float, float]]:
-    """Qty and amount from the latest milk-tool table in this session, up to and including this turn."""
-    found: list[tuple[float, float]] = []
-    for earlier in session:
+def _milk_rows_so_far(turn: dict, session: list[dict]) -> list[tuple[Decimal, Decimal]]:
+    """Latest retrieval turn's rows; combine split lookups and deduplicate overlapping date/shift rows."""
+    found = {}
+    for earlier in sorted(session, key=lambda t: t.get('turn_index', 0)):
         if earlier.get("turn_index", 0) > turn.get("turn_index", 0):
             continue
+        batch = {}
+        retrieved = False
         for call in earlier.get("tool_calls") or []:
             if call.get("name") != "get_farmer_milk_collection_details":
                 continue
+            retrieved = True
             output = call.get("output")
             text = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
-            rows = [(float(qty), float(amount)) for _, qty, amount in _MILK_ROW.findall(text)]
-            if rows:
-                found = rows
-    return found
+            for day, shift, qty, amount in _MILK_ROW.findall(text):
+                batch[(day, shift.strip())] = (Decimal(qty), Decimal(amount))
+        if retrieved:
+            found = batch
+    return list(found.values())
 
 
 def milk_total(turn: dict, session: list[dict]) -> Result:
@@ -239,33 +278,38 @@ def milk_total(turn: dict, session: list[dict]) -> Result:
     """
     question = f"{turn.get('question_en') or ''} {turn.get('question_gu') or ''}"
     answer = turn.get("answer_en") or ""
-    if not _TOTAL_WORD.search(question) and not _TOTAL_WORD.search(answer):
+    if not _TOTAL_WORD.search(question) and not _TOTAL_WORD.search(answer + ' ' + (turn.get('answer_gu') or '')):
         return None
     rows = _milk_rows_so_far(turn, session)
     if not rows:
         return None
     wants_money = bool(_MONEY_ASK.search(question))
-    wants_litres = bool(_LITRE_ASK.search(question)) and not wants_money
+    wants_litres = bool(_LITRE_ASK.search(question))
+    if not (wants_litres or wants_money):
+        return None
     problems = []
-    if wants_litres:
-        claimed = [float(n) for n in _LITRES.findall(answer)]
-        if not claimed:
-            return 0.0, "Farmer asked for a litre total, but the English answer states none."
-        actual = round(sum(qty for qty, _ in rows), 1)
-        if abs(claimed[0] - actual) > 0.05:
-            problems.append(f"answer says {claimed[0]:g} L, the {len(rows)} records sum to {actual:g} L")
-    elif wants_money:
-        claimed = [float(n.replace(",", "")) for n in _RUPEES.findall(answer)]
-        if not claimed:
-            return 0.0, "Farmer asked for total earnings, but the English answer states no amount."
-        actual = round(sum(amount for _, amount in rows), 2)
-        if abs(claimed[0] - actual) > 0.5:
-            problems.append(f"answer says ₹{claimed[0]:.2f}, the {len(rows)} records sum to ₹{actual:.2f}")
-    else:
+    any_total = False
+    for language, text in [('English', answer), ('Gujarati', turn.get('answer_gu') or '')]:
+        if not text and language == 'English':
+            continue
+        normalized = text.translate(str.maketrans('૦૧૨૩૪૫૬૭૮૯', '0123456789'))
+        for requested, column, tolerance, unit in [(wants_money, 1, Decimal('0.50'), 'rupees'), (wants_litres, 0, Decimal('0.05'), 'L')]:
+            if not requested:
+                continue
+            actual = sum((row[column] for row in rows), Decimal(0))
+            claimed = ([Decimal((a or b).replace(',', '')) for a, b in _RUPEES.findall(normalized)] if column else
+                       [Decimal(n.replace(',', '')) for n in _LITRES.findall(normalized)])
+            if not claimed:
+                problems.append(f'{language} reply states no requested {unit} total')
+            else:
+                any_total = True
+                if abs(claimed[0] - actual) > tolerance:
+                    problems.append(f'{language} answer says {claimed[0]:g} {unit}, the {len(rows)} records sum to {actual:g} {unit}')
+    if not any_total:
         return None
     if problems:
         return 0.0, "; ".join(problems) + "."
-    kind = "earnings" if wants_money else "litres"
+    kind = "earnings and litres" if wants_money and wants_litres else "earnings" if wants_money else "litres"
     return 1.0, f"Stated {kind} total matches the sum of the {len(rows)} collection records."
 
 
@@ -276,11 +320,41 @@ def latency_s(turn: dict, session: list[dict]) -> Result:
 
 
 CHECKS: dict[str, Callable[[dict, list[dict]], Result]] = {
-    "ticket_consistency": ticket_consistency,
-    "tool_arguments": tool_arguments,
-    "milk_total": milk_total,
     "output_hygiene": output_hygiene,
-    "language_mixing": language_mixing,
-    "glossary_adherence": glossary_adherence,
     "latency_s": latency_s,
 }
+
+# Supporting validators stay internal; only the final metric names are posted.
+SOURCE_VALIDATORS = {'ticket_consistency': ticket_consistency, 'tool_arguments': tool_arguments, 'milk_total': milk_total}
+
+
+def source_validation(turn: dict, session: list[dict]) -> dict[str, tuple[float, str]]:
+    return {name: result for name, check in SOURCE_VALIDATORS.items() if (result := check(turn, session)) is not None}
+
+
+def language_validation(turn: dict, session: list[dict]) -> str:
+    findings = []
+    for name, check in [('language_mixing', language_mixing), ('glossary_adherence', glossary_adherence)]:
+        result = check(turn, session)
+        if result is not None:
+            findings.append(f'{name}: {result[1]}')
+    return '\n'.join(findings)
+
+
+def combine_source_alignment(judged: tuple[float | None, str], validators: dict[str, tuple[float, str]]) -> tuple[float | None, str]:
+    score, reason = judged
+    failures = [f'{name}: {evidence}' for name, (value, evidence) in validators.items() if value == 0]
+    if failures:
+        score = min(score, 2.0) if score is not None else 2.0
+    evidence = [reason] if reason else []
+    evidence.extend(f'{name}: {entry[1]}' for name, entry in validators.items())
+    return score, ' '.join(evidence)
+
+
+def ticket_translation(turn: dict, session: list[dict]) -> Result:
+    """Exact returned ticket in English must survive into Gujarati; do not penalize untranslated source omissions."""
+    english, gujarati = turn.get('answer_en') or '', turn.get('answer_gu') or ''
+    changed = sorted(ticket for ticket in _session_tickets(turn, session) if ticket in english and ticket not in gujarati)
+    if changed:
+        return 0.0, f'English ticket {", ".join(changed)} is missing or changed in Gujarati.'
+    return None

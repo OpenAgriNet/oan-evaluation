@@ -1,0 +1,76 @@
+session_id,question_id,question_english,question_gujarati,category,tool_hint,expected_tools
+ai-seed-en,ai-seed-en-1,I want to book an artificial insemination visit.,મારે બીજદાનની વિઝિટ બુક કરવી છે.,AI_technician_booking,create_ai_call,
+ai-seed-en,ai-seed-en-2,For the cow.,ગાય માટે.,AI_technician_booking,create_ai_call,
+ai-seed-en,ai-seed-en-3,The first technician.,પહેલા ટેકનિશિયન.,AI_technician_booking,create_ai_call,create_ai_call
+ai-home,ai-home-1,I need to get artificial insemination done at my home.,Mara ghare bijadan karavanu છે,AI_technician_booking,create_ai_call,
+ai-home,ai-home-2,For the cow.,ગાય માટે.,AI_technician_booking,create_ai_call,
+ai-home,ai-home-3,The first one.,પહેલો.,AI_technician_booking,create_ai_call,create_ai_call
+ai-cow,ai-cow-1,My cow needs to undergo artificial insemination.,મારી ગાયને બીજદાન કરવાનું છે,AI_technician_booking,create_ai_call,
+ai-cow,ai-cow-2,The first technician.,પહેલા ટેકનિશિયન.,AI_technician_booking,create_ai_call,create_ai_call
+ai-buffalo,ai-buffalo-1,I want to get artificial insemination done for my buffalo.,મારે ભેંસ નુ બીજદાન કરાવવું છે,AI_technician_booking,create_ai_call,
+ai-buffalo,ai-buffalo-2,The first one.,પહેલો.,AI_technician_booking,create_ai_call,create_ai_call
+ai-who,ai-who-1,I want to get my cow artificially inseminated; who should I contact for a visit?,મારેગાય બીજદાન કરાવુ છે એના માટે કોને વીજીટ કરાવી,AI_technician_booking,create_ai_call,
+ai-who,ai-who-2,The first technician.,પહેલા ટેકનિશિયન.,AI_technician_booking,create_ai_call,create_ai_call
+ai-register,ai-register-1,I need to register for the cow's artificial insemination.,ગાયનું બીજદાન નોંધવાનું છે,AI_technician_booking,create_ai_call,
+ai-register,ai-register-2,The first one.,પહેલો.,AI_technician_booking,create_ai_call,create_ai_call
+ai-animal,ai-animal-1,Artificial insemination needs to be done.,બદાન કરવાનું છે કૃત્રિમ,AI_technician_booking,create_ai_call,
+ai-animal,ai-animal-2,The buffalo needs artificial insemination.,ભેસને બિદાન કરવાનું છે,AI_technician_booking,create_ai_call,
+ai-animal,ai-animal-3,The first one.,પહેલો.,AI_technician_booking,create_ai_call,create_ai_call
+milk-dates,milk-dates-1,How much milk was produced on the 14th?,14tarikh nu દૂધ કેટલું થયું,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-dates,milk-dates-2,Of the 13th date,13તારીખ નું,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-dates,milk-dates-3,Please provide the accounts from 16.7.2026 to 31.7.2026.,16.7.2026થી 31.7.2026સુધી નો હિસાબ આપો,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-today,milk-today-1,How much milk did I pour at the society today?,આજે મેં મંડળીમાં કેટલું દૂધ ભર્યું?,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-period,milk-period-1,From April 4th until May,4 એપ્રિલથી સુધી મે સુધી,Milk_collection,get_farmer_milk_collection_details,
+milk-period,milk-period-2,How much money did I receive during this period?,આ સમયગાળા દરમિયાન મને કેટલા પૈસા મળ્યા?,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-week,milk-week-1,Show the details of the milk I have deposited in the last 7 days.,છેલ્લા 7 દિવસમાં મેં જમા કરાવેલા દૂધની વિગતો બતાવો.,Milk_collection,get_farmer_milk_collection_details,get_farmer_milk_collection_details
+milk-week,milk-week-2,How many total liters of milk were deposited this week?,આ અઠવાડિયે કુલ કેટલા લીટર દૂધ જમા થયું?,Milk_collection,get_farmer_milk_collection_details,prior:get_farmer_milk_collection_details
+milk-week,milk-week-3,What are the total earnings for this week?,આ અઠવાડિયાની કુલ કમાણી કેટલી છે?,Milk_collection,get_farmer_milk_collection_details,prior:get_farmer_milk_collection_details
+milk-week,milk-week-4,What is the current price of milk?,દૂધનો ભાવ શું ચાલે છે?,Milk_collection,get_farmer_milk_collection_details,
+scheme-gov,scheme-gov-1,Please provide information about the government's animal husbandry schemes.,સરકારની પશુપાલન યોજનાઓ વિશે જણાવો.,Union_schemes,get_union_scheme_data,get_vistaar_scheme_info
+scheme-all,scheme-all-1,"Please provide detailed information on all schemes of the milk union, the Government of Gujarat, and the Government of India for animal husbandry and farming assistance.","પશુપાલન અને ખેતી સહાય માટેની દૂધ સંઘ, ગુજરાત સરકાર અને ભારત સરકારની બધી યોજનાઓની વિગતવાર માહિતી આપો",Union_schemes,get_union_scheme_data,get_union_scheme_data+get_vistaar_scheme_info
+scheme-all,scheme-all-2,What assistance does the milk society give to increase milk production?,દૂધ ઉત્પાદન વધારવા માટે દૂધ મંડળી કઈ સહાય આપે છે?,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-all,scheme-all-3,What is the process for taking a loan from the milk society?,મિલ્ક સોસાયટીમાંથી લોન લેવાની પ્રક્રિયા શું છે?,Union_schemes,get_union_scheme_data,prior:get_union_scheme_data
+scheme-all,scheme-all-4,What is the heifer rearing scheme?,વાછરડી ઉછેર યોજના શુ છે,Union_schemes,get_union_scheme_data,prior:get_union_scheme_data
+scheme-apply,scheme-apply-1,"Please provide detailed information on all schemes of the milk union, the Government of Gujarat, and the Government of India for animal husbandry and farming assistance.","પશુપાલન અને ખેતી સહાય માટેની દૂધ સંઘ, ગુજરાત સરકાર અને ભારત સરકારની બધી યોજનાઓની વિગતવાર માહિતી આપો",Union_schemes,get_union_scheme_data,get_union_scheme_data+get_vistaar_scheme_info
+scheme-apply,scheme-apply-2,How to apply for these schemes?,આ યોજનાઓ માટે અરજી કેવી રીતે કરવી?,Union_schemes,get_union_scheme_data,prior:get_union_scheme_data
+scheme-loan,scheme-loan-1,Which schemes are currently active for livestock loans through Amul?,હાલ કઈ યોજના ચાલુ છે અમૂલ તરફતી પશુ લોન માટે,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-amul,scheme-amul-1,Please provide details of all Amul schemes.,અમૂલ ની તમામ યોજના ઓ જણાવવા વિનંતી,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-calf,scheme-calf-1,What are the current schemes available for calves and heifers?,બચ્ચા અને વાછરડા માટે હાલ કેટલી યોજના છે,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-twelve,scheme-twelve-1,What should be done to avail the benefits of the 12 milk-producing animal husbandry scheme?,12 દૂધ વાળા પશુ પાલન યોજના નો લાભ લેવા માટે શું કરવું,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-gap,scheme-gap-1,They are not providing anything for the calf and heifer scheme either.,બચ્ચા અને પાડી યોજના નું પણ કશું ય નથી આપતા,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-heifer,scheme-heifer-1,How do I enroll a heifer in the heifer rearing scheme?,વાછરડી ને વાછરડી ઉછેર યોજના મા કઈ રીતે લેવી,Union_schemes,get_union_scheme_data,get_union_scheme_data
+scheme-heifer,scheme-heifer-2,How do I enroll a heifer in the heifer rearing scheme at Vasudhara Dairy?,વાસુધારા ડેરી મા વાછરડી ઉછેર યોજના મા વાછરડી કઈ રીતે સામેલ કરવી,Union_schemes,get_union_scheme_data,get_union_scheme_data
+health-pd,health-pd-1,Which of my animals are pending for pregnancy diagnosis?,મારા કયા પશુની ગર્ભ તપાસ બાકી છે?,Health_call,create_health_call,
+health-pd,health-pd-2,Who should I contact to get a PD (Pregnancy Diagnosis) done?,PD કરાવવા માટે મારે કોનો સંપર્ક કરવો?,Health_call,create_health_call,
+health-pd,health-pd-3,Can you book a doctor's appointment for me?,શું તમે મારા માટે ડોક્ટરની એપોઇન્ટમેન્ટ બુક કરી શકો છો?,Health_call,create_health_call,
+health-pd,health-pd-4,For the cow. A pregnancy diagnosis is pending.,ગાય માટે. ગર્ભ તપાસ બાકી છે.,Health_call,create_health_call,create_health_call
+health-book,health-book-1,My heifer is not eating.,મારી પાડીી ખાતી નથી,Health_call,create_health_call,search_documents
+health-book,health-book-2,How much will be charged for a health call?,હેલ્થ કોલ માટે કેટલો ચાર્જ થશે?,Health_call,create_health_call,
+health-book,health-book-3,Where to contact for booking?,બુકિંગ માટે ક્યાં સંપર્ક કરવો?,Health_call,create_health_call,
+health-book,health-book-4,"Yes, please book a health call.","હા, હેલ્થ કોલ બુક કરી આપો.",Health_call,create_health_call,create_health_call
+health-book,health-book-5,When will the doctor arrive?,ડોક્ટર ક્યારે આવશે?,Health_call,create_health_call,prior:create_health_call
+health-conceive,health-conceive-1,The cow is not conceiving.,ગાય ગાભણ થતી નથી,Health_call,create_health_call,search_documents
+health-conceive,health-conceive-2,Can you give some advice?,સલાહ આપી શકો છો,Health_call,create_health_call,search_documents
+health-conceive,health-conceive-3,Which mineral mixture should be given?,કયા મિનરલ મિશ્રણ આપવા જોઈએ?,Health_call,create_health_call,search_documents
+health-conceive,health-conceive-4,Yes,હા,Health_call,create_health_call,create_health_call
+health-calved,health-calved-1,"My cow has recently calved, but she is not giving milk.",મારે તાજી ગાય વિયાણ થયું છે પણ દૂધ માં નથી આવતી,Health_call,create_health_call,search_documents
+health-calved,health-calved-2,"After the cow calved, the retained placenta was removed by the Amul doctor. In the previous lactation, she gave 17 liters of milk, but this time it is only 5 liters; what is the remedy for this?",ગાય ના વિયાણ પછી મેલી અમુલ ડોક્ટર જોડે. પડાવી હતી... ગયા વેતર માં 17 લીટર દૂધ હતું પણ આ વખત 5 લીટર તો એનો શું ઉપાય 🙏🙏,Health_call,create_health_call,search_documents
+health-calved,health-calved-3,Yes,હા,Health_call,create_health_call,create_health_call
+health-calved,health-calved-4,Arrange a visit.,વિઝીટ કરાવાઈ,Health_call,create_health_call,prior:create_health_call
+health-heat,health-heat-1,"I have a buffalo that is seven months along, but she is not coming into heat and is not getting bred. What is the reason? She comes into heat, and I call the doctor, but she does not get bred.",મારી એક ભેસ છે તે સાત વસની થઈ છે પણ હજુ સુધી વિતરમાં આવતી નથી બંધાતી નથી શા કારણવેતર માં આવે છે પણ ડોક્ટર બોલાવું શું પણ બંધાતી નથી,Health_call,create_health_call,search_documents
+health-heat,health-heat-2,"My buffalo heifer is seven years old, but she has not conceived yet.",મારી ભેસ નહીં મારી પાડી છે તે સાત વર્ષથી થઈ છે પણ હજુ સુધી બંધા ગાભણ થતી નથી,Health_call,create_health_call,search_documents
+health-heat,health-heat-3,Ha,Ha,Health_call,create_health_call,create_health_call
+health-heat,health-heat-4,Is there any special feed or medicine for this?,શું આ માટે કોઈ ખાસ ખોરાક કે દવા છે?,Health_call,create_health_call,search_documents
+health-heat,health-heat-5,"A check-up was done one month ago, and the doctor said there was a hormone problem, so they gave a hormone injection for heat. At that time she came into heat and was given an AI injection, but today after twenty days she is in heat again.",એક મહિના પહેલા તપાસ કરાવી હતીી ત્યારે ડોક્ટરે કહ્યું હતું કે હોમાણસનો પ્રોબ્લમ છે તો તેમણે હોમાસ ન ઇન્જેક્શન ગરમીનું મીક્યું હતું તો તે સમયે વિતરમાં આવી હતી ત્યારે એ આઈ ઇન્જેકશન અપાવ્યું હતું પણ આજે ફરી વીસ દિવસ ફરી ફરી આજે વેતરમાં આવી છે,Health_call,create_health_call,search_documents
+health-visit,health-visit-1,What should I do to request a visit?,વિઝીટ લખાવવા શું કરવું,Health_call,create_health_call,
+health-visit,health-visit-2,"I need to call a doctor for my sick cow, what should I do? When will the technician come for artificial insemination? What will be the charge for the visit? Can I book a visit online?","મારે બીમાર ગાય માટે ડોક્ટરને બોલાવવા છે, શું કરવું? કૃત્રિમ ગર્ભાધાન માટે ટેકનિશિયન ક્યારે આવશે? વિઝિટ માટેનો ચાર્જ કેટલો થશે? શું હું ઓનલાઇન વિઝિટ બુક કરી શકું?",Health_call,create_health_call,
+health-visit,health-visit-3,Yes,હા,Health_call,create_health_call,create_health_call
+health-anoestrus,health-anoestrus-1,My buffalo has not come into heat for 14 months.,મારી ભેંશ 14 મહીના થી ગરમીમાં નથી આવી,Health_call,create_health_call,search_documents
+health-anoestrus,health-anoestrus-2,Which mineral mixture can help a buffalo conceive quickly?,કયા મિનરલ મિશ્રણથી ભેંસ જલ્દી ગર્ભધારણ કરી શકે?,Health_call,create_health_call,search_documents
+health-anoestrus,health-anoestrus-3,Could you please help me book a health call with the doctor?,શું મને ડોક્ટર સાથે હેલ્થ કોલ બુક કરી આપવામાં મદદ કરશો?,Health_call,create_health_call,create_health_call
+health-anoestrus,health-anoestrus-4,Thank you very much.,તમારો ખુબ ખુબ આભાર,Health_call,create_health_call,
+health-leg,health-leg-1,A vet is needed to treat the animal's swollen leg.,પશુનો પગ ચઢાવવા માટે વૈધ ની જરૂર છે,Health_call,create_health_call,
+health-leg,health-leg-2,"Yes, okay.",હા ઓકે,Health_call,create_health_call,create_health_call
+health-leg,health-leg-3,When will the doctor arrive?,ડોક્ટર ક્યારે આવશે?,Health_call,create_health_call,prior:create_health_call
+health-leg,health-leg-4,You decide any date.,આપ ગમે તે ડેટ નક્કી કરો,Health_call,create_health_call,prior:create_health_call
+health-leg,health-leg-5,How can a health call be booked?,હેલ્થ કોલ બુક કેવી રીતે કરી શકાય?,Health_call,create_health_call,

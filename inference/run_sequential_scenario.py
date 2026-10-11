@@ -35,6 +35,7 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_ENV = ROOT / ".env"
+load_dotenv(DEFAULT_ENV)
 
 # ---------------------------------------------------------------------------
 # Config
@@ -45,6 +46,11 @@ DEFAULT_ENV = ROOT / ".env"
 # yourself, each time. See oan-brain's knowledge/environments.md.
 GEMMA_BASE_URL = os.environ["SCENARIO_GEMMA_BASE_URL"]
 GEMMA_MODEL = os.environ["SCENARIO_GEMMA_MODEL"]
+# Virtual key for the LiteLLM proxy. Direct vLLM accepts "dummy".
+GEMMA_API_KEY = os.environ.get("LITELLM_API_KEY", "dummy")
+QUESTION_COLUMN = os.environ.get("SCENARIO_QUESTION_COLUMN", "question")
+SOURCE_LANG = os.environ.get("SCENARIO_SOURCE_LANG", "en")
+TARGET_LANG = os.environ.get("SCENARIO_TARGET_LANG", "en")
 
 INPUT_CSV = Path(os.environ.get("SCENARIO_INPUT_CSV", ROOT / "per_lang_csvs" / "english.csv"))
 OUTPUT_CSV = Path(os.environ.get("SCENARIO_OUTPUT_CSV", ROOT / "output" / "sequential_scenario" / "english_scenario_chat.csv"))
@@ -69,18 +75,37 @@ class StreamResult(NamedTuple):
     total_ms: float
 
 
+def chat_auth_headers(token: str) -> dict[str, str]:
+    """Auth for one capture run.
+
+    SCENARIO_CHAT_API_KEY is an eval-copy-only key (X-API-Key + X-User-Phone).
+    It is not a farmer JWT, so it cannot authenticate to the shared app when
+    that app has CHAT_API_KEY unset. Bearer TOKEN remains the live-app path.
+    """
+    api_key = os.environ.get("SCENARIO_CHAT_API_KEY", "").strip()
+    if api_key:
+        phone = os.environ.get("SCENARIO_USER_PHONE", "").strip()
+        if not phone:
+            raise SystemExit(
+                "SCENARIO_USER_PHONE is required when SCENARIO_CHAT_API_KEY is set"
+            )
+        return {"X-API-Key": api_key, "X-User-Phone": phone}
+    if not token:
+        raise SystemExit("TOKEN required — set TOKEN in .env or pass --token")
+    return {"Authorization": f"Bearer {token}"}
+
+
 async def stream_chat_answer(
     client: httpx.AsyncClient,
     *,
     url: str,
-    token: str,
+    headers: dict[str, str],
     query: str,
     source_lang: str,
     target_lang: str,
     user_id: str,
     session_id: str,
 ) -> StreamResult:
-    headers = {"Authorization": f"Bearer {token}"}
     params = {
         "query": query,
         "source_lang": source_lang,
@@ -180,7 +205,7 @@ class ChatBotAgent(scenario.AgentAdapter):
         *,
         client: httpx.AsyncClient,
         url: str,
-        token: str,
+        headers: dict[str, str],
         api_session_id: str,
         source_lang: str = "en",
         target_lang: str = "en",
@@ -192,7 +217,7 @@ class ChatBotAgent(scenario.AgentAdapter):
     ) -> None:
         self.client = client
         self.url = url
-        self.token = token
+        self.headers = headers
         self.api_session_id = api_session_id
         self.source_lang = source_lang
         self.target_lang = target_lang
@@ -212,7 +237,7 @@ class ChatBotAgent(scenario.AgentAdapter):
         res = await stream_chat_answer(
             self.client,
             url=self.url,
-            token=self.token,
+            headers=self.headers,
             query=query,
             source_lang=self.source_lang,
             target_lang=self.target_lang,
@@ -249,9 +274,11 @@ async def run_session(
     *,
     client: httpx.AsyncClient,
     url: str,
-    token: str,
+    headers: dict[str, str],
     run_uuid: str,
     sem: asyncio.Semaphore,
+    source_lang: str = "en",
+    target_lang: str = "en",
     langfuse_base_url: str = "",
     langfuse_public_key: str = "",
     langfuse_secret_key: str = "",
@@ -261,15 +288,15 @@ async def run_session(
     sorted_qs = sorted(questions, key=lambda r: r["question_id"])
 
     # Unique session id per run (mirrors run_chat_benchmark.py's run_uuid scheme)
-    api_session_id = f"{run_uuid}_en_{session_id}"
+    api_session_id = f"{run_uuid}_{source_lang}_{session_id}"
 
     agent = ChatBotAgent(
         client=client,
         url=url,
-        token=token,
+        headers=headers,
         api_session_id=api_session_id,
-        source_lang="en",
-        target_lang="en",
+        source_lang=source_lang,
+        target_lang=target_lang,
         langfuse_base_url=langfuse_base_url,
         langfuse_public_key=langfuse_public_key,
         langfuse_secret_key=langfuse_secret_key,
@@ -280,12 +307,12 @@ async def run_session(
     # it is never called — we always inject explicit messages via scenario.message()
     user_agent = scenario.UserSimulatorAgent(
         model=GEMMA_MODEL,
-        extra_litellm_params={"api_base": GEMMA_BASE_URL, "api_key": "dummy"},
+        extra_litellm_params={"api_base": GEMMA_BASE_URL, "api_key": GEMMA_API_KEY},
     )
 
     script: list = []
     for row in sorted_qs:
-        q = row["question"].strip()
+        q = (row.get("question") or "").strip()
         if q:
             script.append(scenario.message({"role": "user", "content": q}))
             script.append(scenario.agent())
@@ -337,10 +364,12 @@ async def async_main(args: argparse.Namespace) -> None:
     load_dotenv(DEFAULT_ENV)
 
     token = (args.token or os.environ.get("TOKEN", "")).strip()
-    if not token:
-        raise SystemExit("TOKEN required — set TOKEN in .env or pass --token")
+    headers = chat_auth_headers(token)
 
     base_url = (args.base_url or os.environ.get("BASE_URL", "http://127.0.0.1:8000")).rstrip("/")
+    # The shared Amul app publishes port 8000. An eval capture must not use it.
+    if os.environ.get("SCENARIO_CHAT_API_KEY", "").strip() and base_url.endswith(":8000"):
+        raise SystemExit("refusing capture: BASE_URL port 8000 is the shared app")
     url = f"{base_url}/api/chat/"
 
     langfuse_base_url = (os.environ.get("LANGFUSE_BASE_URL") or os.environ.get("LANGFUSE_HOST") or "").rstrip("/")
@@ -353,17 +382,21 @@ async def async_main(args: argparse.Namespace) -> None:
         fieldnames = list(reader.fieldnames or [])
         rows = [dict(r) for r in reader]
 
-    # Add output columns if absent
-    for col in ("answer", "tool_calls", "tool_outputs", "TTFT_answer", "latency_answer"):
+    # Add output columns if absent. `question` is filled from SCENARIO_QUESTION_COLUMN
+    # when the source CSV only has language columns (question_gujarati, etc.).
+    for col in ("question", "answer", "tool_calls", "tool_outputs", "TTFT_answer", "latency_answer"):
         if col not in fieldnames:
             fieldnames.append(col)
 
     sessions: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
+        text = (row.get("question") or row.get(QUESTION_COLUMN) or "").strip()
+        row["question"] = text
         sessions[row["session_id"]].append(row)
 
     run_uuid = uuid.uuid4().hex[:8]
     print(f"Bot API: {url}")
+    print(f"lang={SOURCE_LANG}->{TARGET_LANG}  question_column={QUESTION_COLUMN}")
     print(f"run_uuid={run_uuid}  rows={len(rows)}  sessions={len(sessions)}  "
           f"multi-turn={sum(1 for v in sessions.values() if len(v) > 1)}")
     print(f"Langfuse: {'enabled' if lf_enabled else 'disabled'}")
@@ -379,9 +412,11 @@ async def async_main(args: argparse.Namespace) -> None:
                 sid, qs,
                 client=client,
                 url=url,
-                token=token,
+                headers=headers,
                 run_uuid=run_uuid,
                 sem=sem,
+                source_lang=SOURCE_LANG,
+                target_lang=TARGET_LANG,
                 langfuse_base_url=langfuse_base_url,
                 langfuse_public_key=langfuse_public_key,
                 langfuse_secret_key=langfuse_secret_key,

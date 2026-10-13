@@ -1,0 +1,42 @@
+{
+  "_about": "Test members referenced by the fixture column of amul_eval_set_v0.csv. Every name, code, phone and tag is invented. F1 is the farmer served today by mock_server/amul_pashu_mock/server.py. F2 to F6 need the mock to serve more than one farmer.",
+  "F1": {
+    "label": "Banas member, one cow and one buffalo, every lookup succeeds",
+    "district": "Banaskantha", "union": "banas",
+    "animals": {"cow": 1, "buffalo": 1}, "technicians": 2, "milk_history_days": 60,
+    "lookups": "all succeed"
+  },
+  "F2": {
+    "label": "Dudhsagar member, buffaloes only",
+    "district": "Mehsana", "union": "dudhsagar",
+    "animals": {"cow": 0, "buffalo": 2}, "technicians": 2, "milk_history_days": 60,
+    "lookups": "all succeed"
+  },
+  "F3": {
+    "label": "Member of a union where app booking of insemination is switched off",
+    "district": "Kutch", "union": "kutch",
+    "animals": {"cow": 1, "buffalo": 0}, "technicians": 2, "milk_history_days": 60,
+    "lookups": "all succeed"
+  },
+  "F4": {
+    "label": "Lookups fail or come back empty",
+    "district": "Anand", "union": "kaira",
+    "animals": {"cow": 1, "buffalo": 1}, "technicians": 0, "milk_history_days": 0,
+    "lookups": "technician list empty; milk records empty for every range"
+  },
+  "F5": {
+    "label": "Mobile not registered with any society",
+    "district": null, "union": null,
+    "animals": {}, "technicians": 0, "milk_history_days": 0,
+    "lookups": "farmer profile not found"
+  },
+  "F6": {
+    "label": "One mobile with two member records in two unions",
+    "records": [
+      {"district": "Banaskantha", "union": "banas", "animals": {"cow": 1, "buffalo": 0}},
+      {"district": "Sabarkantha", "union": "sabar", "animals": {"cow": 0, "buffalo": 1}}
+    ],
+    "technicians": 2, "milk_history_days": 60,
+    "lookups": "all succeed"
+  }
+}

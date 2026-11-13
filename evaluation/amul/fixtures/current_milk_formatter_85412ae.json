@@ -1,0 +1,27 @@
+{
+  "source": "https://github.com/OpenAgriNet/amul-oan-api/blob/85412aeec3f62a36b39f982b04d82a178729cd33/agents/tools/milk_collection.py",
+  "source_sha256": "f583476b845d6a1a2a6a32ac0ded46b077457cf2c0a56bb0fbc81967ff6b0dc9",
+  "generation": "Executed only the six pure formatting helpers from the pinned source with synthetic account records. No app/model/network/business calls. Expected totals independently specified as 12 L and 480 Rs.",
+  "cases": [
+    {
+      "name": "multi_account",
+      "input": {
+        "fromdate": "2026-10-01",
+        "todate": "2026-10-02"
+      },
+      "output": "### Summary\n| Period | Days with milk | Total milk (L) | Total amount (Rs) | Average FAT | Average SNF |\n| --- | --- | --- | --- | --- | --- |\n| 01-10-2026 to 02-10-2026 | 1 | 12.00 | 480.00 | 4.58 | 8.56 |\n\n### Milk Collection\n| Date | Shift | Qty (L) | FAT | SNF | Amount |\n| --- | --- | --- | --- | --- | --- |\n| 2026-10-01 | morning | 5.00 | 4.00 | 8.50 | 200.00 |\n| 2026-10-01 | morning | 7.00 | 5.00 | 8.60 | 280.00 |\n\n### Deductions\n| Date | Account | Amount |\n| --- | --- | --- |\n| 2026-10-01 | Feed | 9999.00 |",
+      "expected_litres": "12",
+      "expected_amount": "480"
+    },
+    {
+      "name": "identical_accounts",
+      "input": {
+        "fromdate": "2026-10-01",
+        "todate": "2026-10-02"
+      },
+      "output": "### Summary\n| Period | Days with milk | Total milk (L) | Total amount (Rs) | Average FAT | Average SNF |\n| --- | --- | --- | --- | --- | --- |\n| 01-10-2026 to 02-10-2026 | 1 | 12.00 | 480.00 | - | - |\n\n### Milk Collection\n| Date | Shift | Qty (L) | FAT | SNF | Amount |\n| --- | --- | --- | --- | --- | --- |\n| 2026-10-01 | morning | 6.00 | - | - | 240.00 |\n| 2026-10-01 | morning | 6.00 | - | - | 240.00 |\n\n### Deductions\n| Date | Account | Amount |\n| --- | --- | --- |\n| 2026-10-01 | Feed | 9999.00 |",
+      "expected_litres": "12",
+      "expected_amount": "480"
+    }
+  ]
+}

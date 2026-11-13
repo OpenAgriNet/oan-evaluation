@@ -16,7 +16,7 @@ from evaluation.amul.checks import (
 from evaluation.amul.judge import JUDGES, Judge, eval_farmer_context
 from evaluation.amul.langfuse_io import Langfuse, load_env_file, load_run
 
-CHECKS_VERSION = 'amul-final-v3'
+CHECKS_VERSION = 'amul-final-v5'
 FINAL_METRICS = [
     'output_hygiene', 'tool_sequencing', 'source_alignment', 'safety_compliance',
     'grammar', 'terminology', 'language_purity', 'fluency', 'task_success',
@@ -121,7 +121,9 @@ def main() -> None:
     rows, cache = [], {}
     lock = threading.Lock()
     context = Path(args.farmer_context).read_text(encoding='utf-8') if args.farmer_context else eval_farmer_context()
-    implementation_hash = hashlib.sha256(''.join(Path(__file__).with_name(name).read_text(encoding='utf-8') for name in ('checks.py', 'judge.py', 'run_amul_eval.py', 'glossary.py','reliability.py')).encode()).hexdigest()
+    implementation_hash = hashlib.sha256(''.join(Path(__file__).with_name(name).read_text(encoding='utf-8') for name in
+        ('checks.py', 'judge.py', 'run_amul_eval.py', 'glossary.py', 'reliability.py',
+         'langfuse_io.py', 'tool_evidence.py', 'milk_evidence.py')).encode()).hexdigest()
     report = {
         'dataset': args.dataset, 'run': args.run, 'version': CHECKS_VERSION,
         'implementation_sha256': implementation_hash,

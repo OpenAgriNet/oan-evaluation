@@ -265,7 +265,9 @@ class FinalMetrics(unittest.TestCase):
         prior = turn(tool_calls=[{'name': 'get_farmer_milk_collection_details', 'output': table('2026-10-01', 'morning', 9, 180)}])
         current = turn(turn_index=2, question_en='Total litres?', answer_en='Total 9 litres.', answer_gu='કુલ 9 લિટર.',
                        tool_calls=[{'name': 'get_farmer_milk_collection_details', 'output': 'No records available.'}])
-        self.assertIsNone(milk_total(current, [prior, current]))
+        result = milk_total(current, [prior, current])
+        self.assertIsNone(result[0])
+        self.assertIn('REVIEW_REQUIRED', result[1])
 
     def test_future_dates_and_inclusive_range(self):
         t = turn(tool_calls=[{'name': 'get_farmer_milk_collection_details', 'input': {'fromdate': '2026-10-14', 'todate': '2026-10-14'}}])

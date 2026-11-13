@@ -14,7 +14,7 @@ The judge does three things. Every specific claim matches a tool result or the f
 
 Code validators, same metric:
 
-- Milk sum. When the farmer asks for a litre total or an earnings total, add the rows already fetched. Litres must match within 0.05. Rupees must match within ₹0.50. On `milk-week` turn 2 the reply says 72.7 L and the 15 rows add up to 68.4 L. That fails. The tool table never prints the total, so the judge is not the one adding the rows.
+- Milk total. Code checks a requested litre or earnings total against the tool's calculated summary when available, or the recorded detail rows for older outputs. Litres must match within 0.05. Rupees must match within ₹0.50. In an older `milk-week` example, the reply says 72.7 L while the 15 rows add up to 68.4 L. That fails. The judge does not redo arithmetic. Missing numeric evidence or ambiguous overlapping account records require review, not an assumed pass.
 - Ticket. The booking number in the Gujarati reply is the number the booking tool returned. A transliterated ticket, or an extra digit, fails.
 - Arguments. A milk date is a real date, in order, within 31 days, and not after the day of the question. Asked on 2 Oct about "the 14th", fetching 14 Oct instead of 14 Sep fails. The animal matches what the farmer said. The AI technician is one of the two on the list. Booking uses this farmer's union, society, and farmer code.
 

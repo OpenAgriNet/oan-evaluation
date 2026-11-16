@@ -1,6 +1,7 @@
 """Evidence contracts and audit-derived guards; emit only the final metric names."""
 from __future__ import annotations
 import json,re
+from evaluation.amul.tool_evidence import outcome_evidence
 
 CHECKLISTS={
  'source_alignment':['claims_and_quotes','animal_and_condition','profile_and_history','translated_meaning','unsupported_promises','numeric_validator_findings'],
@@ -137,6 +138,7 @@ def source_catalog(turn,session,farmer_context):
                     encoded=json.dumps(out,ensure_ascii=False)
                     if len(encoded)<=2200:add(encoded,origin+' output')
                 fragments(out,origin+' output')
+                fragments(outcome_evidence(c),origin+' outcome')
     return catalog
 
 def resolve_source_references(data,catalog):
@@ -151,6 +153,13 @@ def resolve_source_references(data,catalog):
         used[ref]=catalog[ref];review['source_quote']=catalog[ref]['text']
     return used
 
+def _borrowing_present(word, text):
+    # Gujarati combining marks are not reliably covered by Python's \w. A
+    # leading letter/mark boundary prevents ચાર્જ matching inside ડિસ્ચાર્જ,
+    # while still recognizing inflected forms such as બુકિંગ and શિફ્ટમાં.
+    return bool(re.search(r'(?<![\w\u0A80-\u0AFF])' + re.escape(word), text))
+
+
 def deterministic_findings(turn,session):
     """Narrow observable checks, never a general Gujarati grammatical gold label."""
     gu=turn.get('answer_gu') or '';en=turn.get('answer_en') or ''
@@ -160,9 +169,9 @@ def deterministic_findings(turn,session):
             findings[metric]={'level':level,'reason':reason,'reply_quote':quote}
     approved='\n'.join(guword for _,guword in turn.get('glossary') or [])
     inventory=[{'item':word,'equivalent':eq} for word,eq in BORROWINGS.items()
-               if word in gu and word not in approved]
+               if _borrowing_present(word, gu) and not _borrowing_present(word, approved)]
     # Two spelling variants are a single lexical item.
-    if 'ઓનલાઈન' in gu and 'ઓનલાઇન' in gu:
+    if {'ઓનલાઈન', 'ઓનલાઇન'}.issubset({item['item'] for item in inventory}):
         inventory=[x for x in inventory if x['item']!='ઓનલાઇન']
     if inventory:
         cap('language_purity',4 if len(inventory)==1 else 3,

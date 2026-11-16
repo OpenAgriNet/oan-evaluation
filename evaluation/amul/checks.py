@@ -15,9 +15,10 @@ from helpers.language_utils import (
     detect_foreign_scripts,
 )
 from evaluation.amul.glossary import glossary_adherence
+from evaluation.amul.milk_evidence import MilkEvidenceError, recorded_milk_totals, summary_totals
 from mock_server.amul_pashu_mock.server import FARMER, TECHNICIANS
 
-Result = tuple[float, str] | None
+Result = tuple[float | None, str] | None
 
 TICKET_IN_TOOL = re.compile(r"[Tt]icket\s*(?:[Nn]umber|[Nn]o\.?|[Ii][Dd])?\s*[:#]?\s*\"?([A-Z0-9][A-Z0-9-]{3,})")
 TICKET_IN_ANSWER = re.compile(r"\b[A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*-\d{2,}\b|\b[A-Z]{2,4}\d{6,}\b")
@@ -43,9 +44,6 @@ BUFFALO_WORDS = re.compile(r"\bbuffalo(?:es|s)?\b|ભેંસ|ભેસ|પા�
 COW_WORDS = re.compile(r"\bcows?\b|ગાય|વાછરડી", re.I)
 URGENT_WORDS = re.compile(r"\b(?:urgent|emergency|immediately|serious|critical)\b|તાત્કાલિક|ઇમરજન્સી|ગંભીર", re.I)
 MAX_MILK_RANGE_DAYS = 31
-_MILK_ROW = re.compile(
-    r"\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+)\|\s*([\d.]+)\s*\|\s*[\d.]+\s*\|\s*[\d.]+\s*\|\s*([\d.]+)\s*\|"
-)
 _LITRES = re.compile(r"(\d[\d,]*(?:\.\d+)?)\s*(?:lit(?:er|re)?s?\b|લીટર|લિટર)", re.I)
 _RUPEES = re.compile(r"(?:₹|rs\.?|INR|રૂપિયા)\s*(\d[\d,]*(?:\.\d+)?)|(\d[\d,]*(?:\.\d+)?)\s*(?:રૂપિયા|રૂ\.)", re.I)
 _TOTAL_WORD = re.compile(r"\btotal\b|કુલ", re.I)
@@ -249,27 +247,6 @@ def tool_arguments(turn: dict, session: list[dict]) -> Result:
     return 1.0, f"Checked profile codes, confirmed species, technician membership and date validity for {', '.join(dict.fromkeys(checked))}; relative date interpretation requires semantic review."
 
 
-def _milk_rows_so_far(turn: dict, session: list[dict]) -> list[tuple[Decimal, Decimal]]:
-    """Latest retrieval turn's rows; combine split lookups and deduplicate overlapping date/shift rows."""
-    found = {}
-    for earlier in sorted(session, key=lambda t: t.get('turn_index', 0)):
-        if earlier.get("turn_index", 0) > turn.get("turn_index", 0):
-            continue
-        batch = {}
-        retrieved = False
-        for call in earlier.get("tool_calls") or []:
-            if call.get("name") != "get_farmer_milk_collection_details":
-                continue
-            retrieved = True
-            output = call.get("output")
-            text = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
-            for day, shift, qty, amount in _MILK_ROW.findall(text):
-                batch[(day, shift.strip())] = (Decimal(qty), Decimal(amount))
-        if retrieved:
-            found = batch
-    return list(found.values())
-
-
 def milk_total(turn: dict, session: list[dict]) -> Result:
     """Stated litre or earnings total against the sum of the milk records already fetched.
 
@@ -280,43 +257,65 @@ def milk_total(turn: dict, session: list[dict]) -> Result:
     answer = turn.get("answer_en") or ""
     if not _TOTAL_WORD.search(question) and not _TOTAL_WORD.search(answer + ' ' + (turn.get('answer_gu') or '')):
         return None
-    rows = _milk_rows_so_far(turn, session)
-    if not rows:
-        return None
     wants_money = bool(_MONEY_ASK.search(question))
     wants_litres = bool(_LITRE_ASK.search(question))
     if not (wants_litres or wants_money):
         return None
+    columns = ({0} if wants_litres else set()) | ({1} if wants_money else set())
+    try:
+        claims = {}
+        for language, text in [('English', answer), ('Gujarati', turn.get('answer_gu') or '')]:
+            normalized = text.translate(str.maketrans('૦૧૨૩૪૫૬૭૮૯', '0123456789'))
+            summary = summary_totals(normalized)
+            claims[language] = {
+                0: [Decimal(n.replace(',', '')) for n in _LITRES.findall(normalized)],
+                1: [Decimal((a or b).replace(',', '')) for a, b in _RUPEES.findall(normalized)],
+            }
+            for column in columns:
+                if summary.get(column) is not None:
+                    claims[language][column] = [summary[column]]
+                if len(set(claims[language][column])) > 1:
+                    raise MilkEvidenceError(f'{language} reply contains multiple candidate totals; cannot select the first number as the total')
+            if any(not claims[language][column] for column in columns) and re.search(r'(?m)^\s*\|[^\n]*\d[^\n]*\|', normalized):
+                raise MilkEvidenceError(f'{language} requested total is in an unrecognized numeric table')
+        # An honest failure/clarifier states no total. It is not an unverifiable
+        # numerical claim merely because the farmer asked for a calculation.
+        if not any(claims[language][c] for language in claims for c in columns):
+            return None
+        recorded = recorded_milk_totals(turn, session, columns)
+    except MilkEvidenceError as exc:
+        return None, f'REVIEW_REQUIRED milk_total: {exc}'
+    if recorded is None:
+        return None
+    totals, origin = recorded
     problems = []
     any_total = False
     for language, text in [('English', answer), ('Gujarati', turn.get('answer_gu') or '')]:
         if not text and language == 'English':
             continue
-        normalized = text.translate(str.maketrans('૦૧૨૩૪૫૬૭૮૯', '0123456789'))
         for requested, column, tolerance, unit in [(wants_money, 1, Decimal('0.50'), 'rupees'), (wants_litres, 0, Decimal('0.05'), 'L')]:
             if not requested:
                 continue
-            actual = sum((row[column] for row in rows), Decimal(0))
-            claimed = ([Decimal((a or b).replace(',', '')) for a, b in _RUPEES.findall(normalized)] if column else
-                       [Decimal(n.replace(',', '')) for n in _LITRES.findall(normalized)])
+            actual = totals[column]
+            claimed = claims[language][column]
             if not claimed:
                 problems.append(f'{language} reply states no requested {unit} total')
             else:
                 any_total = True
                 if abs(claimed[0] - actual) > tolerance:
-                    problems.append(f'{language} answer says {claimed[0]:g} {unit}, the {len(rows)} records sum to {actual:g} {unit}')
+                    problems.append(f'{language} answer says {claimed[0]:g} {unit}, {origin} gives {actual:g} {unit}')
     if not any_total:
         return None
     if problems:
         return 0.0, "; ".join(problems) + "."
     kind = "earnings and litres" if wants_money and wants_litres else "earnings" if wants_money else "litres"
-    return 1.0, f"Stated {kind} total matches the sum of the {len(rows)} collection records."
+    return 1.0, f"Stated {kind} total matches {origin}."
 
 
 def latency_s(turn: dict, session: list[dict]) -> Result:
     if turn.get("latency_s") is None:
         return None
-    return round(float(turn["latency_s"]), 2), "End-to-end trace latency in seconds."
+    return round(float(turn["latency_s"]), 2), "End-to-end reply latency in seconds (root turn for turn.v1; whole trace for legacy runs)."
 
 
 CHECKS: dict[str, Callable[[dict, list[dict]], Result]] = {
@@ -328,7 +327,7 @@ CHECKS: dict[str, Callable[[dict, list[dict]], Result]] = {
 SOURCE_VALIDATORS = {'ticket_consistency': ticket_consistency, 'tool_arguments': tool_arguments, 'milk_total': milk_total}
 
 
-def source_validation(turn: dict, session: list[dict]) -> dict[str, tuple[float, str]]:
+def source_validation(turn: dict, session: list[dict]) -> dict[str, tuple[float | None, str]]:
     return {name: result for name, check in SOURCE_VALIDATORS.items() if (result := check(turn, session)) is not None}
 
 
@@ -341,7 +340,10 @@ def language_validation(turn: dict, session: list[dict]) -> str:
     return '\n'.join(findings)
 
 
-def combine_source_alignment(judged: tuple[float | None, str], validators: dict[str, tuple[float, str]]) -> tuple[float | None, str]:
+def combine_source_alignment(judged: tuple[float | None, str], validators: dict[str, tuple[float | None, str]]) -> tuple[float | None, str]:
+    unresolved = [evidence for value, evidence in validators.values() if value is None]
+    if unresolved:
+        raise ValueError('; '.join(unresolved))
     score, reason = judged
     failures = [f'{name}: {evidence}' for name, (value, evidence) in validators.items() if value == 0]
     if failures:

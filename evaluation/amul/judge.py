@@ -8,6 +8,8 @@ import re
 from pathlib import Path
 from urllib.request import Request, urlopen
 
+from evaluation.amul.tool_evidence import OUTCOME_RULES, outcome_evidence
+
 PROMPT_DIR = Path(__file__).resolve().parents[2] / "assets" / "prompts" / "metrics" / "amul"
 
 JUDGES: dict[str, list[str]] = {
@@ -36,16 +38,34 @@ def eval_farmer_context() -> str:
     return json.dumps({"farmer": FARMER, "ai_technicians": TECHNICIANS}, ensure_ascii=False, indent=1)
 
 
+def _fmt_call(call: dict) -> str:
+    output = call.get("output")
+    output = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
+    if len(output) > MAX_TOOL_OUTPUT_CHARS:
+        output = output[:MAX_TOOL_OUTPUT_CHARS] + " ...[truncated]"
+    return (f"{call['name']}({json.dumps(call.get('input'), ensure_ascii=False)})"
+            f"\n   outcome: {json.dumps(outcome_evidence(call), ensure_ascii=False)}\n   result: {output}")
+
+
+def _compact_call(call: dict) -> dict:
+    return {'name': call.get('name'), 'input': call.get('input'),
+            'outcome': outcome_evidence(call),
+            'booking_result': call.get('output') if call.get('name') in ('create_ai_call', 'create_health_call') else None}
+
+
+def _compact_api(call: dict) -> dict:
+    return {'name': call.get('name'), 'result': call.get('output'), 'outcome': outcome_evidence(call)}
+
+
 def _fmt_tool_calls(turn: dict) -> str:
-    if not turn["tool_calls"]:
-        return "(no tools called in this turn)"
     lines = []
     for i, call in enumerate(turn["tool_calls"], 1):
-        output = call.get("output")
-        output = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
-        if len(output) > MAX_TOOL_OUTPUT_CHARS:
-            output = output[:MAX_TOOL_OUTPUT_CHARS] + " ...[truncated]"
-        lines.append(f"{i}. {call['name']}({json.dumps(call.get('input'), ensure_ascii=False)})\n   result: {output}")
+        lines.append(f"{i}. {_fmt_call(call)}")
+    if not lines:
+        lines.append("(no tools called in this turn)")
+    if turn.get('api_calls'):
+        lines.append("Backend operations (not extra agent tool calls):")
+        lines.extend(_fmt_call(call) for call in turn['api_calls'])
     return "\n".join(lines)
 
 
@@ -56,13 +76,15 @@ def _fmt_history(turn: dict, session: list[dict], *, source_review: bool = False
     blocks = []
     for t in earlier:
         lines = [f"Turn {t['turn_index']} original farmer: {t.get('question_gu') or ''}; English translation: {t.get('question_en') or ''}"]
-        for call in t["tool_calls"]:
-            output = call.get("output")
-            output = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
-            history_limit = MAX_TOOL_OUTPUT_CHARS if source_review else MAX_HISTORY_TOOL_CHARS
-            if len(output) > history_limit:
-                output = output[:history_limit] + " ...[truncated]"
-            lines.append(f"Turn {t['turn_index']} tool {call['name']}({json.dumps(call.get('input'), ensure_ascii=False)}) result: {output}")
+        for field, label in [('tool_calls', 'tool'), ('api_calls', 'backend operation')]:
+            for call in t.get(field) or []:
+                output = call.get("output")
+                output = output if isinstance(output, str) else json.dumps(output, ensure_ascii=False)
+                history_limit = MAX_TOOL_OUTPUT_CHARS if source_review else MAX_HISTORY_TOOL_CHARS
+                if len(output) > history_limit:
+                    output = output[:history_limit] + " ...[truncated]"
+                lines.append(f"Turn {t['turn_index']} {label} {call['name']}({json.dumps(call.get('input'), ensure_ascii=False)}) "
+                             f"outcome: {json.dumps(outcome_evidence(call), ensure_ascii=False)} result: {output}")
         lines.append(f"Turn {t['turn_index']} agent: {t.get('answer_en') or t.get('answer_gu')}")
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks)
@@ -83,6 +105,7 @@ class Judge:
         text = (PROMPT_DIR / f"{judge}.md").read_text(encoding="utf-8")
         text += RELIABILITY_VERSION + Path(__file__).with_name('reliability.py').read_text(encoding='utf-8')
         text += Path(__file__).read_text(encoding='utf-8')
+        text += Path(__file__).with_name('tool_evidence.py').read_text(encoding='utf-8')
         if judge in ('safety', 'tool_sequencing'):
             text += (PROMPT_DIR / f'{judge}_scope.md').read_text(encoding='utf-8')
         return f"{judge}@{hashlib.sha1(text.encode()).hexdigest()[:8]}"
@@ -94,7 +117,8 @@ class Judge:
         guards={name:detail for name,detail in guards.items() if name in own_metrics}
         compact_history=json.dumps([{'question_en':t.get('question_en'),'question_gu':t.get('question_gu'),
              'answer_en':t.get('answer_en'),'answer_gu':t.get('answer_gu'),
-             'tools':[{'name':c.get('name'),'input':c.get('input'),'booking_result':c.get('output') if c.get('name') in ('create_ai_call','create_health_call') else None} for c in t.get('tool_calls') or []]}
+             'tools':[_compact_call(c) for c in t.get('tool_calls') or []],
+             'backend_operations':[_compact_api(c) for c in t.get('api_calls') or []]}
              for t in session if t['turn_index']<turn['turn_index']],ensure_ascii=False)
         values = {
             "farmer_context": self.farmer_context,
@@ -108,22 +132,22 @@ class Judge:
             "language_checks": turn.get("language_checks") or "(no applicable supporting code findings)",
             "reliability_findings":json.dumps(guards,ensure_ascii=False),
             "borrowing_inventory":json.dumps(inventory,ensure_ascii=False),
-            "workflow_calls": json.dumps([{'name': c.get('name'), 'input': c.get('input')} for c in turn.get('tool_calls') or []], ensure_ascii=False),
+            "workflow_calls": json.dumps([_compact_call(c) for c in turn.get('tool_calls') or []], ensure_ascii=False),
             "workflow_history": json.dumps([{'question': t.get('question_en'), 'answer': t.get('answer_en'),
-                 'calls': [{'name': c.get('name'), 'input': c.get('input'),
-                            'booking_result': c.get('output') if c.get('name') in ('create_ai_call', 'create_health_call') else None}
-                           for c in t.get('tool_calls') or []]}
+                 'calls': [_compact_call(c) for c in t.get('tool_calls') or []],
+                 'backend_operations': [_compact_api(c) for c in t.get('api_calls') or []]}
                  for t in session if t['turn_index'] < turn['turn_index']], ensure_ascii=False),
         }
         text = (PROMPT_DIR / f"{judge}.md").read_text(encoding="utf-8")
         if judge in ('gujarati_language','persona','brevity','user_context_retention'):
             values['history']=compact_history
-            values['tool_calls']=json.dumps([{'name':c.get('name'),'input':c.get('input'),'booking_result':c.get('output') if c.get('name') in ('create_ai_call','create_health_call') else None} for c in turn.get('tool_calls') or []],ensure_ascii=False)
+            values['tool_calls']=json.dumps([_compact_call(c) for c in turn.get('tool_calls') or []],ensure_ascii=False)
         if judge=='gujarati_language':
             values['tool_calls']='Only service identity: '+json.dumps([c['name'] for c in turn.get('tool_calls') or []],ensure_ascii=False)
             values['history']='Current translation is checked against English, not tool truth. Prior service context: '+json.dumps([{'question':t.get('question_en'),'service_tools':[c['name'] for c in t.get('tool_calls') or []]} for t in session if t['turn_index']<turn['turn_index']],ensure_ascii=False)
             values['language_checks']='Script detection and glossary presence do not establish correctness. Use the explicit inventory and contextual sense.'
-        return re.sub(r"\{\{\s*(\w+)\s*\}\}", lambda m: values.get(m.group(1), m.group(0)), text)
+        rendered = re.sub(r"\{\{\s*(\w+)\s*\}\}", lambda m: values.get(m.group(1), m.group(0)), text)
+        return rendered if judge == 'gujarati_language' else OUTCOME_RULES + '\n\n' + rendered
 
     def _complete(self, prompt: str) -> str:
         from urllib.error import HTTPError
@@ -216,6 +240,10 @@ class Judge:
         """Independent criterion review; quoted violations and anchors are validated."""
         from evaluation.amul.reliability import CHECKLISTS,validate_review,deterministic_findings,source_units,validate_source_units,quantified_clinical_timing,source_catalog,resolve_source_references
         from evaluation.amul.checks import source_validation
+        if judge == 'source_alignment':
+            unresolved = [reason for value, reason in source_validation(turn, session).values() if value is None]
+            if unresolved:
+                raise RuntimeError('; '.join(unresolved))
         findings,inventory=deterministic_findings(turn,session)
         clinical_timing=judge=='safety' and ('safety_compliance' in findings or quantified_clinical_timing(turn))
         first={}

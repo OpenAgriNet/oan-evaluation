@@ -323,6 +323,37 @@ def _build_response_context(incoming: dict, action: str, now: str) -> dict:
     }
 
 
+def _synth_shc(cycle: str, farmer: dict) -> dict:
+    """Deterministic soil card for a cycle with no curated fixture.
+
+    Seeded on cycle+phone so the same question always yields the same card.
+    Values sit inside the agronomic ranges _npk_status/_micro_status classify.
+    """
+    import hashlib
+
+    h = int(hashlib.sha256(f"{cycle}:{farmer.get('name','')}".encode()).hexdigest()[:12], 16)
+
+    def pick(lo: float, hi: float, shift: int, nd: int = 2) -> float:
+        span = hi - lo
+        return round(lo + span * (((h >> shift) & 0xFFFF) / 65535.0), nd)
+
+    return {
+        "report_no": f"{farmer.get('state_code', 'IN')}/SYN/{cycle}/{h % 1000000:06d}",
+        "test_date": f"15-Jun-{cycle.split('-')[0]}",
+        "ph": pick(5.6, 7.8, 0, 1),
+        "ec": pick(0.15, 0.60, 4),
+        "organic_carbon": pick(0.35, 0.85, 8),
+        "nitrogen": int(pick(150, 320, 12, 0)),
+        "phosphorus": int(pick(12, 45, 16, 0)),
+        "potassium": int(pick(120, 260, 20, 0)),
+        "sulphur": int(pick(8, 22, 24, 0)),
+        "zinc": pick(0.25, 0.85, 28),
+        "iron": pick(4.0, 12.0, 32, 1),
+        "manganese": pick(2.0, 7.0, 36, 1),
+        "copper": pick(0.8, 2.6, 40, 1),
+        "boron": pick(0.2, 0.7, 44),
+    }
+
 def build_shc_response(body: dict, registry_path: Path) -> Optional[dict]:
     """
     Build a Beckn on_init response for the SHC mock.
@@ -346,17 +377,26 @@ def build_shc_response(body: dict, registry_path: Path) -> Optional[dict]:
             cycle = tag.get("value", "")
             break
 
-    farmer = registry.get("farmers", {}).get(phone_key)
+    farmers = registry.get("farmers", {})
+    farmer = farmers.get(phone_key) or next(iter(farmers.values()), None)
     if not farmer:
         return None
 
     shc = farmer.get("shc_data", {}).get(cycle)
     if not shc:
-        return None
+        # Prod sends cycles the registry does not carry (2026-27, bare "2026", ...).
+        # Returning None handed the request to the live BPP, so synthesise a
+        # deterministic card for the requested cycle instead. Values are stable
+        # per cycle, so eval runs stay reproducible.
+        shc = _synth_shc(cycle or "unknown", farmer)
 
-    html = _build_shc_html(farmer, cycle, shc)
-    b64_html = base64.b64encode(html.encode("utf-8")).decode("ascii")
-    html_url = f"data:text/html;base64,{b64_html}"
+    # Production lists every report on the farmer's record (2.5 on average, ~7.4k chars
+    # formatted). Return this cycle's card plus two more plots, synthesised deterministically.
+    cards = [shc] + [_synth_shc(f"{cycle or 'unknown'} plot {n}", farmer) for n in (2, 3)]
+
+    def media_url(card: dict) -> str:
+        html = _build_shc_html(farmer, cycle, card)
+        return "data:text/html;base64," + base64.b64encode(html.encode("utf-8")).decode("ascii")
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
     out_ctx = _build_context(body, "on_init", now)
@@ -382,16 +422,12 @@ def build_shc_response(body: dict, registry_path: Path) -> Optional[dict]:
                                 },
                                 "items": [
                                     {
-                                        "id": f"shc-{phone_key}-{cycle}",
+                                        "id": f"shc-{phone_key}-{cycle}-{n}",
                                         "descriptor": {"name": "Soil Health Card"},
                                         "tags": [],
-                                        "media": [
-                                            {
-                                                "mimetype": "text/html",
-                                                "url": html_url,
-                                            }
-                                        ],
+                                        "media": [{"mimetype": "text/html", "url": media_url(card)}],
                                     }
+                                    for n, card in enumerate(cards, start=1)
                                 ],
                             }
                         ],

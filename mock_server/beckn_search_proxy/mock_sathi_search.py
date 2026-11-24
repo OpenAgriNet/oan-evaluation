@@ -173,7 +173,7 @@ def _get_dealers_for_crop(crop_code: str) -> list[dict[str, Any]]:
                 "dealer_name": "MSSC LTD PUNE",
                 "district": "Pune",
                 "state": "Maharashtra",
-                "contact": "8669642774",
+                "contact": "9000002001",
                 "crops": ["Soybean", "Cotton", "Sunflower"]
             },
             {
@@ -181,7 +181,7 @@ def _get_dealers_for_crop(crop_code: str) -> list[dict[str, Any]]:
                 "dealer_name": "SHRIBALRAM AGRO FARMERS PRODUCER COM",
                 "district": "Pune",
                 "state": "Maharashtra",
-                "contact": "9423580655",
+                "contact": "9000002003",
                 "crops": ["Soybean", "Cotton", "Groundnut"]
             },
             {
@@ -189,7 +189,7 @@ def _get_dealers_for_crop(crop_code: str) -> list[dict[str, Any]]:
                 "dealer_name": "Pratibha Farmers Producer Co.Ltd",
                 "district": "Pune",
                 "state": "Maharashtra",
-                "contact": "9767735151",
+                "contact": "9000002004",
                 "crops": ["Soybean", "Sunflower", "Safflower"]
             }
         ],
@@ -199,7 +199,7 @@ def _get_dealers_for_crop(crop_code: str) -> list[dict[str, Any]]:
                 "dealer_name": "KSCB Ltd Kochi",
                 "district": "Ernakulam",
                 "state": "Kerala",
-                "contact": "8901234567",
+                "contact": "9000002002",
                 "crops": ["Tapioca", "Cotton"]
             },
             {
@@ -207,7 +207,7 @@ def _get_dealers_for_crop(crop_code: str) -> list[dict[str, Any]]:
                 "dealer_name": "Kerala Agro Products",
                 "district": "Ernakulam",
                 "state": "Kerala",
-                "contact": "9876543215",
+                "contact": "9000002005",
                 "crops": ["Tapioca", "Cotton"]
             }
         ]

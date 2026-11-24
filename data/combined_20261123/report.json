@@ -1,0 +1,515 @@
+{
+ "questions": 527,
+ "questions_by_source": {
+  "current-long": 120,
+  "current-short": 53,
+  "mined": 91,
+  "full": 211,
+  "ffs": 52
+ },
+ "inference_sessions": 208,
+ "judge_units": 263,
+ "judge_units_by_source": {
+  "current-long": 60,
+  "current-short": 17,
+  "mined": 39,
+  "full": 141,
+  "ffs": 6
+ },
+ "missing": {
+  "english": 0,
+  "hindi": 0,
+  "marathi": 0,
+  "gujarati": 0,
+  "malayalam": 0,
+  "kannada": 0,
+  "tamil": 0,
+  "telugu": 0,
+  "bengali": 0,
+  "assamese": 0,
+  "odia": 0,
+  "punjabi": 0,
+  "maithili": 0
+ },
+ "translated": {
+  "english": 0,
+  "hindi": 52,
+  "marathi": 143,
+  "gujarati": 143,
+  "malayalam": 143,
+  "kannada": 143,
+  "tamil": 143,
+  "telugu": 143,
+  "bengali": 143,
+  "assamese": 143,
+  "odia": 143,
+  "punjabi": 354,
+  "maithili": 354
+ },
+ "date_edits": [
+  {
+   "question_id": "3013-3",
+   "language": "english",
+   "old": "29 October through 4 November 2026",
+   "new": "17 November through 23 November 2026"
+  },
+  {
+   "question_id": "3013-3",
+   "language": "hindi",
+   "old": "29 अक्टूबर से 4 नवंबर 2026",
+   "new": "17 नवंबर से 23 नवंबर 2026"
+  },
+  {
+   "question_id": "3014-1",
+   "language": "english",
+   "old": "29 October through 4 November 2026",
+   "new": "17 November through 23 November 2026"
+  },
+  {
+   "question_id": "3014-1",
+   "language": "hindi",
+   "old": "29 अक्टूबर से 4 नवंबर 2026",
+   "new": "17 नवंबर से 23 नवंबर 2026"
+  },
+  {
+   "question_id": "3018-1",
+   "language": "english",
+   "old": "29 October through 4 November 2026",
+   "new": "17 November through 23 November 2026"
+  },
+  {
+   "question_id": "3018-1",
+   "language": "hindi",
+   "old": "29 अक्टूबर से 4 नवंबर 2026",
+   "new": "17 नवंबर से 23 नवंबर 2026"
+  },
+  {
+   "question_id": "3020-1",
+   "language": "english",
+   "old": " including today (4 November 2026)",
+   "new": " including today"
+  },
+  {
+   "question_id": "3020-1",
+   "language": "hindi",
+   "old": "आज (4 नवंबर 2026) समेत",
+   "new": "आज समेत"
+  },
+  {
+   "question_id": "2049-1",
+   "language": "gujarati",
+   "old": "અકોટા",
+   "new": "અકોલા"
+  }
+ ],
+ "untooled_units": [
+  "901-closing",
+  "902-closing",
+  "903-closing",
+  "904-closing",
+  "905-closing",
+  "3035",
+  "2004",
+  "2165",
+  "2166",
+  "2167"
+ ],
+ "dropped": [
+  [
+   "mined",
+   "prod-kcc-collateral-limit-replay-a",
+   2,
+   "replay of prod-kcc-collateral-limit-001"
+  ],
+  [
+   "mined",
+   "prod-kcc-collateral-limit-replay-b",
+   2,
+   "replay of prod-kcc-collateral-limit-001"
+  ],
+  [
+   "mined",
+   "prod-kcc-overview-stale-limit-repeat2-20261104",
+   1,
+   "replay of prod-kcc-overview-stale-limit-20261104"
+  ],
+  [
+   "mined",
+   "prod-kcc-overview-stale-limit-repeat3-20261104",
+   1,
+   "replay of prod-kcc-overview-stale-limit-20261104"
+  ],
+  [
+   "mined",
+   "prod-kcc-overview-stale-limit-repeat4-20261104",
+   1,
+   "replay of prod-kcc-overview-stale-limit-20261104"
+  ],
+  [
+   "mined",
+   "prod-kcc-overview-stale-limit-repeat5-20261104",
+   1,
+   "replay of prod-kcc-overview-stale-limit-20261104"
+  ],
+  [
+   "mined",
+   "prod-pmfby-overview-eligibility-repeat-002",
+   1,
+   "replay of prod-pmfby-overview-eligibility-001"
+  ],
+  [
+   "mined",
+   "prod-pmfby-overview-eligibility-repeat3-20261104",
+   1,
+   "replay of prod-pmfby-overview-eligibility-001"
+  ],
+  [
+   "mined",
+   "prod-pmfby-tenant-docs-repeat-001",
+   2,
+   "replay of prod-pmfby-tenant-docs-001"
+  ],
+  [
+   "mined",
+   "prod-pmkisan-overview-replay-b",
+   2,
+   "replay of prod-pmkisan-overview-replay-a"
+  ],
+  [
+   "full",
+   "1",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "3",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "5",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "6",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "7",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "8",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "9",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "10",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "11",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "12",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "13",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "14",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "15",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "18",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "20",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "22",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "23",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "25",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "32",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "46",
+   1,
+   "template already 2x: \"what are today s rates of <P> in <P>\""
+  ],
+  [
+   "full",
+   "51",
+   1,
+   "template already 2x: \"what are today s rates of <P> in <P>\""
+  ],
+  [
+   "full",
+   "58",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P> today\""
+  ],
+  [
+   "full",
+   "60",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P> today\""
+  ],
+  [
+   "full",
+   "62",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "81",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P> today\""
+  ],
+  [
+   "full",
+   "83",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P>\""
+  ],
+  [
+   "full",
+   "84",
+   1,
+   "template already 2x: \"how to apply for <P> pond scheme in <P>\""
+  ],
+  [
+   "full",
+   "87",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P>\""
+  ],
+  [
+   "full",
+   "88",
+   1,
+   "template already 2x: \"what will be the temperature for <P> next few days in <\""
+  ],
+  [
+   "full",
+   "93",
+   1,
+   "template already 2x: \"what will be the temperature for <P> next few days in <\""
+  ],
+  [
+   "full",
+   "99",
+   1,
+   "template already 2x: \"what are today s rates of <P> in <P>\""
+  ],
+  [
+   "full",
+   "108",
+   1,
+   "template already 2x: \"is there a possibility of <P> rainfall this week in <P>\""
+  ],
+  [
+   "full",
+   "121",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "122",
+   1,
+   "template already 2x: \"which organic fertilizer to use for <P> in <P>\""
+  ],
+  [
+   "full",
+   "123",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P>\""
+  ],
+  [
+   "full",
+   "124",
+   1,
+   "100% of its questions already in set"
+  ],
+  [
+   "full",
+   "129",
+   1,
+   "template already 2x: \"what are today s rates of <P> in <P>\""
+  ],
+  [
+   "full",
+   "132",
+   1,
+   "template already 2x: \"what is the seed rate for <P> crop in <P>\""
+  ],
+  [
+   "full",
+   "133",
+   1,
+   "template already 2x: \"is there a possibility of <P> rainfall this week in <P>\""
+  ],
+  [
+   "full",
+   "134",
+   1,
+   "template already 2x: \"what care to take during flowering of <P> in <P>\""
+  ],
+  [
+   "full",
+   "135",
+   1,
+   "template already 2x: \"what are the current market prices for <P> in <P> today\""
+  ],
+  [
+   "full",
+   "138",
+   1,
+   "template already 2x: \"how to prevent newcastle disease in <P> in <P>\""
+  ],
+  [
+   "full",
+   "142",
+   1,
+   "template already 2x: \"what is the treatment if cow s udder is swollen in <P>\""
+  ],
+  [
+   "full",
+   "146",
+   1,
+   "template already 2x: \"what is the seed rate for <P> crop in <P>\""
+  ],
+  [
+   "full",
+   "147",
+   1,
+   "template already 2x: \"will it rain tomorrow in <P>\""
+  ],
+  [
+   "full",
+   "148",
+   1,
+   "template already 2x: \"why does buffalo milk production decrease in <P>\""
+  ],
+  [
+   "full",
+   "152",
+   1,
+   "template already 2x: \"why does buffalo milk production decrease in <P>\""
+  ],
+  [
+   "full",
+   "153",
+   1,
+   "template already 2x: \"suggest fertilizer schedule for <P> in <P>\""
+  ],
+  [
+   "full",
+   "155",
+   1,
+   "template already 2x: \"what is the current market price of <P> in <P>\""
+  ],
+  [
+   "full",
+   "156",
+   1,
+   "template already 2x: \"how to prevent newcastle disease in <P> in <P>\""
+  ],
+  [
+   "full",
+   "189",
+   3,
+   "50% of its questions already in set"
+  ],
+  [
+   "full",
+   "911",
+   13,
+   "83% of its questions already in set"
+  ],
+  [
+   "full",
+   "912",
+   13,
+   "83% of its questions already in set"
+  ],
+  [
+   "full",
+   "913",
+   13,
+   "83% of its questions already in set"
+  ],
+  [
+   "full",
+   "914",
+   13,
+   "83% of its questions already in set"
+  ],
+  [
+   "full",
+   "915",
+   13,
+   "83% of its questions already in set"
+  ]
+ ]
+}

@@ -39,7 +39,7 @@ async def llm_call(
 
     agent = Agent(**agent_kwargs)
     result = await agent.run(prompt)
-    usage = result.usage
+    usage = result.usage() if callable(result.usage) else result.usage
     return {
         "text": result.output,
         "usage": {

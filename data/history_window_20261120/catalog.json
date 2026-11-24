@@ -1,0 +1,1605 @@
+{
+  "version": 191,
+  "updated_at": "2026-11-03T07:40:51Z",
+  "entries": [
+    {
+      "code": "0001",
+      "name": "બીજ ઉત્પદન સહાય_0001",
+      "aliases": [
+        "0001",
+        "બીજ ઉત્પદન સહાય_0001",
+        "બ જ ઉત પદન સહ ય_0001",
+        "બજઉપસય"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "10cd",
+      "name": "ડ્રોન ની ખરીદી પર સહાય 15.00 Cr_DAG",
+      "aliases": [
+        "10cd",
+        "ડ્રોન ની ખરીદી પર સહાય 15.00 Cr_DAG",
+        "ડ ર ન ન ખર દ પર સહ ય 15 00 cr_dag",
+        "ડરનનખદપસય10C"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "2iiiipr2",
+      "name": "2007_ICAR-IIPR_Indian_Institute_of_Pulses_Res__._2007",
+      "aliases": [
+        "2iiiipr2",
+        "2007_ICAR-IIPR_Indian_Institute_of_Pulses_Res__._2007",
+        "2007_icar iipr_indian_institute_of_pulses_res__ _2007",
+        "2I_",
+        "iipr_indian_institute_of_pulses_res__._2007"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "2iiiiprjs2",
+      "name": "2006_ICAR-IIPR_Indian_Institute_of_Pulses_Res_July-September_2006",
+      "aliases": [
+        "2iiiiprjs2",
+        "2006_ICAR-IIPR_Indian_Institute_of_Pulses_Res_July-September_2006",
+        "2006_icar iipr_indian_institute_of_pulses_res_july september_2006",
+        "2IS",
+        "september_2006"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "35a6003132fa8fbd8c4d7595890b77ea",
+      "name": "ಜಿಲ್ಲಾ ಕೃಷಿ ತರಬೇತಿ ಕೇಂದ್ರಗಳು.pdf",
+      "aliases": [
+        "ಜಿಲ್ಲಾ ಕೃಷಿ ತರಬೇತಿ ಕೇಂದ್ರಗಳು.pdf",
+        "ಜ ಲ ಲ ಕ ಷ ತರಬ ತ ಕ ದ ರಗಳ pdf",
+        "ಜಲಲಕಷತತಕದರP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "40",
+      "name": "4076 બ્રીડર સીડ ખરીદી_0001",
+      "aliases": [
+        "40",
+        "4076 બ્રીડર સીડ ખરીદી_0001",
+        "4076 બ ર ડર સ ડ ખર દ _0001",
+        "4બરડસડખદ_"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "50b1d14196dcb8bdbf1dfbec539d05db",
+      "name": "Revised MI Scheme Information for chatbot ENGLISH - 05.09.2026  DDA.pdf",
+      "aliases": [
+        "Revised MI Scheme Information for chatbot ENGLISH - 05.09.2026  DDA.pdf",
+        "revised mi scheme information for chatbot english 05 09 2026 dda pdf",
+        "RMSICE002DP",
+        "05.09.2026  dda.pdf"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "8068f2cc5f4c268fbece880ae9dad949",
+      "name": "Chatbot guidelines pdf.pdf",
+      "aliases": [
+        "Chatbot guidelines pdf.pdf",
+        "chatbot guidelines pdf pdf",
+        "CGPP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "866844561b6504814673d93637c992db",
+      "name": "Maize DM_Management Practices.pdf",
+      "aliases": [
+        "Maize DM_Management Practices.pdf",
+        "maize dm_management practices pdf",
+        "MDPP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a2d",
+      "name": "AGR-2_DAG",
+      "aliases": [
+        "a2d",
+        "AGR-2_DAG",
+        "agr 2_dag",
+        "A2",
+        "2_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a2dnid",
+      "name": "AGR-2 DEMO NEW ITEM_DAG",
+      "aliases": [
+        "a2dnid",
+        "AGR-2 DEMO NEW ITEM_DAG",
+        "agr 2 demo new item_dag",
+        "A2DNI",
+        "2 demo new item_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a2sha",
+      "name": "AGR-2 Soil health abhiyan",
+      "aliases": [
+        "a2sha",
+        "AGR-2 Soil health abhiyan",
+        "agr 2 soil health abhiyan",
+        "2 soil health abhiyan"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a322td",
+      "name": "AGR 3 2026-27 THARAV_DAG",
+      "aliases": [
+        "a322td",
+        "AGR 3 2026-27 THARAV_DAG",
+        "agr 3 2026 27 tharav_dag",
+        "A322T",
+        "27 tharav_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a4d",
+      "name": "AGR-4_DAG",
+      "aliases": [
+        "a4d",
+        "AGR-4_DAG",
+        "agr 4_dag",
+        "A4",
+        "4_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a4nitd",
+      "name": "AGR-4 new item Tharav_DAG",
+      "aliases": [
+        "a4nitd",
+        "AGR-4 new item Tharav_DAG",
+        "agr 4 new item tharav_dag",
+        "A4NIT",
+        "4 new item tharav_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "a8sd",
+      "name": "AGR-8 A Scheme_DAG",
+      "aliases": [
+        "a8sd",
+        "AGR-8 A Scheme_DAG",
+        "agr 8 a scheme_dag",
+        "A8S",
+        "8 a scheme_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ad",
+      "name": "Compensation for Accidental Death Cases 2026-27 (Karnataka)",
+      "aliases": [
+        "ad",
+        "Compensation for Accidental Death Cases 2026-27 (Karnataka)",
+        "compensation for accidental death cases 2026 27 karnataka",
+        "CADC22K",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "aea",
+      "name": "AIF Eligible Activities",
+      "aliases": [
+        "aea",
+        "AIF Eligible Activities",
+        "AIF activities",
+        "AIF eligible activities",
+        "Agriculture Infrastructure Fund eligible activities"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "aea22k",
+      "name": "Agriculture extension(ATMA) 2026-27(Karnataka)",
+      "aliases": [
+        "aea22k",
+        "Agriculture extension(ATMA) 2026-27(Karnataka)",
+        "agriculture extension atma 2026 27 karnataka",
+        "27(karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "af",
+      "name": "AIF FAQ",
+      "aliases": [
+        "af",
+        "AIF FAQ",
+        "AIF",
+        "Agriculture Infrastructure Fund"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "afe22k",
+      "name": "Agricultural Fairs and Exhibitions 2026-27 (Karnataka)",
+      "aliases": [
+        "afe22k",
+        "Agricultural Fairs and Exhibitions 2026-27 (Karnataka)",
+        "agricultural fairs and exhibitions 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ag22d",
+      "name": "ASP GR 2026-27_DAG",
+      "aliases": [
+        "ag22d",
+        "ASP GR 2026-27_DAG",
+        "asp gr 2026 27_dag",
+        "AG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "anig22d",
+      "name": "ASP New Item GR 2026-27_DAG",
+      "aliases": [
+        "anig22d",
+        "ASP New Item GR 2026-27_DAG",
+        "asp new item gr 2026 27_dag",
+        "ANIG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "b9a0426bbaa81d8ab6ea11aa93613b31",
+      "name": "ಕೃಷಿಯಲ್ಲಿ ಹಸಿರೆಲೆ ಗೊಬ್ಬರಗಳ ಮಹತ್ವ.pdf",
+      "aliases": [
+        "ಕೃಷಿಯಲ್ಲಿ ಹಸಿರೆಲೆ ಗೊಬ್ಬರಗಳ ಮಹತ್ವ.pdf",
+        "ಕ ಷ ಯಲ ಲ ಹಸ ರ ಲ ಗ ಬ ಬರಗಳ ಮಹತ ವ pdf",
+        "ಕಷಯಲಹರಲಗಬಬಮವP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "bwfs",
+      "name": "Brackish water fisheries scheme",
+      "aliases": [
+        "bwfs",
+        "Brackish water fisheries scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "by",
+      "name": "Bahustariy yojna",
+      "aliases": [
+        "by",
+        "Bahustariy yojna"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "cb5199fa57d161d6efad27a71ed223a0",
+      "name": "Information to Chatboat.pdf",
+      "aliases": [
+        "Information to Chatboat.pdf",
+        "information to chatboat pdf",
+        "ICP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "cd",
+      "name": "Crop Diversification",
+      "aliases": [
+        "cd",
+        "Crop Diversification"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "cdp-2",
+      "name": "Crop Diversification Program",
+      "aliases": [
+        "cdp-2",
+        "Crop Diversification Program",
+        "CDP"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "cg22d",
+      "name": "CDP GR 2026-27_DAG",
+      "aliases": [
+        "cg22d",
+        "CDP GR 2026-27_DAG",
+        "cdp gr 2026 27_dag",
+        "CG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "cl22k",
+      "name": "Crop Loan Subsidy Scheme 2026-27 (Karnataka)",
+      "aliases": [
+        "cl22k",
+        "Crop Loan Subsidy Scheme 2026-27 (Karnataka)",
+        "crop loan subsidy scheme 2026 27 karnataka",
+        "CLSS22K",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "dag",
+      "name": "સુધાર ઠરાવ તારની વાડ યોજના_DAG",
+      "aliases": [
+        "dag",
+        "સુધાર ઠરાવ તારની વાડ યોજના_DAG",
+        "સ ધ ર ઠર વ ત રન વ ડ ય જન _dag",
+        "સધરઠવતરવડયજ_"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "datc",
+      "name": "District Agriculture Training Centres",
+      "aliases": [
+        "datc",
+        "District Agriculture Training Centres"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "datc222k",
+      "name": "District Agriculture Training Centers 2 2026-27 (Karnataka)",
+      "aliases": [
+        "datc222k",
+        "District Agriculture Training Centers 2 2026-27 (Karnataka)",
+        "district agriculture training centers 2 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "dcs",
+      "name": "Digital Crop Survey (2026-27) Karnataka",
+      "aliases": [
+        "dcs",
+        "Digital Crop Survey (2026-27) Karnataka",
+        "digital crop survey 2026 27 karnataka",
+        "DCS22K",
+        "27) karnataka"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "dt22d",
+      "name": "Drone Tharav - 2026-27_DAG",
+      "aliases": [
+        "dt22d",
+        "Drone Tharav - 2026-27_DAG",
+        "drone tharav 2026 27_dag",
+        "DT22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "enam-2",
+      "name": "Electronic National Agriculture Market",
+      "aliases": [
+        "enam-2",
+        "Electronic National Agriculture Market",
+        "ENAM"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "epifspur22k",
+      "name": "Expansion and Popularization of Integrated Farming System program under the RKVY 2026-27 (Karnataka)",
+      "aliases": [
+        "epifspur22k",
+        "Expansion and Popularization of Integrated Farming System program under the RKVY 2026-27 (Karnataka)",
+        "expansion and popularization of integrated farming system program under the rkvy 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "eshtoiurd22k",
+      "name": "Enhancement of Soil Health through Organic Inputs under RKVY - DPR 2026-27 (Karnataka)",
+      "aliases": [
+        "eshtoiurd22k",
+        "Enhancement of Soil Health through Organic Inputs under RKVY - DPR 2026-27 (Karnataka)",
+        "enhancement of soil health through organic inputs under rkvy dpr 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "f24nig4kd",
+      "name": "FM 2&4 New item GR 4323-k5_DAG",
+      "aliases": [
+        "f24nig4kd",
+        "FM 2&4 New item GR 4323-k5_DAG",
+        "fm 2 4 new item gr 4323 k5_dag",
+        "F24NIG4K",
+        "k5_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fais",
+      "name": "Fisheries accident insurance scheme",
+      "aliases": [
+        "fais",
+        "Fisheries accident insurance scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fc",
+      "name": "field cover",
+      "aliases": [
+        "fc",
+        "field cover"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ffs-2",
+      "name": "Framework for Fertilizer Sales",
+      "aliases": [
+        "ffs-2",
+        "Framework for Fertilizer Sales",
+        "FFS"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fis",
+      "name": "Fisheries Inland scheme",
+      "aliases": [
+        "fis",
+        "Fisheries Inland scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fm22k",
+      "name": "Farm Management 2026-27 (Karnataka)",
+      "aliases": [
+        "fm22k",
+        "Farm Management 2026-27 (Karnataka)",
+        "farm management 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "foap",
+      "name": "Farmers Old Age Pension",
+      "aliases": [
+        "foap",
+        "Farmers Old Age Pension"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fsc22k",
+      "name": "Compensation for Farmer Suicide Cases 2026-27 (Karnataka)",
+      "aliases": [
+        "fsc22k",
+        "Compensation for Farmer Suicide Cases 2026-27 (Karnataka)",
+        "compensation for farmer suicide cases 2026 27 karnataka",
+        "CFSC22K",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "fsnig22d",
+      "name": "On Farm Storage New Item GR 2026-27_DAG",
+      "aliases": [
+        "fsnig22d",
+        "On Farm Storage New Item GR 2026-27_DAG",
+        "on farm storage new item gr 2026 27_dag",
+        "FSNIG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "h2y",
+      "name": "HRT-2 yojna",
+      "aliases": [
+        "h2y",
+        "HRT-2 yojna",
+        "hrt 2 yojna",
+        "2 yojna"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "h3",
+      "name": "HRT-3",
+      "aliases": [
+        "h3",
+        "HRT-3",
+        "hrt 3",
+        "3"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "h4",
+      "name": "HRT-4",
+      "aliases": [
+        "h4",
+        "HRT-4",
+        "hrt 4",
+        "4"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "hl22k",
+      "name": "Compensation for Hay Loss Cases 2026-27 (Karnataka)",
+      "aliases": [
+        "hl22k",
+        "Compensation for Hay Loss Cases 2026-27 (Karnataka)",
+        "compensation for hay loss cases 2026 27 karnataka",
+        "CHLC22K",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "hs",
+      "name": "Horticulture scheme",
+      "aliases": [
+        "hs",
+        "Horticulture scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "if70s",
+      "name": "Inland Fisheries 796-02 scheme",
+      "aliases": [
+        "if70s",
+        "Inland Fisheries 796-02 scheme",
+        "inland fisheries 796 02 scheme",
+        "02 scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ifs80",
+      "name": "Inland fisheries scheme 800-01",
+      "aliases": [
+        "ifs80",
+        "Inland fisheries scheme 800-01",
+        "inland fisheries scheme 800 01",
+        "01"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ig22d",
+      "name": "IYOM GR 2026-27_DAG",
+      "aliases": [
+        "ig22d",
+        "IYOM GR 2026-27_DAG",
+        "iyom gr 2026 27_dag",
+        "IG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "isnig1c202d",
+      "name": "Input sahay New Item GR 1150 Crore 28.04.2026_DAG",
+      "aliases": [
+        "isnig1c202d",
+        "Input sahay New Item GR 1150 Crore 28.04.2026_DAG",
+        "input sahay new item gr 1150 crore 28 04 2026_dag",
+        "ISNIG1C202"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "isnig1c202d-2",
+      "name": "Input sahay New Item GR 1150 Crore 28.04.2026_DAG",
+      "aliases": [
+        "isnig1c202d-2",
+        "Input sahay New Item GR 1150 Crore 28.04.2026_DAG",
+        "input sahay new item gr 1150 crore 28 04 2026_dag",
+        "ISNIG1C202"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kbs22k",
+      "name": "Krishi Bhagya Scheme 2026-27 (Karnataka)",
+      "aliases": [
+        "kbs22k",
+        "Krishi Bhagya Scheme 2026-27 (Karnataka)",
+        "krishi bhagya scheme 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kcc",
+      "name": "Kisan Credit Card",
+      "aliases": [
+        "kcc",
+        "Kisan Credit Card",
+        "KCC"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kkyv",
+      "name": "Kisan Kaleva Yojana - Vendor",
+      "aliases": [
+        "kkyv",
+        "Kisan Kaleva Yojana - Vendor",
+        "kisan kaleva yojana vendor",
+        "vendor"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kpkpp22k",
+      "name": "Krishi prashasti & krishi panditha prashasti 2026-27 (Karnataka)",
+      "aliases": [
+        "kpkpp22k",
+        "Krishi prashasti & krishi panditha prashasti 2026-27 (Karnataka)",
+        "krishi prashasti krishi panditha prashasti 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kpsg22d",
+      "name": "Kisan Parivahan Scheme GR 2026-27_DAG",
+      "aliases": [
+        "kpsg22d",
+        "Kisan Parivahan Scheme GR 2026-27_DAG",
+        "kisan parivahan scheme gr 2026 27_dag",
+        "KPSG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "kvg22k",
+      "name": "Krishi Vartha Ghataka 2026-27 (Karnataka)",
+      "aliases": [
+        "kvg22k",
+        "Krishi Vartha Ghataka 2026-27 (Karnataka)",
+        "krishi vartha ghataka 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "map",
+      "name": "Mission for Aatmanirbharta in Pulses",
+      "aliases": [
+        "map",
+        "Mission for Aatmanirbharta in Pulses"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mcp",
+      "name": "Mission for Cotton Productivity",
+      "aliases": [
+        "mcp",
+        "Mission for Cotton Productivity"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mcpsd",
+      "name": "Mission for Cotton Productivity and Sustainability_DAG",
+      "aliases": [
+        "mcpsd",
+        "Mission for Cotton Productivity and Sustainability_DAG",
+        "MCPS"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mfs",
+      "name": "Marine Fisheries Scheme",
+      "aliases": [
+        "mfs",
+        "Marine Fisheries Scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "midh-2",
+      "name": "Mission for Integrated Development of Horticulture",
+      "aliases": [
+        "midh-2",
+        "Mission for Integrated Development of Horticulture",
+        "MIDH"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mif-2",
+      "name": "Micro Irrigation Fund",
+      "aliases": [
+        "mif-2",
+        "Micro Irrigation Fund",
+        "MIF"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mip22",
+      "name": "Micro Irrigation Programme 2026-27",
+      "aliases": [
+        "mip22",
+        "Micro Irrigation Programme 2026-27",
+        "micro irrigation programme 2026 27",
+        "27"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "miss",
+      "name": "Modified Interest Subvention Scheme",
+      "aliases": [
+        "miss",
+        "Modified Interest Subvention Scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "mrckam22k",
+      "name": "Mukhyamantri Raitha Chaitanya - Karnataka AgriTech Mission 2026-27 (Karnataka)",
+      "aliases": [
+        "mrckam22k",
+        "Mukhyamantri Raitha Chaitanya - Karnataka AgriTech Mission 2026-27 (Karnataka)",
+        "mukhyamantri raitha chaitanya karnataka agritech mission 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ms",
+      "name": "Makhana Scheme",
+      "aliases": [
+        "ms",
+        "Makhana Scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "msmms",
+      "name": "MP State Millet Mission Scheme",
+      "aliases": [
+        "msmms",
+        "MP State Millet Mission Scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nbhm",
+      "name": "National Beekeeping & Honey Mission",
+      "aliases": [
+        "nbhm",
+        "National Beekeeping & Honey Mission",
+        "national beekeeping honey mission",
+        "NBHM",
+        "National Beekeeping and Honey Mission"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nbm",
+      "name": "National Bamboo Mission",
+      "aliases": [
+        "nbm",
+        "National Bamboo Mission",
+        "NBM"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nfsm",
+      "name": "National Food Security Mission",
+      "aliases": [
+        "nfsm",
+        "National Food Security Mission",
+        "NFSM"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nhms",
+      "name": "National Horticulture Mission Scheme",
+      "aliases": [
+        "nhms",
+        "National Horticulture Mission Scheme"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nidt22d",
+      "name": "New Item Demo Tharav 2026-27_DAG",
+      "aliases": [
+        "nidt22d",
+        "New Item Demo Tharav 2026-27_DAG",
+        "new item demo tharav 2026 27_dag",
+        "NIDT22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nmeo-2",
+      "name": "National Mission on Edible OilSeeds",
+      "aliases": [
+        "nmeo-2",
+        "National Mission on Edible OilSeeds",
+        "NMEO"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nmeoop",
+      "name": "National Mission on Edible Oils – Oil Palm",
+      "aliases": [
+        "nmeoop",
+        "National Mission on Edible Oils – Oil Palm",
+        "national mission on edible oils oil palm",
+        "oil palm"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nmeoop-2",
+      "name": "National Mission on Edible Oils-Oil Palm",
+      "aliases": [
+        "nmeoop-2",
+        "National Mission on Edible Oils-Oil Palm",
+        "national mission on edible oils oil palm",
+        "NMEOOP",
+        "oil palm"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nmnf",
+      "name": "National Mission on Natural Farming",
+      "aliases": [
+        "nmnf",
+        "National Mission on Natural Farming"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nmnfd",
+      "name": "National Mission on Natural Farming_DAG",
+      "aliases": [
+        "nmnfd",
+        "National Mission on Natural Farming_DAG",
+        "NMNF"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nng220d",
+      "name": "NFSNM Normal GR 2026 27_0001_DAG",
+      "aliases": [
+        "nng220d",
+        "NFSNM Normal GR 2026 27_0001_DAG",
+        "NNG22"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "noty22d",
+      "name": "NMEO-OIlseed Tharav year 2026-27_DAG",
+      "aliases": [
+        "noty22d",
+        "NMEO-OIlseed Tharav year 2026-27_DAG",
+        "nmeo oilseed tharav year 2026 27_dag",
+        "NOTY22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nsd",
+      "name": "NFSNM SC_DAG",
+      "aliases": [
+        "nsd",
+        "NFSNM SC_DAG",
+        "NS"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "nsg220d",
+      "name": "NFSNM ST GR 2026 27_0001_DAG",
+      "aliases": [
+        "nsg220d",
+        "NFSNM ST GR 2026 27_0001_DAG",
+        "NSG22"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "opg22d",
+      "name": "Organic Policy GR 2026-27_DAG",
+      "aliases": [
+        "opg22d",
+        "Organic Policy GR 2026-27_DAG",
+        "organic policy gr 2026 27_dag",
+        "OPG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pa",
+      "name": "PM-ASHA",
+      "aliases": [
+        "pa",
+        "PM-ASHA",
+        "pm asha",
+        "asha",
+        "PMASHA",
+        "PM ASHA",
+        "Pradhan Mantri Annadata Aay Sanrakshan Abhiyan"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pdmcd",
+      "name": "PER DROP MORE CROP_DAG",
+      "aliases": [
+        "pdmcd",
+        "PER DROP MORE CROP_DAG",
+        "PDMC"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pg22d",
+      "name": "PKVy GR 2026-27_DAG",
+      "aliases": [
+        "pg22d",
+        "PKVy GR 2026-27_DAG",
+        "pkvy gr 2026 27_dag",
+        "PG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pk",
+      "name": "PM Kisan",
+      "aliases": [
+        "pk",
+        "PM Kisan",
+        "PMKISAN",
+        "PM-KISAN",
+        "Pradhan Mantri Kisan Samman Nidhi",
+        "Pradhanmantri Kisan Samman Nidhi",
+        "पीएम किसान",
+        "प्रधानमंत्री किसान सम्मान निधि"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pksy",
+      "name": "PM Krishi Sinchayee Yojana",
+      "aliases": [
+        "pksy",
+        "PM Krishi Sinchayee Yojana",
+        "PMKSY",
+        "Pradhan Mantri Krishi Sinchayee Yojana"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pkvy-3",
+      "name": "Paramparagat Krishi Vikas Yojana",
+      "aliases": [
+        "pkvy-3",
+        "Paramparagat Krishi Vikas Yojana",
+        "PKVY"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pmddky",
+      "name": "Prime Minister Dhan-Dhaanya Krishi Yojana",
+      "aliases": [
+        "pmddky",
+        "Prime Minister Dhan-Dhaanya Krishi Yojana",
+        "prime minister dhan dhaanya krishi yojana",
+        "dhaanya krishi yojana"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pmfby",
+      "name": "Pradhan Mantri Fasal Bima Yojana",
+      "aliases": [
+        "pmfby",
+        "Pradhan Mantri Fasal Bima Yojana",
+        "PMFBY"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pmfby22k",
+      "name": "Pradhan Mantri Fasal Bima Yojana 2026-27 (Karnataka)",
+      "aliases": [
+        "pmfby22k",
+        "Pradhan Mantri Fasal Bima Yojana 2026-27 (Karnataka)",
+        "pradhan mantri fasal bima yojana 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pmkmdy",
+      "name": "Pradhan Mantri Kisan Maan-Dhan Yojana",
+      "aliases": [
+        "pmkmdy",
+        "Pradhan Mantri Kisan Maan-Dhan Yojana",
+        "pradhan mantri kisan maan dhan yojana",
+        "dhan yojana"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pmrkvy",
+      "name": "PRADHAN MANTRI RASHTRIYA KRISHI VIKAS YOJANA",
+      "aliases": [
+        "pmrkvy",
+        "PRADHAN MANTRI RASHTRIYA KRISHI VIKAS YOJANA"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ppridsg22",
+      "name": "Plant Protection related Input distribution Scheme Guideline 2026-2027",
+      "aliases": [
+        "ppridsg22",
+        "Plant Protection related Input distribution Scheme Guideline 2026-2027",
+        "plant protection related input distribution scheme guideline 2026 2027",
+        "2027"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "pps26k",
+      "name": "Plant Protection Scheme_2026-27 (Karnataka)",
+      "aliases": [
+        "pps26k",
+        "Plant Protection Scheme_2026-27 (Karnataka)",
+        "plant protection scheme_2026 27 karnataka",
+        "PPS2K",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "prn0",
+      "name": "PM_RKVY_NORMAL_0001",
+      "aliases": [
+        "prn0",
+        "PM_RKVY_NORMAL_0001"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "prs0",
+      "name": "PM_RKVY_SCSP_0001",
+      "aliases": [
+        "prs0",
+        "PM_RKVY_SCSP_0001"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "prt0d",
+      "name": "PM_RKVY_TASP_0001_DAG",
+      "aliases": [
+        "prt0d",
+        "PM_RKVY_TASP_0001_DAG"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "rad",
+      "name": "RAINFED AREA DEVELOPMENT",
+      "aliases": [
+        "rad",
+        "RAINFED AREA DEVELOPMENT",
+        "RAD",
+        "Rainfed Area Development"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "rgksy",
+      "name": "Rajiv Gandhi Krishak Saathi Yojana",
+      "aliases": [
+        "rgksy",
+        "Rajiv Gandhi Krishak Saathi Yojana"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "rsksf22k",
+      "name": "Raitha Samparka Kendra - Services to Farmers 2026-27 (Karnataka)",
+      "aliases": [
+        "rsksf22k",
+        "Raitha Samparka Kendra - Services to Farmers 2026-27 (Karnataka)",
+        "raitha samparka kendra services to farmers 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "rt22d",
+      "name": "RAD Tharav 2026-27_DAG",
+      "aliases": [
+        "rt22d",
+        "RAD Tharav 2026-27_DAG",
+        "rad tharav 2026 27_dag",
+        "RT22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "rwbcis-2",
+      "name": "Restructured Weather Based Crop Insurance Scheme",
+      "aliases": [
+        "rwbcis-2",
+        "Restructured Weather Based Crop Insurance Scheme",
+        "RWBCIS"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "s1202",
+      "name": "SMSP 100 28.04.26",
+      "aliases": [
+        "s1202",
+        "SMSP 100 28.04.26",
+        "smsp 100 28 04 26"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "s22gk5d",
+      "name": "SMAM 2026-27 GR K-5_DAG",
+      "aliases": [
+        "s22gk5d",
+        "SMAM 2026-27 GR K-5_DAG",
+        "smam 2026 27 gr k 5_dag",
+        "S22GK5",
+        "5_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "s64202d",
+      "name": "SCSP 60-40 28.04.26_DAG",
+      "aliases": [
+        "s64202d",
+        "SCSP 60-40 28.04.26_DAG",
+        "scsp 60 40 28 04 26_dag",
+        "S64202",
+        "40 28.04.26_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "s64l202",
+      "name": "SMSP 60-40 Letter_28.04.26",
+      "aliases": [
+        "s64l202",
+        "SMSP 60-40 Letter_28.04.26",
+        "smsp 60 40 letter_28 04 26",
+        "S64L02",
+        "40 letter_28.04.26"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "sathi",
+      "name": "SATHI",
+      "aliases": [
+        "sathi",
+        "SATHI",
+        "Seed Authentication Traceability and Holistic Inventory"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "sd22k",
+      "name": "Seed Distribution 2026-27(Karnataka)",
+      "aliases": [
+        "sd22k",
+        "Seed Distribution 2026-27(Karnataka)",
+        "seed distribution 2026 27 karnataka",
+        "27(karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "shf",
+      "name": "Soil Health Fertility",
+      "aliases": [
+        "shf",
+        "Soil Health Fertility"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "shmhf22k",
+      "name": "Soil Health Mission and Soil Health &  Fertility 2026-27 ( Karnataka)",
+      "aliases": [
+        "shmhf22k",
+        "Soil Health Mission and Soil Health &  Fertility 2026-27 ( Karnataka)",
+        "soil health mission and soil health fertility 2026 27 karnataka",
+        "SHMSHF22K",
+        "27 ( karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "smam",
+      "name": "SUB-MISSION ON AGRICULTURAL MECHANIZATION",
+      "aliases": [
+        "smam",
+        "SUB-MISSION ON AGRICULTURAL MECHANIZATION",
+        "sub mission on agricultural mechanization",
+        "mission on agricultural mechanization",
+        "SMAM",
+        "Sub Mission on Agricultural Mechanization"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "spfgd",
+      "name": "Smart And Precision Farming GR_DAG",
+      "aliases": [
+        "spfgd",
+        "Smart And Precision Farming GR_DAG",
+        "SPFG"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ssf",
+      "name": "Sugarcane SC Farmer",
+      "aliases": [
+        "ssf",
+        "Sugarcane SC Farmer"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ssg22d",
+      "name": "STATE SRR GR 2026-27_DAG",
+      "aliases": [
+        "ssg22d",
+        "STATE SRR GR 2026-27_DAG",
+        "state srr gr 2026 27_dag",
+        "SSG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ssr22d",
+      "name": "SUGARCANE SC RESO.2026-27_DAG",
+      "aliases": [
+        "ssr22d",
+        "SUGARCANE SC RESO.2026-27_DAG",
+        "sugarcane sc reso 2026 27_dag",
+        "SSR22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "t64202d",
+      "name": "TASP 60-40 28.04.26_DAG",
+      "aliases": [
+        "t64202d",
+        "TASP 60-40 28.04.26_DAG",
+        "tasp 60 40 28 04 26_dag",
+        "T64202",
+        "40 28.04.26_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "tds40d",
+      "name": "THARAV_DIGITAL SURVEY_4017_0001_DAG",
+      "aliases": [
+        "tds40d",
+        "THARAV_DIGITAL SURVEY_4017_0001_DAG",
+        "TS"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "tgy221ad",
+      "name": "Tractor GR Yr 2026-27 (1) - AGR50_DAG",
+      "aliases": [
+        "tgy221ad",
+        "Tractor GR Yr 2026-27 (1) - AGR50_DAG",
+        "tractor gr yr 2026 27 1 agr50_dag",
+        "TGY221A",
+        "agr50_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "tusffcd",
+      "name": "Top up scheme for FPO & facilitation cell_DAG",
+      "aliases": [
+        "tusffcd",
+        "Top up scheme for FPO & facilitation cell_DAG",
+        "top up scheme for fpo facilitation cell_dag",
+        "TUSFFC"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "umsaiapurd22k",
+      "name": "Utilization of Micronutrients and Soil Amendments for Improvement of Agriculture Productivity under RKVY-DPR 2026-27 (Karnataka)",
+      "aliases": [
+        "umsaiapurd22k",
+        "Utilization of Micronutrients and Soil Amendments for Improvement of Agriculture Productivity under RKVY-DPR 2026-27 (Karnataka)",
+        "utilization of micronutrients and soil amendments for improvement of agriculture productivity under rkvy dpr 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "upagrees",
+      "name": "UPAGREES",
+      "aliases": [
+        "upagrees"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "usmp",
+      "name": "Uttarakhand State Millet Policy",
+      "aliases": [
+        "usmp",
+        "Uttarakhand State Millet Policy"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "vag22d",
+      "name": "Value Addition GR 2026-27_DAG",
+      "aliases": [
+        "vag22d",
+        "Value Addition GR 2026-27_DAG",
+        "value addition gr 2026 27_dag",
+        "VAG22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "vfg22",
+      "name": "Vanbandhu FM Gr 2026-27",
+      "aliases": [
+        "vfg22",
+        "Vanbandhu FM Gr 2026-27",
+        "vanbandhu fm gr 2026 27",
+        "27"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "vss22k",
+      "name": "Vasundhamrutha State Scheme 2026-27 (Karnataka)",
+      "aliases": [
+        "vss22k",
+        "Vasundhamrutha State Scheme 2026-27 (Karnataka)",
+        "vasundhamrutha state scheme 2026 27 karnataka",
+        "27 (karnataka)"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "vtgy22d",
+      "name": "Vanbandhu Tractor GR Yr 2026-27_DAG",
+      "aliases": [
+        "vtgy22d",
+        "Vanbandhu Tractor GR Yr 2026-27_DAG",
+        "vanbandhu tractor gr yr 2026 27_dag",
+        "VTGY22",
+        "27_dag"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    },
+    {
+      "code": "ybd",
+      "name": "Yojana Book DAG",
+      "aliases": [
+        "ybd",
+        "Yojana Book DAG"
+      ],
+      "tool_name": "search_schemes",
+      "status": "dev"
+    }
+  ]
+}

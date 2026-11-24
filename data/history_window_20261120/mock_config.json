@@ -1,0 +1,478 @@
+{
+  "_comment": "Paths are relative to this JSON file's directory unless absolute. Strings support ${ENV} and ${ENV:default}.",
+  "upstream": {
+    "base_url": "http://127.0.0.1:1",
+    "search_path": "/search"
+  },
+  "rules": [
+    {
+      "id": "current_crop_advisory",
+      "when": {
+        "path": "message.intent.category.descriptor.code",
+        "equals": "knowledge-advisory"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "current_aif-agri",
+      "when": {
+        "path": "message.order.provider.id",
+        "equals": "aif-agri"
+      },
+      "then": {
+        "handler": "mock_current_status"
+      }
+    },
+    {
+      "id": "current_kcc-agri",
+      "when": {
+        "path": "message.order.provider.id",
+        "equals": "kcc-agri"
+      },
+      "then": {
+        "handler": "mock_current_status"
+      }
+    },
+    {
+      "id": "current_khc-agri",
+      "when": {
+        "path": "message.order.provider.id",
+        "equals": "khc-agri"
+      },
+      "then": {
+        "handler": "mock_current_status"
+      }
+    },
+    {
+      "id": "gfr_crop_registry_dev",
+      "_comment": "Public crop registry by location: real dev network. Recommendations (need phone) stay mocked below.",
+      "when": {
+        "and": [
+          {
+            "path": "message.order.provider.id",
+            "equals": "gfr-agri"
+          },
+          {
+            "path": "message.order.items.0.id",
+            "equals": "gfr-agri-crop-registy"
+          }
+        ]
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      }
+    },
+    {
+      "id": "current_search_gfr-agri",
+      "when": {
+        "path": "message.order.provider.id",
+        "equals": "gfr-agri"
+      },
+      "then": {
+        "handler": "mock_current_search"
+      }
+    },
+    {
+      "id": "current_search_WFC",
+      "when": {
+        "path": "message.intent.category.descriptor.code",
+        "equals": "WFC"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "scheme_search_dev",
+      "when": {
+        "path": "message.intent.category.descriptor.code",
+        "equals": "scheme-agri-qdrant"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only dev network; identical results to production (verified 2026-11-22)."
+    },
+    {
+      "id": "current_search_smam",
+      "when": {
+        "path": "message.intent.provider.id",
+        "equals": "smam"
+      },
+      "then": {
+        "handler": "mock_current_search"
+      }
+    },
+    {
+      "id": "current_search_agristack-agri",
+      "when": {
+        "path": "message.intent.provider.id",
+        "equals": "agristack-agri"
+      },
+      "then": {
+        "handler": "mock_current_search"
+      }
+    },
+    {
+      "id": "current_search_ndksp-drip-irrigation",
+      "when": {
+        "path": "message.intent.item.descriptor.code",
+        "equals": "ndksp-drip-irrigation"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "current_search_ndksp-farm-pond-lining",
+      "when": {
+        "path": "message.intent.item.descriptor.code",
+        "equals": "ndksp-farm-pond-lining"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "current_search_aif",
+      "when": {
+        "path": "message.intent.item.descriptor.code",
+        "equals": "aif"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "current_search_schemes:amul-union",
+      "when": {
+        "path": "context.domain",
+        "equals": "schemes:amul-union"
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "current_pmfby_status_payload",
+      "when": {
+        "and": [
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-grievance"
+          },
+          {
+            "path": "context.action",
+            "equals": "search"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_grievance_status",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "scheme_info_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.code",
+            "equals": "schemes-agri"
+          }
+        ]
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "shc_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "shc-discovery"
+          },
+          {
+            "type": "phone_in_registry",
+            "registry": "common_registry.json"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_shc",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmfby_init_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-agri"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_init",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmfby_grievance_init_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-grievance"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_grievance",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmfby_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "status"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-agri"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_status",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_init_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": ""
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_init",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmfby_grievance_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "status"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-grievance"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_grievance_status",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_otp_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmkisan"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_init",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_submit_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmkisan-greviance"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_grievance_submit",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.name",
+            "equals": "grievance-agri"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_grievance_status",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "status"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_status",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "sathi_seed_availability_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "sathi-discovery"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_sathi",
+        "registry": "common_registry.json"
+      }
+    },
+    {
+      "id": "sathi_seed_search_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.provider.id",
+            "equals": "sathi-seed"
+          }
+        ]
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    },
+    {
+      "id": "mandi_price_metro_cities_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.code",
+            "equals": "price-discovery"
+          },
+          {
+            "type": "mandi_nearest_city_in",
+            "registry": "../../mock_server/vistaar_mandi_mock/registry.json",
+            "city_keys": [
+              "kozhikode",
+              "chandigarh",
+              "mumbai",
+              "kochi",
+              "bangalore",
+              "bardhaman",
+              "malkangiri",
+              "ahmedabad",
+              "anantapur",
+              "thiruvananthapuram",
+              "khordha"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "handler": "forward_network",
+        "env_file": "${BENCHMARK_NETWORK_ENV_FILE}"
+      },
+      "_comment": "Real read-only network (user direction 2026-11-22: no mocks where the real service is reachable)."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "repo": "text",
+    "variant": "before",
+    "port": 8060,
+    "redis_db": 0,
+    "redis_container": "bv-eval-redis",
+    "redis_key_prefix": "cap-text-before-",
+    "worktree_path": "/path/to/bharat-oan-api-before",
+    "worktree": "before"
+  },
+  {
+    "repo": "text",
+    "variant": "state",
+    "port": 8063,
+    "redis_db": 3,
+    "redis_container": "bv-eval-redis",
+    "redis_key_prefix": "cap-text-state-",
+    "worktree_path": "/path/to/bharat-oan-api-state",
+    "worktree": "state"
+  }
+]

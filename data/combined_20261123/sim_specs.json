@@ -1,0 +1,1867 @@
+{
+ "901": {
+  "user_messages": [
+   "901-1",
+   "901-2",
+   "901-3",
+   "901-4",
+   "901-5",
+   "901-6",
+   "901-7",
+   "901-8",
+   "901-10",
+   "901-12",
+   "901-15",
+   "901-17",
+   "901-23",
+   "901-24"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "soil_health_card_year": "2026-27",
+   "pm_kisan_registration_number": "KL221000980",
+   "pm_kisan_otp": "1111",
+   "crop_insurance_otp": "111111",
+   "insurance_season": "Kharif",
+   "insurance_year": "2026",
+   "insurance_application_number": "PMFBY2026KL005983",
+   "insurance_damage_reason": "unseasonal rain",
+   "insurance_grievance_ticket": "PMFBYGRV543210",
+   "pm_kisan_complaint_reason": "installment has not been credited for two seasons"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "901-9",
+    "901-11",
+    "901-13",
+    "901-14",
+    "901-16",
+    "901-18",
+    "901-19",
+    "901-20",
+    "901-21",
+    "901-22"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "902": {
+  "user_messages": [
+   "902-1",
+   "902-2",
+   "902-3",
+   "902-4",
+   "902-5",
+   "902-6",
+   "902-7",
+   "902-8",
+   "902-10",
+   "902-12",
+   "902-15",
+   "902-17",
+   "902-23",
+   "902-24"
+  ],
+  "facts": {
+   "mobile_number": "9000001002",
+   "soil_health_card_cycle": "2025-26",
+   "pm_kisan_registration_number": "WB221504417",
+   "pm_kisan_otp": "4820",
+   "crop_insurance_season": "Kharif 2026",
+   "crop_insurance_otp": "654321",
+   "pm_kisan_complaint_reason": "installment has not been credited for two seasons",
+   "crop_insurance_application_number": "PMFBY2026WB004417",
+   "crop_insurance_policy_year": "2026",
+   "crop_insurance_season_detail": "Kharif season",
+   "crop_damage_reason": "unseasonal rain",
+   "crop_insurance_grievance_ticket": "PMFBYGRV456789"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "902-9",
+    "902-11",
+    "902-13",
+    "902-14",
+    "902-16",
+    "902-18",
+    "902-19",
+    "902-20",
+    "902-21",
+    "902-22"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "903": {
+  "user_messages": [
+   "903-1",
+   "903-2",
+   "903-3",
+   "903-4",
+   "903-5",
+   "903-6",
+   "903-7",
+   "903-8",
+   "903-10",
+   "903-12",
+   "903-15",
+   "903-17",
+   "903-23",
+   "903-24"
+  ],
+  "facts": {
+   "mobile_number": "9000001001",
+   "pm_kisan_registration_number": "OD221802210",
+   "pm_kisan_otp": "5573",
+   "crop_insurance_otp": "223344",
+   "insurance_claim_season": "Kharif 2026",
+   "insurance_application_number": "PMFBY2026OD002210",
+   "insurance_policy_year": "2026",
+   "insurance_season": "Kharif",
+   "insurance_damage_reason": "unseasonal rain",
+   "insurance_grievance_ticket": "PMFBYGRV000001",
+   "pm_kisan_complaint_reason": "installment has not been credited for two seasons"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "903-9",
+    "903-11",
+    "903-13",
+    "903-14",
+    "903-16",
+    "903-18",
+    "903-19",
+    "903-20",
+    "903-21",
+    "903-22"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "904": {
+  "user_messages": [
+   "904-1",
+   "904-2",
+   "904-3",
+   "904-4",
+   "904-5",
+   "904-6",
+   "904-7",
+   "904-8",
+   "904-10",
+   "904-12",
+   "904-15",
+   "904-17",
+   "904-23",
+   "904-24"
+  ],
+  "facts": {
+   "market": "Kozhikode",
+   "crop_price_query": "apples",
+   "weather_area": "Jalna",
+   "fertilizer_crop": "tomato",
+   "fertilizer_area": "Chandrapur",
+   "poultry_disease": "Newcastle disease",
+   "poultry_district": "Yavatmal",
+   "mobile": "9000001005",
+   "soil_health_card_year": "2023-24",
+   "pm_kisan_registration_number": "RJ306747220",
+   "pm_kisan_otp": "7391",
+   "insurance_season": "Kharif 2026",
+   "insurance_otp": "889900",
+   "pm_kisan_complaint_reason": "installment has not been credited for two seasons",
+   "insurance_application_number": "PMFBY2026RJ006747",
+   "insurance_policy_year": "2026",
+   "insurance_season_detail": "Kharif",
+   "insurance_damage_reason": "unseasonal rain",
+   "insurance_grievance_ticket": "PMFBYGRV345678"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "904-9",
+    "904-11",
+    "904-13",
+    "904-14",
+    "904-16",
+    "904-18",
+    "904-19",
+    "904-20",
+    "904-21",
+    "904-22"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "905": {
+  "user_messages": [
+   "905-1",
+   "905-2",
+   "905-3",
+   "905-4",
+   "905-5",
+   "905-6",
+   "905-7",
+   "905-8",
+   "905-10",
+   "905-12",
+   "905-15",
+   "905-17",
+   "905-23",
+   "905-24"
+  ],
+  "facts": {
+   "mobile": "9000001003",
+   "soil_card_cycle": "2027-28",
+   "pm_kisan_registration_number": "UP223105983",
+   "pm_kisan_otp": "6204",
+   "insurance_claim_season": "Kharif 2026",
+   "insurance_otp": "445566",
+   "pm_kisan_complaint_reason": "installment has not been credited for two seasons",
+   "insurance_application_number": "PMFBY2026UP005983",
+   "insurance_policy_year": "2026",
+   "insurance_season": "Kharif",
+   "insurance_damage_reason": "unseasonal rain",
+   "insurance_grievance_ticket": "PMFBYGRV456780"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "905-9",
+    "905-11",
+    "905-13",
+    "905-14",
+    "905-16",
+    "905-18",
+    "905-19",
+    "905-20",
+    "905-21",
+    "905-22"
+   ],
+   "manual_fixes": [
+    "905-24 -> request (follow-up the bot does not ask for)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "1001": {
+  "user_messages": [
+   "1001-1",
+   "1001-4",
+   "1001-5",
+   "1001-6"
+  ],
+  "facts": {
+   "beneficiary_id": "45721",
+   "otp": "111111",
+   "loan_application_number": "730015",
+   "location": "Patna",
+   "file_new_complaint": "no"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1001-2",
+    "1001-3"
+   ],
+   "manual_fixes": [
+    "1001-6 -> request (follow-up the bot does not ask for)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "1002": {
+  "user_messages": [
+   "1002-1",
+   "1002-3",
+   "1002-4"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "kcc_otp": "111111",
+   "application_ids": [
+    "51001",
+    "51002"
+   ]
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1002-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1003": {
+  "user_messages": [
+   "1003-1",
+   "1003-6"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "otp": "111111",
+   "preferred_language": "English",
+   "village": "Baluwa",
+   "sub_district": "Maner",
+   "district": "Patna",
+   "state": "Bihar",
+   "complaint_reason": "The bank refused my AIF loan without explaining why",
+   "loan_type": "Agriculture Infrastructure Fund",
+   "grievance_id": "KHC1001",
+   "location_preference": "use the location and complaint I already gave",
+   "submission_instruction": "Submit this Kisan Help Center complaint once"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1003-2",
+    "1003-3",
+    "1003-4",
+    "1003-5"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1004": {
+  "user_messages": [
+   "1004-1",
+   "1004-2"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "smam_application_reference": "SMAM202600123"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [
+    "1004-2 -> request"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "1005": {
+  "user_messages": [
+   "1005-1",
+   "1005-3"
+  ],
+  "facts": {
+   "crop": "rice",
+   "district": "Patna",
+   "state": "Bihar",
+   "soil_card_mobile": "9876543210",
+   "cycle": "2026-27",
+   "farming_type": "inorganic",
+   "recommendation_preference": "inorganic farming recommendations"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1005-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1006": {
+  "user_messages": [
+   "1006-1",
+   "1006-2",
+   "1006-3",
+   "1006-4"
+  ],
+  "facts": {
+   "crop": "soybean",
+   "city": "Pune",
+   "state": "Maharashtra",
+   "seed_type": "certified"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [
+    "1006-4 -> request (follow-up the bot does not ask for)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "1007": {
+  "user_messages": [
+   "1007-1",
+   "1007-2",
+   "1007-3"
+  ],
+  "facts": {
+   "state": "Maharashtra"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1008": {
+  "user_messages": [
+   "1008-1",
+   "1008-2",
+   "1008-3"
+  ],
+  "facts": {
+   "agristack_logged_in": "yes",
+   "consented_to_sharing": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1009": {
+  "user_messages": [
+   "1009-1",
+   "1009-2"
+  ],
+  "facts": {
+   "consented_agristack": "no",
+   "crop": "rice",
+   "location": "near Patna"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1010": {
+  "user_messages": [
+   "1010-1",
+   "1010-2"
+  ],
+  "facts": {
+   "crop_photo_url": "http://127.0.0.1:17893/fixtures/crop.png"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1011": {
+  "user_messages": [
+   "1011-1",
+   "1011-2"
+  ],
+  "facts": {
+   "state": "Bihar",
+   "district": "Patna",
+   "crop": "rice"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1014": {
+  "user_messages": [
+   "1014-1"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "season": "Kharif",
+   "year": "2026",
+   "otp": {
+    "value": "111111",
+    "in_order": [
+     "000000",
+     "111111"
+    ]
+   },
+   "constraint": "use the same mobile, year and season"
+  },
+  "audit": {
+   "test_inputs_folded": [
+    "1014-2"
+   ],
+   "folded_answers": [
+    "1014-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1015": {
+  "user_messages": [
+   "1015-1",
+   "1015-3",
+   "1015-6"
+  ],
+  "facts": {
+   "complaint_center": "Kisan Helpline Center",
+   "issue": "bank refusing my Agriculture Infrastructure Fund loan without explaining why",
+   "village": "Baluwa",
+   "sub_district": "Maner",
+   "district": "Patna",
+   "state": "Bihar",
+   "service_language": "English",
+   "sub_category": "Bank refused loan",
+   "mobile_number": "9876543210",
+   "otp": "111111",
+   "name": "Ravi Kumar",
+   "gender": "male",
+   "grievance_id": "KHC1001",
+   "otp_verification_request": "Please verify it and submit the complaint once"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1015-2",
+    "1015-4",
+    "1015-5"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1030": {
+  "user_messages": [
+   "1030-1"
+  ],
+  "facts": {
+   "crop": "cauliflower",
+   "location": "Buldhana area",
+   "type": "generic"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1030-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1031": {
+  "user_messages": [
+   "1031-1"
+  ],
+  "facts": {
+   "crop": "wheat",
+   "pest": "stem borer",
+   "district": "Beed",
+   "pesticide_type": "chemical",
+   "brand_preference": "generic"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1031-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "1032": {
+  "user_messages": [
+   "1032-1"
+  ],
+  "facts": {
+   "grievance_id": "BR/240926/2",
+   "otp": "111111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "1032-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2160": {
+  "user_messages": [
+   "2160-1"
+  ],
+  "facts": {
+   "pm_kisan_registration_number": "KL2210000980",
+   "otp": "1111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2160-2",
+    "2160-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2161": {
+  "user_messages": [
+   "2161-1"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "otp": "1111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2161-2",
+    "2161-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2162": {
+  "user_messages": [
+   "2162-1",
+   "2162-4"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "otp": "1111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2162-2",
+    "2162-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2163": {
+  "user_messages": [
+   "2163-1"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "otp": "1111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2163-2",
+    "2163-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2164": {
+  "user_messages": [
+   "2164-1",
+   "2164-4"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "pm_kisan_otp": "1111"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2164-2",
+    "2164-3"
+   ],
+   "manual_fixes": [
+    "2164-3 -> answer"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "2165": {
+  "user_messages": [
+   "2165-1"
+  ],
+  "facts": {
+   "grievance_type": "PM-KISAN",
+   "issue": "not received my latest installment",
+   "pm_kisan_registration_number": "KL2210000980",
+   "grievance_description": "I have not received the latest installment despite being eligible"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2165-2",
+    "2165-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2166": {
+  "user_messages": [
+   "2166-1"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "grievance_type": "Installment has not arrived even though I am eligible",
+   "action": "Register this grievance"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2166-2",
+    "2166-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2167": {
+  "user_messages": [
+   "2167-1"
+  ],
+  "facts": {
+   "pm_kisan_registration_number": "KL2210000980",
+   "issue": "money was not credited to my bank account",
+   "beneficiary_list_status": "name is in the beneficiary list",
+   "missing_installment_period": "past season"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2167-2",
+    "2167-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2168": {
+  "user_messages": [
+   "2168-1"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2168-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2169": {
+  "user_messages": [
+   "2169-1"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2169-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2170": {
+  "user_messages": [
+   "2170-1",
+   "2170-4"
+  ],
+  "facts": {
+   "registration_number": "KL2210000980",
+   "otp": "1111",
+   "latest_installment": "17",
+   "installment_credited": "no",
+   "wants_to_file_grievance": "yes",
+   "grievance_reason": "non-receipt of the latest PM-KISAN installment"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2170-2",
+    "2170-3",
+    "2170-5"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2171": {
+  "user_messages": [
+   "2171-1"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "cycle": "2024-25"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2171-2",
+    "2171-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2172": {
+  "user_messages": [
+   "2172-1"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "season": "Kharif",
+   "year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2172-2",
+    "2172-3",
+    "2172-4"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2173": {
+  "user_messages": [
+   "2173-1",
+   "2173-4"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "season": "Kharif",
+   "year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2173-2",
+    "2173-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2174": {
+  "user_messages": [
+   "2174-1"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "season": "Kharif",
+   "year": "2024",
+   "request": "policy status chahiye"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2174-2",
+    "2174-3",
+    "2174-4"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2175": {
+  "user_messages": [
+   "2175-1",
+   "2175-4"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "season": "Rabi",
+   "year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2175-2",
+    "2175-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2176": {
+  "user_messages": [
+   "2176-1"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "otp": "111111",
+   "application_number": "PMFBY2024KL001",
+   "season": "Kharif 2024",
+   "grievance_details": "I did not receive the claim amount despite submitting all documents"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2176-2",
+    "2176-3",
+    "2176-4",
+    "2176-5"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2177": {
+  "user_messages": [
+   "2177-1"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "application_number": "PMFBY2024KL001",
+   "season": "Kharif",
+   "year": "2024",
+   "grievance": "My crop was damaged but I did not receive compensation"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2177-2",
+    "2177-3",
+    "2177-4"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2178": {
+  "user_messages": [
+   "2178-1"
+  ],
+  "facts": {
+   "location": "Kochi",
+   "latitude": "9.93",
+   "longitude": "76.27",
+   "interested_crops": [
+    "tapioca",
+    "cotton"
+   ]
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2178-2",
+    "2178-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2179": {
+  "user_messages": [
+   "2179-1"
+  ],
+  "facts": {
+   "crops": "Tapioca and Cotton",
+   "state": "Kerala",
+   "phone_number": "9876543210",
+   "cycle": "2024-25"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2179-2",
+    "2179-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2180": {
+  "user_messages": [
+   "2180-1",
+   "2180-3"
+  ],
+  "facts": {
+   "latitude": "9.93",
+   "longitude": "76.27",
+   "city": "Kochi",
+   "state": "Kerala",
+   "crops_for_recommendation": [
+    "tapioca",
+    "cotton"
+   ],
+   "farm_location": "latitude 9.93, longitude 76.27, Kochi Kerala"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2180-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2181": {
+  "user_messages": [
+   "2181-1"
+  ],
+  "facts": {
+   "crop": "tapioca",
+   "city": "Pune",
+   "state": "Maharashtra",
+   "latitude": "9.93",
+   "longitude": "76.27"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2181-2",
+    "2181-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2182": {
+  "user_messages": [
+   "2182-1"
+  ],
+  "facts": {
+   "crop": "cotton",
+   "location": "Pune",
+   "state": "Maharashtra"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2182-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2184": {
+  "user_messages": [
+   "2184-1",
+   "2184-2"
+  ],
+  "facts": {
+   "location": "Pune",
+   "crop_interest": "cotton",
+   "seed_type": "certified"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2185": {
+  "user_messages": [
+   "2185-1",
+   "2185-5"
+  ],
+  "facts": {
+   "phone_number": "9876543210",
+   "otp": "111111",
+   "season": "Kharif",
+   "year": "2024",
+   "application_number": "PMFBY2024KL001",
+   "claim_settled": "no",
+   "wants_to_file_grievance": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2185-2",
+    "2185-3",
+    "2185-4"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2186": {
+  "user_messages": [
+   "2186-1",
+   "2186-2",
+   "2186-3"
+  ],
+  "facts": {
+   "district": "Bardhaman",
+   "state": "West Bengal",
+   "crops": [
+    "wheat",
+    "mustard"
+   ]
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2187": {
+  "user_messages": [
+   "2187-1",
+   "2187-2",
+   "2187-3"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "year": "2026-27",
+   "crop": "tapioca"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2188": {
+  "user_messages": [
+   "2188-1",
+   "2188-3",
+   "2188-4"
+  ],
+  "facts": {
+   "mobile_number": "9876543210",
+   "otp": "1111",
+   "received_latest_installment": "no"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2188-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2190": {
+  "user_messages": [
+   "2190-1",
+   "2190-2"
+  ],
+  "facts": {
+   "crop": "wheat",
+   "issue": "yellow rust"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2191": {
+  "user_messages": [
+   "2191-1",
+   "2191-2"
+  ],
+  "facts": {
+   "district": "Malkangiri",
+   "state": "Odisha",
+   "crop": "paddy"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "2192": {
+  "user_messages": [
+   "2192-1",
+   "2192-2"
+  ],
+  "facts": {
+   "end_call": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "2192-3"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3001": {
+  "user_messages": [
+   "3001-1",
+   "3001-2"
+  ],
+  "facts": {
+   "state": "Maharashtra"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3002": {
+  "user_messages": [
+   "3002-1",
+   "3002-2"
+  ],
+  "facts": {},
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3003": {
+  "user_messages": [
+   "3003-1",
+   "3003-2"
+  ],
+  "facts": {},
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3006": {
+  "user_messages": [
+   "3006-1",
+   "3006-2"
+  ],
+  "facts": {
+   "loan_amount": "₹1.8 lakh",
+   "collateral_free_limit_update": "₹2 lakh per borrower from 1 January 2025"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3011": {
+  "user_messages": [
+   "3011-1",
+   "3011-2"
+  ],
+  "facts": {
+   "is_sharecropper": "yes",
+   "land_record_in_name": "no"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3012": {
+  "user_messages": [
+   "3012-1",
+   "3012-3",
+   "3012-4",
+   "3012-5",
+   "3012-6"
+  ],
+  "facts": {
+   "applied_before": "No"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "3012-2"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3013": {
+  "user_messages": [
+   "3013-1",
+   "3013-2",
+   "3013-3",
+   "3013-4",
+   "3013-5",
+   "3013-6",
+   "3013-7",
+   "3013-8",
+   "3013-9"
+  ],
+  "facts": {
+   "city": "Nashik",
+   "crop": "onion",
+   "end_date": "23 November 2026"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": [
+    "start_date"
+   ]
+  }
+ },
+ "3014": {
+  "user_messages": [
+   "3014-1",
+   "3014-2",
+   "3014-3",
+   "3014-4"
+  ],
+  "facts": {
+   "location": "Nashik",
+   "crop": "onions",
+   "end_date": "23 November 2026"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": [
+    "start_date"
+   ]
+  }
+ },
+ "3015": {
+  "user_messages": [
+   "3015-1",
+   "3015-2",
+   "3015-3",
+   "3015-4"
+  ],
+  "facts": {
+   "location": "Nashik",
+   "crop": "onions"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3016": {
+  "user_messages": [
+   "3016-1",
+   "3016-2"
+  ],
+  "facts": {
+   "location": "Satara",
+   "crop": "onions",
+   "sale_date": "tomorrow"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3017": {
+  "user_messages": [
+   "3017-1",
+   "3017-2",
+   "3017-3",
+   "3017-4",
+   "3017-5"
+  ],
+  "facts": {
+   "location": "near Mumbai",
+   "crop": "onions",
+   "sale_date": "today"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3018": {
+  "user_messages": [
+   "3018-1",
+   "3018-2"
+  ],
+  "facts": {
+   "location_name": "Mumbai city centre",
+   "latitude": "19.0760",
+   "longitude": "72.8777",
+   "crop": "onion",
+   "end_date": "23 November 2026"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": [
+    "start_date"
+   ]
+  }
+ },
+ "3019": {
+  "user_messages": [
+   "3019-1",
+   "3019-2"
+  ],
+  "facts": {
+   "crop": "onion",
+   "location": "Nashik",
+   "price_history_days": "seven"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3020": {
+  "user_messages": [
+   "3020-1",
+   "3020-2"
+  ],
+  "facts": {
+   "city": "Nashik city",
+   "state": "Maharashtra",
+   "crop": "onion",
+   "time_frame": "last seven calendar days"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3021": {
+  "user_messages": [
+   "3021-1",
+   "3021-2"
+  ],
+  "facts": {
+   "has_kisan_credit_card": "yes",
+   "crop": "onions"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3025": {
+  "user_messages": [
+   "3025-1",
+   "3025-2"
+  ],
+  "facts": {
+   "land_status": "leased",
+   "name_on_title": "no",
+   "has_ownership_document": "no"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3026": {
+  "user_messages": [
+   "3026-1",
+   "3026-2",
+   "3026-3",
+   "3026-4",
+   "3026-5",
+   "3026-6"
+  ],
+  "facts": {
+   "crop": "onion",
+   "has_kcc_loan": "yes",
+   "opted_out_insurance": "no",
+   "location_near": "Satara"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3027": {
+  "user_messages": [
+   "3027-1",
+   "3027-2"
+  ],
+  "facts": {},
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3028": {
+  "user_messages": [
+   "3028-1",
+   "3028-2"
+  ],
+  "facts": {
+   "current_year": "2026",
+   "reported_payment_year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [
+    "3028-2 -> request"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "3032": {
+  "user_messages": [
+   "3032-1",
+   "3032-2"
+  ],
+  "facts": {
+   "wants_to_check_application_status": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [
+    "3032-2 -> request (follow-up the bot does not ask for)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "3033": {
+  "user_messages": [
+   "3033-1",
+   "3033-2"
+  ],
+  "facts": {},
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3034": {
+  "user_messages": [
+   "3034-1",
+   "3034-2"
+  ],
+  "facts": {
+   "pm_kisan_installment_pending": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3035": {
+  "user_messages": [
+   "3035-1",
+   "3035-2"
+  ],
+  "facts": {
+   "last_installment_status": "5th Installment payment done",
+   "registration_year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [
+    "3035-2 -> request (follow-up the bot does not ask for)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "3036": {
+  "user_messages": [
+   "3036-1",
+   "3036-2"
+  ],
+  "facts": {
+   "pm_kisan_status": "accidentally surrendered",
+   "eligible": "yes",
+   "prefers_private_id_otp": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3037": {
+  "user_messages": [
+   "3037-1",
+   "3037-2"
+  ],
+  "facts": {
+   "wants_drip_irrigation": "yes"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "3039": {
+  "user_messages": [
+   "3039-1",
+   "3039-2",
+   "3039-3",
+   "3039-4",
+   "3039-5",
+   "3039-6"
+  ],
+  "facts": {
+   "location": "Satara",
+   "crop": "onion",
+   "land_status": "leased",
+   "land_record_in_name": "no",
+   "current_year": "2026",
+   "payment_message_year": "2024"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "4001": {
+  "user_messages": [
+   "4001-1"
+  ],
+  "facts": {
+   "item": "urea",
+   "wants_ffs": "Yes",
+   "farmer_id": "99000000001",
+   "state": "Gujarat",
+   "otp": "246810",
+   "crop": "rice",
+   "quantity": "2 bags of urea",
+   "shop": "Aarti Agro and Seeds"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "4001-2",
+    "4001-3",
+    "4001-4",
+    "4001-5",
+    "4001-6",
+    "4001-7",
+    "4001-8"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "4002": {
+  "user_messages": [
+   "4002-1",
+   "4002-4"
+  ],
+  "facts": {
+   "crop": "cotton",
+   "district": "Mehsana",
+   "state": "Gujarat",
+   "shc_mobile": "9876543210",
+   "cycle": "2024-25",
+   "farming_type": "Inorganic farming",
+   "urea_quantity": "3 bags",
+   "wants_ffs": "yes",
+   "farmer_id": "99000000001",
+   "otp": "246810",
+   "shop_name": "Aarti Agro and Seeds"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "4002-2",
+    "4002-3",
+    "4002-5",
+    "4002-6",
+    "4002-7",
+    "4002-8",
+    "4002-9",
+    "4002-10"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "4003": {
+  "user_messages": [
+   "4003-1"
+  ],
+  "facts": {
+   "farmer_id": {
+    "value": "99000000001",
+    "in_order": [
+     "990000.",
+     "99000000001"
+    ]
+   },
+   "state": "Gujarat",
+   "otp": {
+    "value": "246810",
+    "in_order": [
+     "246.",
+     "246810"
+    ]
+   },
+   "crop": "Rice",
+   "fertilizer_quantity": "Two bags of urea",
+   "shop_name": "Aarti Agro"
+  },
+  "audit": {
+   "test_inputs_folded": [
+    "4003-3",
+    "4003-7"
+   ],
+   "folded_answers": [
+    "4003-2",
+    "4003-4",
+    "4003-5",
+    "4003-6",
+    "4003-8",
+    "4003-9",
+    "4003-10",
+    "4003-11",
+    "4003-12"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "4004": {
+  "user_messages": [
+   "4004-1",
+   "4004-8",
+   "4004-9"
+  ],
+  "facts": {
+   "fertilizer": "urea",
+   "quantity": "2 bags",
+   "farmer_id": "99000000001",
+   "state": "Gujarat",
+   "otp": "246810",
+   "crop": "Rice",
+   "shop": "Aarti Agro"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "4004-2",
+    "4004-3",
+    "4004-4",
+    "4004-5",
+    "4004-6",
+    "4004-7"
+   ],
+   "manual_fixes": [
+    "4004-8,4004-9 -> request (deliberate repeat after booking)"
+   ],
+   "dropped_facts": []
+  }
+ },
+ "4005": {
+  "user_messages": [
+   "4005-1"
+  ],
+  "facts": {
+   "crop": "Rice",
+   "fertilizer": "urea",
+   "quantity": "2 bags",
+   "ffs_booking": "yes",
+   "farmer_id": "99000000001",
+   "state": "Gujarat",
+   "otp": "246810",
+   "shop": {
+    "value": "Aarti Agro and Seeds",
+    "in_order": [
+     "Shree Pramukh Agro Center",
+     "Aarti Agro and Seeds"
+    ]
+   }
+  },
+  "audit": {
+   "test_inputs_folded": [
+    "4005-5"
+   ],
+   "folded_answers": [
+    "4005-2",
+    "4005-3",
+    "4005-4",
+    "4005-6",
+    "4005-7",
+    "4005-8"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ },
+ "4006": {
+  "user_messages": [
+   "4006-1"
+  ],
+  "facts": {
+   "wants_ffs": "yes",
+   "fertilizer": "urea",
+   "farmer_id": "99000000001",
+   "state": "Gujarat",
+   "otp": "246810",
+   "quantity": "1 bag",
+   "shop": "Aarti Agro and Seeds",
+   "crop": "rice"
+  },
+  "audit": {
+   "test_inputs_folded": [],
+   "folded_answers": [
+    "4006-2",
+    "4006-3",
+    "4006-4",
+    "4006-5"
+   ],
+   "manual_fixes": [],
+   "dropped_facts": []
+  }
+ }
+}

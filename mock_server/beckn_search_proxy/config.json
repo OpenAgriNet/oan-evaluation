@@ -9,8 +9,14 @@
       "id": "scheme_info_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "search" },
-          { "path": "message.intent.category.descriptor.code", "equals": "schemes-agri" }
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.code",
+            "equals": "schemes-agri"
+          }
         ]
       },
       "then": {
@@ -22,8 +28,14 @@
       "id": "shc_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "init" },
-          { "path": "message.order.provider.id", "equals": "shc-discovery" },
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "shc-discovery"
+          },
           {
             "type": "phone_in_registry",
             "registry": "../common_registry.json"
@@ -39,8 +51,14 @@
       "id": "pmfby_init_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "init" },
-          { "path": "message.order.provider.id", "equals": "pmfby-agri" }
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-agri"
+          }
         ]
       },
       "then": {
@@ -52,8 +70,14 @@
       "id": "pmfby_grievance_init_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "init" },
-          { "path": "message.order.provider.id", "equals": "pmfby-grievance" }
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-grievance"
+          }
         ]
       },
       "then": {
@@ -65,8 +89,14 @@
       "id": "pmfby_status_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "status" },
-          { "path": "message.order.provider.id", "equals": "pmfby-agri" }
+          {
+            "path": "context.action",
+            "equals": "status"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-agri"
+          }
         ]
       },
       "then": {
@@ -78,8 +108,14 @@
       "id": "pmkisan_init_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "init" },
-          { "path": "message.order.provider.id", "equals": "" }
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": ""
+          }
         ]
       },
       "then": {
@@ -88,10 +124,89 @@
       }
     },
     {
+      "id": "pmfby_grievance_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "status"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmfby-grievance"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmfby_grievance_status",
+        "registry": "../common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_otp_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmkisan"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_init",
+        "registry": "../common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_submit_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "pmkisan-greviance"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_grievance_submit",
+        "registry": "../common_registry.json"
+      }
+    },
+    {
+      "id": "pmkisan_grievance_status_mock",
+      "when": {
+        "and": [
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.name",
+            "equals": "grievance-agri"
+          }
+        ]
+      },
+      "then": {
+        "handler": "mock_pmkisan_grievance_status",
+        "registry": "../common_registry.json"
+      }
+    },
+    {
       "id": "pmkisan_status_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "status" }
+          {
+            "path": "context.action",
+            "equals": "status"
+          }
         ]
       },
       "then": {
@@ -103,8 +218,14 @@
       "id": "sathi_seed_availability_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "init" },
-          { "path": "message.order.provider.id", "equals": "sathi-discovery" }
+          {
+            "path": "context.action",
+            "equals": "init"
+          },
+          {
+            "path": "message.order.provider.id",
+            "equals": "sathi-discovery"
+          }
         ]
       },
       "then": {
@@ -116,8 +237,14 @@
       "id": "sathi_seed_search_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "search" },
-          { "path": "message.intent.provider.id", "equals": "sathi-seed" }
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.provider.id",
+            "equals": "sathi-seed"
+          }
         ]
       },
       "then": {
@@ -129,20 +256,49 @@
       "id": "mandi_price_metro_cities_mock",
       "when": {
         "and": [
-          { "path": "context.action", "equals": "search" },
-          { "path": "message.intent.category.descriptor.code", "equals": "price-discovery" },
-          { "path": "message.intent.item.descriptor.code", "equals": "mandi" },
+          {
+            "path": "context.action",
+            "equals": "search"
+          },
+          {
+            "path": "message.intent.category.descriptor.code",
+            "equals": "price-discovery"
+          },
           {
             "type": "mandi_nearest_city_in",
             "registry": "../vistaar_mandi_mock/registry.json",
-            "city_keys": ["kozhikode", "chandigarh", "mumbai", "kochi", "bangalore"]
+            "city_keys": [
+              "kozhikode",
+              "chandigarh",
+              "mumbai",
+              "kochi",
+              "bangalore",
+              "bardhaman",
+              "malkangiri",
+              "ahmedabad",
+              "anantapur",
+              "thiruvananthapuram",
+              "khordha"
+            ]
           }
         ]
       },
       "then": {
         "handler": "mock_mandi",
         "registry": "../vistaar_mandi_mock/registry.json",
-        "city_keys": ["kozhikode", "chandigarh", "mumbai", "kochi", "bangalore"]
+        "city_keys": [
+          "kozhikode",
+          "chandigarh",
+          "mumbai",
+          "kochi",
+          "bangalore",
+          "bardhaman",
+          "malkangiri",
+          "ahmedabad",
+          "anantapur",
+          "thiruvananthapuram",
+          "khordha"
+        ]
       }
     }
   ]

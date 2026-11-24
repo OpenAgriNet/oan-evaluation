@@ -1,0 +1,468 @@
+{
+  "cases": [
+    {
+      "id": "KCC-HI-001",
+      "expected": "Use the KCC information tool path; ground every eligibility/document claim in retrieved authoritative material. Clearly say when the available documents do not establish tenant/sharecropper eligibility; ask a relevant follow-up or direct the farmer to the bank rather than inventing certainty.",
+      "observed_failure": "The production search returned a KCC-MISS awareness survey, then the answer asserted generic eligibility, application documents and possible loan limits. Later in the same trace, it said no specific official eligibility/exclusion criteria were found, then nevertheless claimed farmers involved in animal husbandry/fisheries are generally covered. Retrieved evidence did not support those assertions.",
+      "judge_checks": [
+        "tool_selection",
+        "retrieval_relevance",
+        "groundedness",
+        "uncertainty",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "KCC-EN-001",
+      "expected": "Do not infer eligibility from a survey or provide an unsourced definitive answer. Separate known official criteria from missing evidence and explain what the farmer can verify with the bank.",
+      "judge_checks": [
+        "tool_selection",
+        "retrieval_relevance",
+        "groundedness",
+        "uncertainty",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-DATE-EN-001",
+      "expected": "As of 4 November 2026 in India, 2024 is not a future date; PIB confirms the 24th national installment was released on 30 October 2026. State this as national release information only; do not claim this individual farmer received it. If asked about their personal payment, use the account-specific status workflow. Official reference: https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=160645&lang=2&reg=48.",
+      "judge_checks": [
+        "temporal_consistency",
+        "source_freshness",
+        "fabrication",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-DATE-HI-001",
+      "expected": "2024 is not a future date. As of 4 November 2026 in India, PIB confirms the 24th national installment was released on 30 October 2026. State this as national release information only; do not claim this individual farmer received it. For personal payment status, use the account-specific status workflow. Official reference: https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=160645&lang=2&reg=48.",
+      "judge_checks": [
+        "temporal_consistency",
+        "source_freshness",
+        "fabrication",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-18TH-EN-001",
+      "expected": "The 18th installment was released on 5 October 2024. Do not invent a different date. If the system cannot retrieve the official release record, say so without fabricating a date. Make clear that this historical installment is not a future payment in 2026.",
+      "observed_failure": "The production reply could not find a specific release date/status for the 18th installment, although the official PIB record says it was released on 5 October 2024. The retrieved scheme documents in the trace were old and did not answer the installment question. In the targeted bh-dev replay, English abstained and Hindi stated 27 March 2024; the separate full-fixture run produced 27 May 2024 in Hindi. Both dates conflict with the official 5 October 2024 release date.",
+      "judge_checks": [
+        "temporal_consistency",
+        "source_freshness",
+        "groundedness",
+        "fabrication",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-18TH-HI-001",
+      "expected": "18वीं किस्त 5 अक्टूबर 2024 को जारी हुई थी। कोई अलग अपुष्ट तारीख न बताएं। आधिकारिक जानकारी न मिले तो साफ कहें कि तारीख की पुष्टि नहीं कर पाए। स्पष्ट करें कि यह 2026 में भविष्य का भुगतान नहीं है।",
+      "observed_failure": "Independent bh-dev Gemma runs produced two different incorrect dates in Hindi (27 March and 27 May 2024); each date was repeated on the follow-up. Official PIB evidence says 5 October 2024.",
+      "judge_checks": [
+        "temporal_consistency",
+        "source_freshness",
+        "groundedness",
+        "fabrication",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "MANDI-CHOICE-EN-001",
+      "expected": "Resolve Onion with the commodity tool, obtain location coordinates if needed, fetch comparable current data from the mandi tool, compare like-for-like dates/units/grades, and rank only markets with returned data. Do not invent a radius parameter: test whether the available tool can actually explore alternatives. State if it cannot compare net transport cost or if the returned data lacks variety/grade.",
+      "judge_checks": [
+        "multi_tool_planning",
+        "tool_arguments",
+        "price_comparability",
+        "freshness",
+        "no_fabricated_radius",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "MANDI-CHOICE-HI-001",
+      "expected": "प्याज़ के लिए सही कमोडिटी खोजें, ज़रूरत हो तो स्थान के निर्देशांक लें, फिर उपलब्ध मंडी टूल से तुलनीय ताज़ा भाव प्राप्त करें। केवल उपलब्ध और समान तारीख/इकाई/किस्म वाले भावों की रैंकिंग करें। टूल में न होने वाला radius विकल्प न गढ़ें; यदि ढुलाई खर्च या किस्म की जानकारी नहीं है तो यह सीमा स्पष्ट करें।",
+      "judge_checks": [
+        "multi_tool_planning",
+        "tool_arguments",
+        "price_comparability",
+        "freshness",
+        "no_fabricated_radius",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "MANDI-DATE-EN-001",
+      "expected": "Pass the requested date range correctly, obey the tool's maximum range, preserve market/date associations, and distinguish highest modal price from best net outcome. Do not extrapolate missing days or imply future prices.",
+      "judge_checks": [
+        "date_range_arguments",
+        "result_attribution",
+        "reasoning",
+        "fabrication",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "MANDI-DATE-HI-001",
+      "expected": "तारीख की सीमा सही दें, टूल की अधिकतम अवधि का पालन करें और हर भाव को उसकी मंडी तथा तारीख से जोड़कर रखें। सबसे अधिक modal price को किसान के लिए सबसे अच्छा शुद्ध परिणाम न बताएं; ढुलाई, किस्म या अनुपलब्ध जानकारी की सीमाएं स्पष्ट करें।",
+      "judge_checks": [
+        "date_range_arguments",
+        "result_attribution",
+        "reasoning",
+        "fabrication",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "KCC-SHARECROPPER-HI-001",
+      "expected": "RBI KCC scheme guidance lists tenant farmers, oral lessees, and sharecroppers as eligible categories, including through SHGs/JLGs. Say the user may be eligible, but do not guarantee loan approval. Bank-specific documentation and underwriting vary; do not assert a lease agreement or revenue-officer certificate is universally required unless the selected bank/source confirms it. Do not treat land ownership in the applicant’s name as the only path.",
+      "judge_checks": [
+        "RBI-supported tenant/sharecropper eligibility",
+        "no guaranteed loan approval",
+        "bank-specific documentation caveat",
+        "Hindi accuracy and clarity"
+      ]
+    },
+    {
+      "id": "TOPIC-SWITCH-LONG-EN-001",
+      "expected": "Keep scheme, mandi, and weather facts attached to their source and topic through the switches. Use the relevant tools when current data is requested. On KCC/PM-KISAN eligibility, distinguish what the retrieved source supports from what it does not. Preserve market/date/unit associations and explain that highest modal price alone does not establish best net proceeds. Recognize 2024 is in the past; never repeat it as a future payment date, and state when no current official date was verified.",
+      "judge_checks": [
+        "topic_switching",
+        "context_retention",
+        "tool_selection",
+        "groundedness",
+        "temporal_consistency",
+        "result_attribution",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "TOPIC-SWITCH-LONG-HI-001",
+      "expected": "विषय बदलने और वापस आने पर योजना, मंडी और मौसम की जानकारी को आपस में न मिलाएं। ताज़ा जानकारी के लिए संबंधित टूल इस्तेमाल करें। पात्रता पर वही कहें जिसका स्रोत समर्थन करता है। मंडी के भाव को मंडी/तारीख/इकाई से जोड़कर रखें और स्पष्ट करें कि सबसे अधिक modal भाव से शुद्ध लाभ तय नहीं होता। 2024 बीत चुका है; उसे भविष्य की किस्त की तारीख न बताएं और नई आधिकारिक तारीख सत्यापित न होने पर यह स्पष्ट कहें।",
+      "judge_checks": [
+        "topic_switching",
+        "context_retention",
+        "tool_selection",
+        "groundedness",
+        "temporal_consistency",
+        "result_attribution",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-STATUS-COUNT-HI-001",
+      "expected": "The quoted “Last Installment – 5th” field identifies the last recorded installment, not the cumulative number of paid installments. Do not infer the total payment count or explain missing later payments from the year the user says they registered alone. Under PM-KISAN FAQ, entitlement begins for the four-monthly period in which the State/UT uploads the eligible farmer to the portal and includes subsequent periods; eligible due installments can be released after a delay is resolved. Ask the user to check full status/history for account-specific facts. Official reference: https://pmkisan.gov.in/Documents/RevisedFAQ.pdf.",
+      "observed_failure": "In a production status conversation, the returned status confirmed a fifth installment payment, but the assistant later treated this as proof that only five installments had ever been paid and attributed that to the registration date. The returned status did not establish the total installment history or that causal explanation.",
+      "judge_checks": [
+        "status_output_interpretation",
+        "groundedness",
+        "temporal_consistency",
+        "fabrication",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "MANDI-CHOICE-MUMBAI-001",
+      "expected": "Use date-filtered mandi data, preserve every market/date/unit, compute averages and the single-day peak accurately, and distinguish price from net return. The available tool does not expose distance/radius selection; do not claim 10/25/50 km comparisons without distance data. The full seven-day mock is synthetic and validates tool use/reasoning only.",
+      "judge_checks": [
+        "tool_selection",
+        "tool_arguments",
+        "market_attribution",
+        "price_unit",
+        "reasoning",
+        "fabrication"
+      ]
+    },
+    {
+      "id": "PMKISAN-OVERVIEW-LANG-GAP",
+      "expected": "Explain that PM-KISAN provides eligible landholding farmer families ₹6,000 annually in three ₹2,000 installments, subject to scheme exclusions. Do not imply eligibility is restricted to small or marginal farmers; current official PM-KISAN guidance says all landholding farmer families are in scope subject to exclusions. Distinguish national scheme facts from the user’s personal eligibility. Official reference: https://pmkisan.gov.in/.",
+      "judge_checks": [
+        "cross_language_fact_consistency",
+        "amount_and_frequency",
+        "eligibility_wording",
+        "appropriate_abstention"
+      ]
+    },
+    {
+      "id": "PMFBY-KCC-SCOPE-001",
+      "expected": "Explain the conditional rule: for notified crops and the relevant season, loanee farmers availing SAO/KCC crop loans are automatically covered unless they submit an opt-out declaration; non-loanee participation is voluntary. A KCC alone does not confirm an individual crop is covered. Ask for state/district, season, crop and loan/loanee status as needed, and avoid claiming coverage without confirmation.",
+      "judge_checks": [
+        "scope_of_kcc_rule",
+        "notified_crop_and_season",
+        "loanee_vs_nonloanee",
+        "ask_missing_details",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMFBY-TOPIC-SWITCH-LONG-001",
+      "expected": "Keep PMFBY distinct from PM-KISAN. Apply the conditional coverage rule consistently: a loanee farmer with an SAO/KCC crop loan for a notified crop is automatically covered for that season unless opting out; non-loanee participation is voluntary, and non-notified crops are not covered under PMFBY. Preserve prior crop/season context after the mandi detour; do not claim an individual policy is confirmed without a status lookup.",
+      "judge_checks": [
+        "topic_switch_context",
+        "PMFBY_vs_PMKISAN",
+        "conditional_automatic_coverage",
+        "nonloanee_voluntary_enrollment",
+        "notified_crop_scope",
+        "mandi_tool_selection",
+        "no_status_fabrication"
+      ]
+    },
+    {
+      "id": "KCC-COLLATERAL-LIMIT-001",
+      "expected": "State the current limit as ₹2 lakh per borrower and that the revised instruction took effect by 1 January 2025. Distinguish this collateral-free cap from the separate KCC loan-limit increase under MISS from ₹3 lakh to ₹5 lakh; clarify eligibility/terms may depend on bank rules.",
+      "judge_checks": [
+        "current_threshold",
+        "effective_date",
+        "distinguish_collateral_limit_from_MISS_limit",
+        "avoid_outdated_figure"
+      ]
+    },
+    {
+      "id": "PMKISAN-HELPLINE-001",
+      "expected": "Do not invent a short code such as 155260. Identify 155261 as the current Bharat-VISTAAR helpline; PIB says Phase I integrates PM-KISAN, so it may be offered as integrated support, not described as a dedicated PM-KISAN helpline without qualification. Older PIB material lists 1800-11-5526 and 155261 for PM-KISAN IVRS status verification, but current 1800-11-5526 availability is unverified. Direct users seeking personal status to the official PM-KISAN portal/status flow or explain the date/source qualification clearly.",
+      "judge_checks": [
+        "do_not_guess_number",
+        "current_155261_reassignment",
+        "distinguish_historical_from_current_contact",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-SURRENDER-REVOCATION-001",
+      "expected": "Direct the user to the official PM-KISAN Voluntary Surrender Revocation form and explain that its OTP is sent to the PM-KISAN registered mobile. Direct status tracking to the official Surrender Revocation Status page. Do not tell the user to register again or claim a generic correction window exists unless official evidence supports it. Do not request the registration number, Aadhaar number, or OTP in chat; advise using the official portal securely. Sources: https://pmkisan.gov.in/Pmkisanbenefitsurrender_revocation.aspx ; https://pmkisan.gov.in/revocation_status.aspx ; PIB confirmation of account reactivation for mistaken surrender: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238588&lang=1&reg=3.",
+      "judge_checks": [
+        "direct official revocation flow",
+        "separate revocation status tracking",
+        "no re-registration misinformation",
+        "do not request OTP or personal identifiers in chat",
+        "Hindi-English consistency"
+      ]
+    },
+    {
+      "id": "MANDI-AVG-RANK-EN-001",
+      "expected": "Use the seven-day Onion results returned by the mandi tool, preserve each market/date/price association, and calculate the arithmetic means from the seven daily modal prices. Fixture ground truth: Nashik APMC Yard 1 = (5200+5450+5800+5300+5600+5000+5500)/7 = ₹5,407.14/quintal; Nashik wholesale hub = (5400+5300+5100+5700+5200+5600+5350)/7 = ₹5,378.57/quintal. Rank APMC Yard 1 first by ₹28.57/quintal. The single-day maximum is also APMC Yard 1 at ₹5,800 on 31-10-2026; do not confuse peak with average or promise tomorrow’s price/net return. The question set switches to PM-KISAN and back; retain the mandi figures correctly. The prices are synthetic and test reasoning only.",
+      "judge_checks": [
+        "tool_selection",
+        "date_range_arguments",
+        "market_date_attribution",
+        "arithmetic",
+        "ranking",
+        "topic_switching",
+        "no_price_forecast",
+        "net_return_caveat"
+      ]
+    },
+    {
+      "id": "MANDI-AVG-RANK-HI-001",
+      "expected": "Use the seven-day Onion results returned by the mandi tool, preserve each market/date/price association, and calculate the arithmetic means from the seven daily modal prices. Fixture ground truth: Nashik APMC Yard 1 = (5200+5450+5800+5300+5600+5000+5500)/7 = ₹5,407.14/quintal; Nashik wholesale hub = (5400+5300+5100+5700+5200+5600+5350)/7 = ₹5,378.57/quintal. Rank APMC Yard 1 first by ₹28.57/quintal. The single-day maximum is also APMC Yard 1 at ₹5,800 on 31-10-2026; do not confuse peak with average or promise tomorrow’s price/net return. The question set switches to PM-KISAN and back; retain the mandi figures correctly. The prices are synthetic and test reasoning only.",
+      "judge_checks": [
+        "tool_selection",
+        "date_range_arguments",
+        "market_date_attribution",
+        "arithmetic",
+        "ranking",
+        "topic_switching",
+        "no_price_forecast",
+        "net_return_caveat"
+      ]
+    },
+    {
+      "id": "MANDI-AVG-EXPLICIT-EN-001",
+      "expected": "Use the requested inclusive date range 29 Oct–4 Nov 2026, fetch Onion prices for Nashik, preserve market/date attribution, and calculate the arithmetic mean of seven daily modal prices. Ground truth from the synthetic fixture: Nashik APMC Yard 1 = (5200+5450+5800+5300+5600+5000+5500)/7 = ₹5,407.14/quintal; Nashik wholesale hub = (5400+5300+5100+5700+5200+5600+5350)/7 = ₹5,378.57/quintal. APMC is higher by ₹28.57/quintal. Peak daily price is ₹5,800 at APMC on 31 Oct. Do not treat the highest average as a guarantee of tomorrow’s price or net return. The session switches to PM-KISAN and back; retain the original market figures accurately. Prices are synthetic and test arithmetic/reasoning only.",
+      "judge_checks": [
+        "tool_selection",
+        "exact_date_range_arguments",
+        "market_date_attribution",
+        "arithmetic",
+        "ranking",
+        "topic_switching",
+        "no_price_forecast",
+        "net_return_caveat"
+      ]
+    },
+    {
+      "id": "MANDI-AVG-EXPLICIT-HI-001",
+      "expected": "Use the requested inclusive date range 29 Oct–4 Nov 2026, fetch Onion prices for Nashik, preserve market/date attribution, and calculate the arithmetic mean of seven daily modal prices. Ground truth from the synthetic fixture: Nashik APMC Yard 1 = (5200+5450+5800+5300+5600+5000+5500)/7 = ₹5,407.14/quintal; Nashik wholesale hub = (5400+5300+5100+5700+5200+5600+5350)/7 = ₹5,378.57/quintal. APMC is higher by ₹28.57/quintal. Peak daily price is ₹5,800 at APMC on 31 Oct. Do not treat the highest average as a guarantee of tomorrow’s price or net return. The session switches to PM-KISAN and back; retain the original market figures accurately. Prices are synthetic and test arithmetic/reasoning only.",
+      "judge_checks": [
+        "tool_selection",
+        "exact_date_range_arguments",
+        "market_date_attribution",
+        "arithmetic",
+        "ranking",
+        "topic_switching",
+        "no_price_forecast",
+        "net_return_caveat"
+      ]
+    },
+    {
+      "id": "MANDI-RELATIVE-EN-001",
+      "expected": "The app prompt supplies today’s date as 4 Nov 2026 IST; “the last seven calendar days, including today” unambiguously means 29 Oct–4 Nov inclusive. Do not ask again for the date. Geocode Nashik, resolve Onion, fetch those inclusive dates once, preserve all market/date rows, compute and rank the seven daily modal means. Ground truth: APMC ₹5,407.14/quintal; wholesale hub ₹5,378.57/quintal; difference ₹28.57. Peak ₹5,800 at APMC 31 Oct. Do not infer tomorrow’s net return from historical prices. Local prices are synthetic.",
+      "judge_checks": [
+        "relative_date_resolution",
+        "tool_selection",
+        "inclusive_date_window",
+        "market_date_attribution",
+        "arithmetic",
+        "topic_context",
+        "no_future_price_claim"
+      ]
+    },
+    {
+      "id": "MANDI-RELATIVE-HI-001",
+      "expected": "The app prompt supplies today’s date as 4 Nov 2026 IST; “the last seven calendar days, including today” unambiguously means 29 Oct–4 Nov inclusive. Do not ask again for the date. Geocode Nashik, resolve Onion, fetch those inclusive dates once, preserve all market/date rows, compute and rank the seven daily modal means. Ground truth: APMC ₹5,407.14/quintal; wholesale hub ₹5,378.57/quintal; difference ₹28.57. Peak ₹5,800 at APMC 31 Oct. Do not infer tomorrow’s net return from historical prices. Local prices are synthetic.",
+      "judge_checks": [
+        "relative_date_resolution",
+        "tool_selection",
+        "inclusive_date_window",
+        "market_date_attribution",
+        "arithmetic",
+        "topic_context",
+        "no_future_price_claim"
+      ]
+    },
+    {
+      "id": "KCC-DOCS-PROD-001",
+      "expected": "Offer the generally supported baseline documents (application form, identity/address proof, landholding evidence, crop and acreage information) with a clear caveat that the lending bank may request additional documents; do not claim this list is exhaustive or universal.",
+      "observed_failure": "Persistent retrieval mismatch: KCC document queries retrieve a survey or unrelated material. Response helpfulness varies; an earlier production trace abstained, while the latest one supplied a partial baseline. In both cases the search evidence did not establish the document list."
+    },
+    {
+      "id": "SATHI-CERT-BOUNDARY-001",
+      "expected": "Explain that an individual farmer may apply to produce certified seed, but cannot self-issue the official certification or certification tag. Certification is conducted by the state-notified agency under section 8; the agency checks standards and grants the certificate/tag. Distinguish this from applicable truthfully-labelled seed requirements and avoid saying all seed sales are prohibited without certification."
+    },
+    {
+      "id": "LONG-MULTITOPIC-REASONING-001",
+      "expected": "Keep KCC application documents bank-qualified; for PMFBY distinguish an eligible SAO/KCC-loanee with a notified crop/area/season (automatic cover unless opted out) from non-notified crops, which are not thereby insured. Answer the 18th installment historical date as 5 October 2024. For SATHI, distinguish a farmer who can apply/produce from the authorized agency that certifies and issues official tags. On the synthetic Nashik data preserve market/date attribution, identify the 31 October APMC daily peak and the seven-day means (APMC ₹5,407.14/quintal; wholesale ₹5,378.57/quintal; gap ₹28.57), and do not infer tomorrow’s net return from historical averages."
+    },
+    {
+      "id": "KCC-LOAN-WAIVER-001",
+      "expected": "Do not treat an old awareness-survey question or survey threshold as the current collateral-free limit. If mentioning the limit, give current ₹2 lakh per borrower (effective by 1 Jan 2025) and distinguish it from the separate higher MISS loan ceiling. Explain there is no automatic loan-waiver benefit built into KCC; waivers depend on an applicable government program, and natural-calamity relief may be restructuring/rescheduling rather than waiver. Avoid overconfident current nationwide claims without fresh official evidence."
+    },
+    {
+      "id": "KCC-LIMIT-180K-001",
+      "expected": "The collateral-free limit rose to ₹2 lakh per borrower effective 1 January 2025, so ₹1.8 lakh is below the national threshold. Do not guarantee individual sanction or omit that bank appraisal/loan conditions still apply; distinguish collateral-free limit from the separate MISS interest-subvention ceiling."
+    },
+    {
+      "id": "PMFBY-OPTOUT-DETAILS-001",
+      "expected": "The signed opt-out declaration must be submitted to the same bank branch where the farmer holds the KCC loan account, at least 7 days before the enrollment/premium-debit cutoff. The opt-out applies for that season only. Do not redirect the farmer to the insurer as the required filing channel."
+    },
+    {
+      "id": "KCC-LIMIT-CORRECTION-001",
+      "expected": "Recognize that ₹1.6 lakh is outdated and the collateral-free cap rose to ₹2 lakh per borrower effective 1 January 2025. Correct any earlier claim plainly; preserve bank appraisal qualification without implying the ₹1.8 lakh amount automatically qualifies for every borrower."
+    },
+    {
+      "id": "FARMER-ID-DISAMBIGUATION-EN-HI-001",
+      "expected": "Clarify that an AgriStack Farmer ID and PM-KISAN registration number are different identifiers. Direct the user to the official Farmer ID lookup/login flow; do not ask them to post Aadhaar or the full identifier in chat.",
+      "judge_checks": [
+        "identifier_disambiguation",
+        "privacy",
+        "groundedness",
+        "English_quality",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-PENDING-GENERIC-HI-001",
+      "expected": "Give general next steps such as checking beneficiary status and the official e-KYC / bank-account / land-record requirements, while making clear that the specific cause cannot be known from the information provided. Do not invent an account-specific reason or claim a status check was done.",
+      "judge_checks": [
+        "account_specificity",
+        "tool_selection",
+        "groundedness",
+        "uncertainty",
+        "English_quality",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "KCC-CIBIL-REQUIREMENT-001",
+      "expected": "Do not claim a universal KCC CIBIL-score threshold or that a particular score is mandatory unless supported by an authoritative source. Explain that RBI KCC guidance gives banks discretion to adapt operational details to their institution/location requirements; a bank may assess an application under its own policy. Ask the user to confirm the lender-specific requirement.",
+      "judge_checks": [
+        "retrieval_relevance",
+        "groundedness",
+        "avoid_universal_credit_score_claim",
+        "uncertainty",
+        "English_quality",
+        "Hindi_quality"
+      ]
+    },
+    {
+      "id": "PMFBY-TENANT-DOCS-001",
+      "expected": "The 2023 PMFBY operational guidelines include tenant farmers and sharecroppers cultivating notified crops in notified areas if they have insurable interest. Evidence can include state land records and/or applicable contract/agreement details or other documents permitted by the state/UT and specified in its notification. Do not state that owning the land or having a title in the farmer’s name is universally required. Ask for state/district, crop and season before giving exact document requirements.",
+      "judge_checks": [
+        "tenant_sharecropper_eligibility",
+        "state_specific_documentation",
+        "notified_crop_and_area",
+        "tool_selection",
+        "groundedness",
+        "Hindi_quality",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "PMFBY-OVERVIEW-ELIGIBILITY-001",
+      "expected": "For a broad overview, explain that farmers including tenant farmers/sharecroppers may be eligible only for notified crops in notified areas and with insurable interest. Tenant/sharecropper evidence requirements are State/UT-specific. Distinguish voluntary non-loanee enrollment from loanee enrollment when describing application. Do not imply universal coverage."
+    },
+    {
+      "id": "KCC-OVERVIEW-STALE-LIMIT-001",
+      "expected": "The answer may describe KCC and should not present ₹1.6 lakh as the current collateral-free agricultural-loan threshold. If mentioning the threshold, state ₹2 lakh per borrower under RBI circular FIDD.CO.FSD.BC.No.10/05.05.010/2024-25, effective no later than 1 January 2025. Distinguish this collateral-free threshold from the separate KCC/MISS interest-subvention loan ceiling, and do not imply the individual loan is automatically sanctioned.",
+      "judge_checks": [
+        "current_threshold",
+        "retrieval_grounding",
+        "distinguish_collateral_limit_from_MISS_limit",
+        "Hindi_quality",
+        "English_quality"
+      ]
+    },
+    {
+      "id": "PMKISAN-FARMER-ID-REGISTRATION-001",
+      "expected": "Explain that Farmer ID is required for new PM-KISAN registration only in states where the Farmer Registry rollout applies (official PIB said 19 states as of March 2026). Ask which state and the exact on-screen error before diagnosing. Do not conflate Farmer ID with a PM-KISAN beneficiary/registration number; do not say Aadhaar-bank linking or e-KYC caused a Farmer ID-generation message without evidence. Do not ask the user to paste Aadhaar, Farmer ID, OTP, or PM-KISAN registration numbers into chat. Direct the farmer to the official PM-KISAN Farmer ID creation help, state Farmer Registry, or CSC as appropriate.",
+      "judge_checks": [
+        "state_specific_farmer_id_requirement",
+        "distinguish_farmer_id_from_pm_kisan_registration",
+        "ask_exact_error_before_diagnosis",
+        "no_unverified_aadhaar_or_ekyc_cause",
+        "do_not_collect_identifiers"
+      ]
+    },
+    {
+      "id": "MANDI-COORDINATES-EN-HI-001",
+      "expected": "Reuse the supplied Mumbai coordinates; resolve Onion; fetch the explicit inclusive date range and preserve market/date/unit attribution; calculate averages and the peak accurately. The current get_mandi_prices contract does not return distance by market or net transport costs, so do not claim 10/25/50 km eligibility or best net return from price alone.",
+      "judge_checks": [
+        "reuse_user_supplied_coordinates",
+        "tool_selection",
+        "inclusive_date_range",
+        "market_date_attribution",
+        "unit",
+        "arithmetic",
+        "peak_date",
+        "radius_limits",
+        "net_return_caveat"
+      ]
+    },
+    {
+      "id": "PMKSY-CURRENT-IMPLEMENTATION-001",
+      "expected": "Explain PMKSY accurately as the broader irrigation programme. For micro-irrigation, identify Per Drop More Crop (PDMC) as currently implemented under PM-RKVY since 2022-23, not as a current PMKSY component. State assistance of 55% for small/marginal farmers and 45% for other farmers, capped at 5 hectares per beneficiary; note state top-up support may exist and exact application steps vary by state.",
+      "judge_checks": [
+        "current_scheme_name",
+        "historical_vs_current_component",
+        "subsidy_rates",
+        "five_hectare_cap",
+        "state_process_qualification",
+        "Hindi_quality"
+      ]
+    }
+  ],
+  "benchmark_fixture_case_aliases": {
+    "MANDI-AVG-EXPLICIT-001": [
+      "MANDI-AVG-EXPLICIT-EN-001",
+      "MANDI-AVG-EXPLICIT-HI-001"
+    ],
+    "MANDI-AVG-RANK-001": [
+      "MANDI-AVG-RANK-EN-001",
+      "MANDI-AVG-RANK-HI-001"
+    ],
+    "MANDI-RELATIVE-001": [
+      "MANDI-RELATIVE-EN-001",
+      "MANDI-RELATIVE-HI-001"
+    ]
+  }
+}

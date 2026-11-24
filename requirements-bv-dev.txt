@@ -1,0 +1,7 @@
+-r requirements.txt
+# Simulator, bounded gateway, standalone FFS mock, and offline checks.
+litellm
+fastapi
+uvicorn
+pycryptodome
+pytest

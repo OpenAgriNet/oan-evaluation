@@ -1,0 +1,4067 @@
+{
+ "901-mandi": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Long conversation 901: mandi",
+  "agristack_consent": "not supplied"
+ },
+ "901-weather": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Long conversation 901: weather",
+  "agristack_consent": "not supplied"
+ },
+ "901-crop-advice": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 901: crop-advice",
+  "agristack_consent": "not supplied"
+ },
+ "901-pest-advice": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 901: pest-advice",
+  "agristack_consent": "not supplied"
+ },
+ "901-video": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "search_video"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 901: video",
+  "agristack_consent": "not supplied"
+ },
+ "901-scheme-info": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 901: scheme-info",
+  "agristack_consent": "not supplied"
+ },
+ "901-soil-card": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Long conversation 901: soil-card",
+  "agristack_consent": "not supplied"
+ },
+ "901-pmkisan-status": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Long conversation 901: pmkisan-status",
+  "agristack_consent": "not supplied"
+ },
+ "901-pmfby-status": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Long conversation 901: pmfby-status",
+  "agristack_consent": "not supplied"
+ },
+ "901-pmkisan-grievance": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Long conversation 901: pmkisan-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "901-pmfby-grievance": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance",
+   "pmfby_grievance_status"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Long conversation 901: pmfby-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "901-closing": {
+  "session_id": "901",
+  "source": "current-long",
+  "source_session": "901",
+  "tools": [],
+  "skills": [],
+  "why": "Long conversation 901: closing",
+  "agristack_consent": "not supplied"
+ },
+ "902-mandi": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Long conversation 902: mandi",
+  "agristack_consent": "not supplied"
+ },
+ "902-crop-watering": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 902: crop-watering",
+  "agristack_consent": "not supplied"
+ },
+ "902-crop-advice": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 902: crop-advice",
+  "agristack_consent": "not supplied"
+ },
+ "902-pest-advice": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 902: pest-advice",
+  "agristack_consent": "not supplied"
+ },
+ "902-video": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "search_video"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 902: video",
+  "agristack_consent": "not supplied"
+ },
+ "902-scheme-info": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 902: scheme-info",
+  "agristack_consent": "not supplied"
+ },
+ "902-soil-card": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Long conversation 902: soil-card",
+  "agristack_consent": "not supplied"
+ },
+ "902-pmkisan-status": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Long conversation 902: pmkisan-status",
+  "agristack_consent": "not supplied"
+ },
+ "902-pmfby-status": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Long conversation 902: pmfby-status",
+  "agristack_consent": "not supplied"
+ },
+ "902-pmkisan-grievance": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Long conversation 902: pmkisan-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "902-pmfby-grievance": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance",
+   "pmfby_grievance_status"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Long conversation 902: pmfby-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "902-closing": {
+  "session_id": "902",
+  "source": "current-long",
+  "source_session": "902",
+  "tools": [],
+  "skills": [],
+  "why": "Long conversation 902: closing",
+  "agristack_consent": "not supplied"
+ },
+ "903-mandi": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Long conversation 903: mandi",
+  "agristack_consent": "not supplied"
+ },
+ "903-weather": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Long conversation 903: weather",
+  "agristack_consent": "not supplied"
+ },
+ "903-livestock": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Long conversation 903: livestock",
+  "agristack_consent": "not supplied"
+ },
+ "903-pest-advice": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 903: pest-advice",
+  "agristack_consent": "not supplied"
+ },
+ "903-video": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "search_video"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 903: video",
+  "agristack_consent": "not supplied"
+ },
+ "903-scheme-info": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 903: scheme-info",
+  "agristack_consent": "not supplied"
+ },
+ "903-soil-card": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Long conversation 903: soil-card",
+  "agristack_consent": "not supplied"
+ },
+ "903-pmkisan-status": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Long conversation 903: pmkisan-status",
+  "agristack_consent": "not supplied"
+ },
+ "903-pmfby-status": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Long conversation 903: pmfby-status",
+  "agristack_consent": "not supplied"
+ },
+ "903-pmkisan-grievance": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Long conversation 903: pmkisan-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "903-pmfby-grievance": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance",
+   "pmfby_grievance_status"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Long conversation 903: pmfby-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "903-closing": {
+  "session_id": "903",
+  "source": "current-long",
+  "source_session": "903",
+  "tools": [],
+  "skills": [],
+  "why": "Long conversation 903: closing",
+  "agristack_consent": "not supplied"
+ },
+ "904-mandi": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Long conversation 904: mandi",
+  "agristack_consent": "not supplied"
+ },
+ "904-weather": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Long conversation 904: weather",
+  "agristack_consent": "not supplied"
+ },
+ "904-crop-advice": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 904: crop-advice",
+  "agristack_consent": "not supplied"
+ },
+ "904-livestock": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Long conversation 904: livestock",
+  "agristack_consent": "not supplied"
+ },
+ "904-video": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "search_video"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 904: video",
+  "agristack_consent": "not supplied"
+ },
+ "904-scheme-info": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 904: scheme-info",
+  "agristack_consent": "not supplied"
+ },
+ "904-soil-card": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Long conversation 904: soil-card",
+  "agristack_consent": "not supplied"
+ },
+ "904-pmkisan-status": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Long conversation 904: pmkisan-status",
+  "agristack_consent": "not supplied"
+ },
+ "904-pmfby-status": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Long conversation 904: pmfby-status",
+  "agristack_consent": "not supplied"
+ },
+ "904-pmkisan-grievance": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Long conversation 904: pmkisan-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "904-pmfby-grievance": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance",
+   "pmfby_grievance_status"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Long conversation 904: pmfby-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "904-closing": {
+  "session_id": "904",
+  "source": "current-long",
+  "source_session": "904",
+  "tools": [],
+  "skills": [],
+  "why": "Long conversation 904: closing",
+  "agristack_consent": "not supplied"
+ },
+ "905-mandi": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Long conversation 905: mandi",
+  "agristack_consent": "not supplied"
+ },
+ "905-weather": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Long conversation 905: weather",
+  "agristack_consent": "not supplied"
+ },
+ "905-crop-advice": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 905: crop-advice",
+  "agristack_consent": "not supplied"
+ },
+ "905-pest-advice": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Long conversation 905: pest-advice",
+  "agristack_consent": "not supplied"
+ },
+ "905-video": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "search_video"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 905: video",
+  "agristack_consent": "not supplied"
+ },
+ "905-scheme-info": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Long conversation 905: scheme-info",
+  "agristack_consent": "not supplied"
+ },
+ "905-soil-card": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Long conversation 905: soil-card",
+  "agristack_consent": "not supplied"
+ },
+ "905-pmkisan-status": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Long conversation 905: pmkisan-status",
+  "agristack_consent": "not supplied"
+ },
+ "905-pmfby-status": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Long conversation 905: pmfby-status",
+  "agristack_consent": "not supplied"
+ },
+ "905-pmkisan-grievance": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Long conversation 905: pmkisan-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "905-pmfby-grievance": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance",
+   "pmfby_grievance_status"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Long conversation 905: pmfby-grievance",
+  "agristack_consent": "not supplied"
+ },
+ "905-closing": {
+  "session_id": "905",
+  "source": "current-long",
+  "source_session": "905",
+  "tools": [],
+  "skills": [],
+  "why": "Long conversation 905: closing",
+  "agristack_consent": "not supplied"
+ },
+ "1001": {
+  "session_id": "1001",
+  "source": "current-short",
+  "source_session": "1001",
+  "tools": [
+   "initiate_aif_otp",
+   "verify_aif_otp",
+   "check_aif_loan_status",
+   "check_aif_grievance_status"
+  ],
+  "skills": [
+   "aif.status",
+   "weather.forecast",
+   "location.resolve"
+  ],
+  "why": "AIF loan and grievance status with a weather interruption.",
+  "agristack_consent": "not supplied"
+ },
+ "1002": {
+  "session_id": "1002",
+  "source": "current-short",
+  "source_session": "1002",
+  "tools": [
+   "initiate_kcc_otp",
+   "check_kcc_application_status",
+   "select_kcc_application"
+  ],
+  "skills": [
+   "kcc.status"
+  ],
+  "why": "KCC status with several applications.",
+  "agristack_consent": "not supplied"
+ },
+ "1003": {
+  "session_id": "1003",
+  "source": "current-short",
+  "source_session": "1003",
+  "tools": [
+   "initiate_khc_otp",
+   "verify_khc_otp",
+   "lookup_khc_reference",
+   "register_khc_grievance",
+   "check_khc_grievance_status"
+  ],
+  "skills": [
+   "khc.grievances",
+   "location.resolve"
+  ],
+  "why": "KHC complaint registration with location and status check.",
+  "agristack_consent": "not supplied"
+ },
+ "1004": {
+  "session_id": "1004",
+  "source": "current-short",
+  "source_session": "1004",
+  "tools": [
+   "check_smam_scheme_status"
+  ],
+  "skills": [
+   "smam.status"
+  ],
+  "why": "SMAM application status by mobile and reference.",
+  "agristack_consent": "not supplied"
+ },
+ "1005": {
+  "session_id": "1005",
+  "source": "current-short",
+  "source_session": "1005",
+  "tools": [
+   "gfr_get_crop_registries",
+   "gfr_get_recommendations"
+  ],
+  "skills": [
+   "fertilizer.recommendations",
+   "location.resolve"
+  ],
+  "why": "Government fertilizer recommendation (GFR).",
+  "agristack_consent": "not supplied"
+ },
+ "1006": {
+  "session_id": "1006",
+  "source": "current-short",
+  "source_session": "1006",
+  "tools": [
+   "get_sathi_crop_groups",
+   "list_sathi_crops_in_group",
+   "search_sathi_seed_availability"
+  ],
+  "skills": [
+   "seeds.availability",
+   "location.resolve"
+  ],
+  "why": "SATHI certified seed groups, crops and dealers.",
+  "agristack_consent": "not supplied"
+ },
+ "1007": {
+  "session_id": "1007",
+  "source": "current-short",
+  "source_session": "1007",
+  "tools": [
+   "call_amul_vistaar_network",
+   "call_maha_vistaar_network",
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Cross-network scheme information (Amul, Maharashtra, SMAM benefits).",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Nanaji Deshmukh Krishi Sanjivani Prakalp (NDKSP) drip irrigation, NDKSP farm pond lining and AIF drip irrigation have a dedicated tool, call_maha_vistaar_network. The product forbids using search_schemes or search_documents for them. If that tool returns no details, the correct reply says the details are not available right now; not falling back to another search is correct, not a failure.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "1008": {
+  "session_id": "1008",
+  "source": "current-short",
+  "source_session": "1008",
+  "tools": [
+   "get_agristack_farmer_location",
+   "get_agristack_farmer_crops",
+   "get_agristack_farmer_profile"
+  ],
+  "skills": [
+   "agristack.profile",
+   "weather.forecast",
+   "location.resolve",
+   "schemes.information"
+  ],
+  "why": "AgriStack with consent: weather, crops and PM-KISAN eligibility from shared records.",
+  "agristack_consent": true
+ },
+ "1009": {
+  "session_id": "1009",
+  "source": "current-short",
+  "source_session": "1009",
+  "tools": [
+   "search_terms",
+   "search_documents",
+   "search_advisory",
+   "search_pests_diseases",
+   "analyze_crop_image",
+   "get_agristack_farmer_location",
+   "get_agristack_farmer_crops",
+   "get_agristack_farmer_profile"
+  ],
+  "skills": [
+   "agristack.profile",
+   "crop.advice",
+   "crop.icar",
+   "documents.search"
+  ],
+  "why": "AgriStack without consent, then general irrigation advice.",
+  "agristack_consent": false
+ },
+ "1010": {
+  "session_id": "1010",
+  "source": "current-short",
+  "source_session": "1010",
+  "tools": [
+   "analyze_crop_image"
+  ],
+  "skills": [
+   "crop.advice"
+  ],
+  "why": "Crop photo diagnosis (NPSS).",
+  "agristack_consent": "not supplied"
+ },
+ "1011": {
+  "session_id": "1011",
+  "source": "current-short",
+  "source_session": "1011",
+  "tools": [
+   "imd_agromet_advisory"
+  ],
+  "skills": [
+   "weather.agromet",
+   "location.resolve"
+  ],
+  "why": "IMD district agromet advisory.",
+  "agristack_consent": "not supplied"
+ },
+ "1012": {
+  "session_id": "1012",
+  "source": "current-short",
+  "source_session": "1012",
+  "tools": [
+   "reverse_geocode"
+  ],
+  "skills": [
+   "location.resolve"
+  ],
+  "why": "Coordinates to place.",
+  "agristack_consent": "not supplied"
+ },
+ "1014": {
+  "session_id": "1014",
+  "source": "current-short",
+  "source_session": "1014",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "PMFBY policy status with wrong then correct OTP.",
+  "agristack_consent": "not supplied"
+ },
+ "1015": {
+  "session_id": "1015",
+  "source": "current-short",
+  "source_session": "1015",
+  "tools": [
+   "find_khc_location",
+   "get_khc_grievance_options",
+   "initiate_khc_otp",
+   "verify_khc_otp",
+   "register_khc_grievance",
+   "check_khc_grievance_status"
+  ],
+  "skills": [
+   "khc.grievances",
+   "weather.forecast",
+   "location.resolve"
+  ],
+  "why": "KHC registration with a weather interruption and status check.",
+  "agristack_consent": "not supplied"
+ },
+ "1030": {
+  "session_id": "1030",
+  "source": "current-short",
+  "source_session": "1030",
+  "tools": [
+   "search_terms",
+   "search_documents",
+   "search_advisory",
+   "search_pests_diseases",
+   "analyze_crop_image"
+  ],
+  "skills": [
+   "crop.advice",
+   "crop.icar",
+   "documents.search"
+  ],
+  "why": "Intercropping advice and a generic follow-up.",
+  "agristack_consent": "not supplied"
+ },
+ "1031": {
+  "session_id": "1031",
+  "source": "current-short",
+  "source_session": "1031",
+  "tools": [
+   "search_terms",
+   "search_documents",
+   "search_advisory",
+   "search_pests_diseases",
+   "analyze_crop_image"
+  ],
+  "skills": [
+   "crop.advice",
+   "crop.icar",
+   "documents.search"
+  ],
+  "why": "Pesticide advice and a generic follow-up.",
+  "agristack_consent": "not supplied"
+ },
+ "1032": {
+  "session_id": "1032",
+  "source": "current-short",
+  "source_session": "1032",
+  "tools": [
+   "check_khc_grievance_status",
+   "initiate_khc_otp",
+   "verify_khc_otp",
+   "lookup_khc_reference",
+   "find_khc_location",
+   "get_khc_grievance_options",
+   "register_khc_grievance"
+  ],
+  "skills": [
+   "khc.grievances"
+  ],
+  "why": "KHC grievance status with OTP.",
+  "agristack_consent": "not supplied"
+ },
+ "3001": {
+  "session_id": "3001",
+  "source": "mined",
+  "source_session": "prod-farmer-id-disambiguation-001",
+  "case_id": "FARMER-ID-DISAMBIGUATION-EN-HI-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Clarify that an AgriStack Farmer ID and PM-KISAN registration number are different identifiers. Direct the user to the official Farmer ID lookup/login flow; do not ask them to post Aadhaar or the full identifier in chat.",
+  "judge_checks": [
+   "identifier_disambiguation",
+   "privacy",
+   "groundedness",
+   "English_quality",
+   "Hindi_quality"
+  ]
+ },
+ "3002": {
+  "session_id": "3002",
+  "source": "mined",
+  "source_session": "prod-kcc-cibil-requirement-001",
+  "case_id": "KCC-CIBIL-REQUIREMENT-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Do not claim a universal KCC CIBIL-score threshold or that a particular score is mandatory unless supported by an authoritative source. Explain that RBI KCC guidance gives banks discretion to adapt operational details to their institution/location requirements; a bank may assess an application under its own policy. Ask the user to confirm the lender-specific requirement.",
+  "judge_checks": [
+   "retrieval_relevance",
+   "groundedness",
+   "avoid_universal_credit_score_claim",
+   "uncertainty",
+   "English_quality",
+   "Hindi_quality"
+  ]
+ },
+ "3003": {
+  "session_id": "3003",
+  "source": "mined",
+  "source_session": "prod-kcc-collateral-limit-001",
+  "case_id": "KCC-COLLATERAL-LIMIT-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "State the current limit as ₹2 lakh per borrower and that the revised instruction took effect by 1 January 2025. Distinguish this collateral-free cap from the separate KCC loan-limit increase under MISS from ₹3 lakh to ₹5 lakh; clarify eligibility/terms may depend on bank rules.",
+  "judge_checks": [
+   "current_threshold",
+   "effective_date",
+   "distinguish_collateral_limit_from_MISS_limit",
+   "avoid_outdated_figure"
+  ]
+ },
+ "3004": {
+  "session_id": "3004",
+  "source": "mined",
+  "source_session": "prod-kcc-docs-direct-001",
+  "case_id": "KCC-DOCS-PROD-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Persistent retrieval mismatch: KCC document queries retrieve a survey or unrelated material. Response helpfulness varies; an earlier production trace abstained, while the latest one supplied a partial baseline. In both cases the search evidence did not establish the document list.",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Offer the generally supported baseline documents (application form, identity/address proof, landholding evidence, crop and acreage information) with a clear caveat that the lending bank may request additional documents; do not claim this list is exhaustive or universal.",
+  "judge_checks": []
+ },
+ "3005": {
+  "session_id": "3005",
+  "source": "mined",
+  "source_session": "prod-kcc-limit-180k-001",
+  "case_id": "KCC-LIMIT-180K-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The collateral-free limit rose to ₹2 lakh per borrower effective 1 January 2025, so ₹1.8 lakh is below the national threshold. Do not guarantee individual sanction or omit that bank appraisal/loan conditions still apply; distinguish collateral-free limit from the separate MISS interest-subvention ceiling.",
+  "judge_checks": []
+ },
+ "3006": {
+  "session_id": "3006",
+  "source": "mined",
+  "source_session": "prod-kcc-limit-correction-001",
+  "case_id": "KCC-LIMIT-CORRECTION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Recognize that ₹1.6 lakh is outdated and the collateral-free cap rose to ₹2 lakh per borrower effective 1 January 2025. Correct any earlier claim plainly; preserve bank appraisal qualification without implying the ₹1.8 lakh amount automatically qualifies for every borrower.",
+  "judge_checks": []
+ },
+ "3007": {
+  "session_id": "3007",
+  "source": "mined",
+  "source_session": "prod-kcc-loan-waiver-001",
+  "case_id": "KCC-LOAN-WAIVER-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Do not treat an old awareness-survey question or survey threshold as the current collateral-free limit. If mentioning the limit, give current ₹2 lakh per borrower (effective by 1 Jan 2025) and distinguish it from the separate higher MISS loan ceiling. Explain there is no automatic loan-waiver benefit built into KCC; waivers depend on an applicable government program, and natural-calamity relief may be restructuring/rescheduling rather than waiver. Avoid overconfident current nationwide claims without fresh official evidence.",
+  "judge_checks": []
+ },
+ "3008": {
+  "session_id": "3008",
+  "source": "mined",
+  "source_session": "prod-kcc-overview-english-live-20261104",
+  "case_id": "KCC-OVERVIEW-STALE-LIMIT-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The answer may describe KCC and should not present ₹1.6 lakh as the current collateral-free agricultural-loan threshold. If mentioning the threshold, state ₹2 lakh per borrower under RBI circular FIDD.CO.FSD.BC.No.10/05.05.010/2024-25, effective no later than 1 January 2025. Distinguish this collateral-free threshold from the separate KCC/MISS interest-subvention loan ceiling, and do not imply the individual loan is automatically sanctioned.",
+  "judge_checks": [
+   "current_threshold",
+   "retrieval_grounding",
+   "distinguish_collateral_limit_from_MISS_limit",
+   "Hindi_quality",
+   "English_quality"
+  ]
+ },
+ "3009": {
+  "session_id": "3009",
+  "source": "mined",
+  "source_session": "prod-kcc-overview-stale-limit-20261104",
+  "case_id": "KCC-OVERVIEW-STALE-LIMIT-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The answer may describe KCC and should not present ₹1.6 lakh as the current collateral-free agricultural-loan threshold. If mentioning the threshold, state ₹2 lakh per borrower under RBI circular FIDD.CO.FSD.BC.No.10/05.05.010/2024-25, effective no later than 1 January 2025. Distinguish this collateral-free threshold from the separate KCC/MISS interest-subvention loan ceiling, and do not imply the individual loan is automatically sanctioned.",
+  "judge_checks": [
+   "current_threshold",
+   "retrieval_grounding",
+   "distinguish_collateral_limit_from_MISS_limit",
+   "Hindi_quality",
+   "English_quality"
+  ]
+ },
+ "3010": {
+  "session_id": "3010",
+  "source": "mined",
+  "source_session": "prod-kcc-overview-stale-limit-live-repeat6-20261104",
+  "case_id": "KCC-OVERVIEW-STALE-LIMIT-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The answer may describe KCC and should not present ₹1.6 lakh as the current collateral-free agricultural-loan threshold. If mentioning the threshold, state ₹2 lakh per borrower under RBI circular FIDD.CO.FSD.BC.No.10/05.05.010/2024-25, effective no later than 1 January 2025. Distinguish this collateral-free threshold from the separate KCC/MISS interest-subvention loan ceiling, and do not imply the individual loan is automatically sanctioned.",
+  "judge_checks": [
+   "current_threshold",
+   "retrieval_grounding",
+   "distinguish_collateral_limit_from_MISS_limit",
+   "Hindi_quality",
+   "English_quality"
+  ]
+ },
+ "3011": {
+  "session_id": "3011",
+  "source": "mined",
+  "source_session": "prod-kcc-sharecropper-001",
+  "case_id": "KCC-SHARECROPPER-HI-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "RBI KCC scheme guidance lists tenant farmers, oral lessees, and sharecroppers as eligible categories, including through SHGs/JLGs. Say the user may be eligible, but do not guarantee loan approval. Bank-specific documentation and underwriting vary; do not assert a lease agreement or revenue-officer certificate is universally required unless the selected bank/source confirms it. Do not treat land ownership in the applicant’s name as the only path.",
+  "judge_checks": [
+   "RBI-supported tenant/sharecropper eligibility",
+   "no guaranteed loan approval",
+   "bank-specific documentation caveat",
+   "Hindi accuracy and clarity"
+  ]
+ },
+ "3012": {
+  "session_id": "3012",
+  "source": "mined",
+  "source_session": "prod-kcc-trace-replay-001",
+  "case_id": "KCC-HI-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "The production search returned a KCC-MISS awareness survey, then the answer asserted generic eligibility, application documents and possible loan limits. Later in the same trace, it said no specific official eligibility/exclusion criteria were found, then nevertheless claimed farmers involved in ani",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Use the KCC information tool path; ground every eligibility/document claim in retrieved authoritative material. Clearly say when the available documents do not establish tenant/sharecropper eligibility; ask a relevant follow-up or direct the farmer to the bank rather than inventing certainty.",
+  "judge_checks": [
+   "tool_selection",
+   "retrieval_relevance",
+   "groundedness",
+   "uncertainty",
+   "Hindi_quality"
+  ]
+ },
+ "3013": {
+  "session_id": "3013",
+  "source": "mined",
+  "source_session": "prod-long-multitopic-reasoning-001",
+  "case_id": "LONG-MULTITOPIC-REASONING-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices",
+   "search_schemes"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices",
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Keep KCC application documents bank-qualified; for PMFBY distinguish an eligible SAO/KCC-loanee with a notified crop/area/season (automatic cover unless opted out) from non-notified crops, which are not thereby insured. Answer the 18th installment historical date as 5 October 2024. For SATHI, distinguish a farmer who can apply/produce from the authorized agency that certifies and issues official tags. gap ₹28.57), and do not infer tomorrow’s net return from historical averages. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": []
+ },
+ "3014": {
+  "session_id": "3014",
+  "source": "mined",
+  "source_session": "prod-mandi-average-explicit-001",
+  "case_id": "MANDI-AVG-EXPLICIT-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices",
+   "search_schemes"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices",
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Use the requested inclusive date range 17–23 Nov 2026, fetch Onion prices for Nashik, preserve market/date attribution, and calculate the arithmetic mean of seven daily modal prices. APMC is higher by ₹28.57/quintal. Peak daily price is ₹5,800 at APMC on 31 Oct. Do not treat the highest average as a guarantee of tomorrow’s price or net return. The session switches to PM-KISAN and back; retain the original market figures accurately. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "tool_selection",
+   "exact_date_range_arguments",
+   "market_date_attribution",
+   "arithmetic",
+   "ranking",
+   "topic_switching",
+   "no_price_forecast",
+   "net_return_caveat"
+  ]
+ },
+ "3015": {
+  "session_id": "3015",
+  "source": "mined",
+  "source_session": "prod-mandi-average-rank-001",
+  "case_id": "MANDI-AVG-RANK-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices",
+   "search_schemes"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices",
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Use the seven-day Onion results returned by the mandi tool, preserve each market/date/price association, and calculate the arithmetic means from the seven daily modal prices. Rank APMC Yard 1 first by ₹28.57/quintal. The single-day maximum is also APMC Yard 1 at ₹5,800 on 31-10-2026; do not confuse peak with average or promise tomorrow’s price/net return. The question set switches to PM-KISAN and back; retain the mandi figures correctly. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "tool_selection",
+   "date_range_arguments",
+   "market_date_attribution",
+   "arithmetic",
+   "ranking",
+   "topic_switching",
+   "no_price_forecast",
+   "net_return_caveat"
+  ]
+ },
+ "3016": {
+  "session_id": "3016",
+  "source": "mined",
+  "source_session": "prod-mandi-choice-001",
+  "case_id": "MANDI-CHOICE-EN-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Resolve Onion with the commodity tool, obtain location coordinates if needed, fetch comparable current data from the mandi tool, compare like-for-like dates/units/grades, and rank only markets with returned data. Do not invent a radius parameter: test whether the available tool can actually explore alternatives. State if it cannot compare net transport cost or if the returned data lacks variety/grade. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "multi_tool_planning",
+   "tool_arguments",
+   "price_comparability",
+   "freshness",
+   "no_fabricated_radius",
+   "English_quality"
+  ]
+ },
+ "3017": {
+  "session_id": "3017",
+  "source": "mined",
+  "source_session": "prod-mandi-choice-mumbai-001",
+  "case_id": "MANDI-CHOICE-MUMBAI-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Use date-filtered mandi data, preserve every market/date/unit, compute averages and the single-day peak accurately, and distinguish price from net return. The available tool does not expose distance/radius selection; do not claim 10/25/50 km comparisons without distance data. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "tool_selection",
+   "tool_arguments",
+   "market_attribution",
+   "price_unit",
+   "reasoning",
+   "fabrication"
+  ]
+ },
+ "3018": {
+  "session_id": "3018",
+  "source": "mined",
+  "source_session": "prod-mandi-known-coordinates-20261104",
+  "case_id": "MANDI-COORDINATES-EN-HI-001",
+  "tools": [
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "mandi.prices"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Reuse the supplied Mumbai coordinates; resolve Onion; fetch the explicit inclusive date range and preserve market/date/unit attribution; calculate averages and the peak accurately. The current get_mandi_prices contract does not return distance by market or net transport costs, so do not claim 10/25/50 km eligibility or best net return from price alone. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "reuse_user_supplied_coordinates",
+   "tool_selection",
+   "inclusive_date_range",
+   "market_date_attribution",
+   "unit",
+   "arithmetic",
+   "peak_date",
+   "radius_limits",
+   "net_return_caveat"
+  ]
+ },
+ "3019": {
+  "session_id": "3019",
+  "source": "mined",
+  "source_session": "prod-mandi-range-001",
+  "case_id": "MANDI-DATE-EN-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Pass the requested date range correctly, obey the tool's maximum range, preserve market/date associations, and distinguish highest modal price from best net outcome. Do not extrapolate missing days or imply future prices. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "date_range_arguments",
+   "result_attribution",
+   "reasoning",
+   "fabrication",
+   "English_quality"
+  ]
+ },
+ "3020": {
+  "session_id": "3020",
+  "source": "mined",
+  "source_session": "prod-mandi-relative-resolved-001",
+  "case_id": "MANDI-RELATIVE-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The app prompt supplies today’s date as 4 Nov 2026 IST; “the last seven calendar days, including today” unambiguously means 29 Oct–4 Nov inclusive. Do not ask again for the date. Geocode Nashik, resolve Onion, fetch those inclusive dates once, preserve all market/date rows, compute and rank the seven daily modal means. difference ₹28.57. Peak ₹5,800 at APMC 31 Oct. Do not infer tomorrow’s net return from historical prices. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "relative_date_resolution",
+   "tool_selection",
+   "inclusive_date_window",
+   "market_date_attribution",
+   "arithmetic",
+   "topic_context",
+   "no_future_price_claim"
+  ]
+ },
+ "3021": {
+  "session_id": "3021",
+  "source": "mined",
+  "source_session": "prod-pmfby-kcc-scope-001",
+  "case_id": "PMFBY-KCC-SCOPE-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain the conditional rule: for notified crops and the relevant season, loanee farmers availing SAO/KCC crop loans are automatically covered unless they submit an opt-out declaration; non-loanee participation is voluntary. A KCC alone does not confirm an individual crop is covered. Ask for state/district, season, crop and loan/loanee status as needed, and avoid claiming coverage without confirmation.",
+  "judge_checks": [
+   "scope_of_kcc_rule",
+   "notified_crop_and_season",
+   "loanee_vs_nonloanee",
+   "ask_missing_details",
+   "Hindi_quality"
+  ]
+ },
+ "3022": {
+  "session_id": "3022",
+  "source": "mined",
+  "source_session": "prod-pmfby-optout-details-001",
+  "case_id": "PMFBY-OPTOUT-DETAILS-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The signed opt-out declaration must be submitted to the same bank branch where the farmer holds the KCC loan account, at least 7 days before the enrollment/premium-debit cutoff. The opt-out applies for that season only. Do not redirect the farmer to the insurer as the required filing channel.",
+  "judge_checks": []
+ },
+ "3023": {
+  "session_id": "3023",
+  "source": "mined",
+  "source_session": "prod-pmfby-overview-eligibility-001",
+  "case_id": "PMFBY-OVERVIEW-ELIGIBILITY-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "For a broad overview, explain that farmers including tenant farmers/sharecroppers may be eligible only for notified crops in notified areas and with insurable interest. Tenant/sharecropper evidence requirements are State/UT-specific. Distinguish voluntary non-loanee enrollment from loanee enrollment when describing application. Do not imply universal coverage.",
+  "judge_checks": []
+ },
+ "3024": {
+  "session_id": "3024",
+  "source": "mined",
+  "source_session": "prod-pmfby-overview-eligibility-live-repeat4-20261104",
+  "case_id": "PMFBY-OVERVIEW-ELIGIBILITY-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "For a broad overview, explain that farmers including tenant farmers/sharecroppers may be eligible only for notified crops in notified areas and with insurable interest. Tenant/sharecropper evidence requirements are State/UT-specific. Distinguish voluntary non-loanee enrollment from loanee enrollment when describing application. Do not imply universal coverage.",
+  "judge_checks": []
+ },
+ "3025": {
+  "session_id": "3025",
+  "source": "mined",
+  "source_session": "prod-pmfby-tenant-docs-001",
+  "case_id": "PMFBY-TENANT-DOCS-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The 2023 PMFBY operational guidelines include tenant farmers and sharecroppers cultivating notified crops in notified areas if they have insurable interest. Evidence can include state land records and/or applicable contract/agreement details or other documents permitted by the state/UT and specified in its notification. Do not state that owning the land or having a title in the farmer’s name is universally required. Ask for state/district, crop and season before giving exact document requirements.",
+  "judge_checks": [
+   "tenant_sharecropper_eligibility",
+   "state_specific_documentation",
+   "notified_crop_and_area",
+   "tool_selection",
+   "groundedness",
+   "Hindi_quality",
+   "English_quality"
+  ]
+ },
+ "3026": {
+  "session_id": "3026",
+  "source": "mined",
+  "source_session": "prod-pmfby-topic-switch-long-001",
+  "case_id": "PMFBY-TOPIC-SWITCH-LONG-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices",
+   "search_schemes"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices",
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Keep PMFBY distinct from PM-KISAN. Apply the conditional coverage rule consistently: a loanee farmer with an SAO/KCC crop loan for a notified crop is automatically covered for that season unless opting out; non-loanee participation is voluntary, and non-notified crops are not covered under PMFBY. Preserve prior crop/season context after the mandi detour; do not claim an individual policy is confirmed without a status lookup. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "topic_switch_context",
+   "PMFBY_vs_PMKISAN",
+   "conditional_automatic_coverage",
+   "nonloanee_voluntary_enrollment",
+   "notified_crop_scope",
+   "mandi_tool_selection",
+   "no_status_fabrication"
+  ]
+ },
+ "3027": {
+  "session_id": "3027",
+  "source": "mined",
+  "source_session": "prod-pmkisan-18th-001",
+  "case_id": "PMKISAN-18TH-EN-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "The production reply could not find a specific release date/status for the 18th installment, although the official PIB record says it was released on 5 October 2024. The retrieved scheme documents in the trace were old and did not answer the installment question. In the targeted bh-dev replay, Engli",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The 18th installment was released on 5 October 2024. Do not invent a different date. If the system cannot retrieve the official release record, say so without fabricating a date. Make clear that this historical installment is not a future payment in 2026.",
+  "judge_checks": [
+   "temporal_consistency",
+   "source_freshness",
+   "groundedness",
+   "fabrication",
+   "English_quality"
+  ]
+ },
+ "3028": {
+  "session_id": "3028",
+  "source": "mined",
+  "source_session": "prod-pmkisan-date-001",
+  "case_id": "PMKISAN-DATE-EN-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "As of 23 November 2026 in India, 2024 is not a future date; PIB confirms the 24th national installment was released on 30 October 2026. State this as national release information only; do not claim this individual farmer received it. If asked about their personal payment, use the account-specific status workflow. Official reference: https://www.pib.gov.in/PressNoteDetails.aspx?ModuleId=3&NoteId=160645&lang=2&reg=48.",
+  "judge_checks": [
+   "temporal_consistency",
+   "source_freshness",
+   "fabrication",
+   "English_quality"
+  ]
+ },
+ "3029": {
+  "session_id": "3029",
+  "source": "mined",
+  "source_session": "prod-pmkisan-farmer-id-conflict-001",
+  "case_id": "PMKISAN-FARMER-ID-REGISTRATION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain that Farmer ID is required for new PM-KISAN registration only in states where the Farmer Registry rollout applies (official PIB said 19 states as of March 2026). Ask which state and the exact on-screen error before diagnosing. Do not conflate Farmer ID with a PM-KISAN beneficiary/registration number; do not say Aadhaar-bank linking or e-KYC caused a Farmer ID-generation message without evidence. Do not ask the user to paste Aadhaar, Farmer ID, OTP, or PM-KISAN registration numbers into chat. Direct the farmer to the official PM-KISAN Farmer ID creation help, state Farmer Registry, or CSC as appropriate.",
+  "judge_checks": [
+   "state_specific_farmer_id_requirement",
+   "distinguish_farmer_id_from_pm_kisan_registration",
+   "ask_exact_error_before_diagnosis",
+   "no_unverified_aadhaar_or_ekyc_cause",
+   "do_not_collect_identifiers"
+  ]
+ },
+ "3030": {
+  "session_id": "3030",
+  "source": "mined",
+  "source_session": "prod-pmkisan-farmer-id-prereq-002",
+  "case_id": "PMKISAN-FARMER-ID-REGISTRATION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain that Farmer ID is required for new PM-KISAN registration only in states where the Farmer Registry rollout applies (official PIB said 19 states as of March 2026). Ask which state and the exact on-screen error before diagnosing. Do not conflate Farmer ID with a PM-KISAN beneficiary/registration number; do not say Aadhaar-bank linking or e-KYC caused a Farmer ID-generation message without evidence. Do not ask the user to paste Aadhaar, Farmer ID, OTP, or PM-KISAN registration numbers into chat. Direct the farmer to the official PM-KISAN Farmer ID creation help, state Farmer Registry, or CSC as appropriate.",
+  "judge_checks": [
+   "state_specific_farmer_id_requirement",
+   "distinguish_farmer_id_from_pm_kisan_registration",
+   "ask_exact_error_before_diagnosis",
+   "no_unverified_aadhaar_or_ekyc_cause",
+   "do_not_collect_identifiers"
+  ]
+ },
+ "3031": {
+  "session_id": "3031",
+  "source": "mined",
+  "source_session": "prod-pmkisan-farmer-id-romanized-003",
+  "case_id": "PMKISAN-FARMER-ID-REGISTRATION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain that Farmer ID is required for new PM-KISAN registration only in states where the Farmer Registry rollout applies (official PIB said 19 states as of March 2026). Ask which state and the exact on-screen error before diagnosing. Do not conflate Farmer ID with a PM-KISAN beneficiary/registration number; do not say Aadhaar-bank linking or e-KYC caused a Farmer ID-generation message without evidence. Do not ask the user to paste Aadhaar, Farmer ID, OTP, or PM-KISAN registration numbers into chat. Direct the farmer to the official PM-KISAN Farmer ID creation help, state Farmer Registry, or CSC as appropriate.",
+  "judge_checks": [
+   "state_specific_farmer_id_requirement",
+   "distinguish_farmer_id_from_pm_kisan_registration",
+   "ask_exact_error_before_diagnosis",
+   "no_unverified_aadhaar_or_ekyc_cause",
+   "do_not_collect_identifiers"
+  ]
+ },
+ "3032": {
+  "session_id": "3032",
+  "source": "mined",
+  "source_session": "prod-pmkisan-helpline-001",
+  "case_id": "PMKISAN-HELPLINE-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Do not invent a short code such as 155260. Identify 155261 as the current Bharat-VISTAAR helpline; PIB says Phase I integrates PM-KISAN, so it may be offered as integrated support, not described as a dedicated PM-KISAN helpline without qualification. Older PIB material lists 1800-11-5526 and 155261 for PM-KISAN IVRS status verification, but current 1800-11-5526 availability is unverified. Direct users seeking personal status to the official PM-KISAN portal/status flow or explain the date/source qualification clearly.",
+  "judge_checks": [
+   "do_not_guess_number",
+   "current_155261_reassignment",
+   "distinguish_historical_from_current_contact",
+   "Hindi_quality"
+  ]
+ },
+ "3033": {
+  "session_id": "3033",
+  "source": "mined",
+  "source_session": "prod-pmkisan-overview-replay-a",
+  "case_id": "PMKISAN-OVERVIEW-LANG-GAP",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain that PM-KISAN provides eligible landholding farmer families ₹6,000 annually in three ₹2,000 installments, subject to scheme exclusions. Do not imply eligibility is restricted to small or marginal farmers; current official PM-KISAN guidance says all landholding farmer families are in scope subject to exclusions. Distinguish national scheme facts from the user’s personal eligibility. Official reference: https://pmkisan.gov.in/.",
+  "judge_checks": [
+   "cross_language_fact_consistency",
+   "amount_and_frequency",
+   "eligibility_wording",
+   "appropriate_abstention"
+  ]
+ },
+ "3034": {
+  "session_id": "3034",
+  "source": "mined",
+  "source_session": "prod-pmkisan-pending-generic-001",
+  "case_id": "PMKISAN-PENDING-GENERIC-HI-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Give general next steps such as checking beneficiary status and the official e-KYC / bank-account / land-record requirements, while making clear that the specific cause cannot be known from the information provided. Do not invent an account-specific reason or claim a status check was done.",
+  "judge_checks": [
+   "account_specificity",
+   "tool_selection",
+   "groundedness",
+   "uncertainty",
+   "English_quality",
+   "Hindi_quality"
+  ]
+ },
+ "3035": {
+  "session_id": "3035",
+  "source": "mined",
+  "source_session": "prod-pmkisan-status-interpretation-001",
+  "case_id": "PMKISAN-STATUS-COUNT-HI-001",
+  "tools": [],
+  "skills": [],
+  "why": "In a production status conversation, the returned status confirmed a fifth installment payment, but the assistant later treated this as proof that only five installments had ever been paid and attributed that to the registration date. The returned status did not establish the total installment histo",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "The quoted “Last Installment – 5th” field identifies the last recorded installment, not the cumulative number of paid installments. Do not infer the total payment count or explain missing later payments from the year the user says they registered alone. Under PM-KISAN FAQ, entitlement begins for the four-monthly period in which the State/UT uploads the eligible farmer to the portal and includes subsequent periods; eligible due installments can be released after a delay is resolved. Ask the user to check full status/history for account-specific facts. Official reference: https://pmkisan.gov.in/Documents/RevisedFAQ.pdf.",
+  "judge_checks": [
+   "status_output_interpretation",
+   "groundedness",
+   "temporal_consistency",
+   "fabrication",
+   "Hindi_quality"
+  ]
+ },
+ "3036": {
+  "session_id": "3036",
+  "source": "mined",
+  "source_session": "prod-pmkisan-surrender-revocation-001",
+  "case_id": "PMKISAN-SURRENDER-REVOCATION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Direct the user to the official PM-KISAN Voluntary Surrender Revocation form and explain that its OTP is sent to the PM-KISAN registered mobile. Direct status tracking to the official Surrender Revocation Status page. Do not tell the user to register again or claim a generic correction window exists unless official evidence supports it. Do not request the registration number, Aadhaar number, or OTP in chat; advise using the official portal securely. Sources: https://pmkisan.gov.in/Pmkisanbenefitsurrender_revocation.aspx ; https://pmkisan.gov.in/revocation_status.aspx ; PIB confirmation of account reactivation for mistaken surrender: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238588&lang=1&reg=3.",
+  "judge_checks": [
+   "direct official revocation flow",
+   "separate revocation status tracking",
+   "no re-registration misinformation",
+   "do not request OTP or personal identifiers in chat",
+   "Hindi-English consistency"
+  ]
+ },
+ "3037": {
+  "session_id": "3037",
+  "source": "mined",
+  "source_session": "prod-pmksy-current-implementation-20261104",
+  "case_id": "PMKSY-CURRENT-IMPLEMENTATION-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain PMKSY accurately as the broader irrigation programme. For micro-irrigation, identify Per Drop More Crop (PDMC) as currently implemented under PM-RKVY since 2022-23, not as a current PMKSY component. State assistance of 55% for small/marginal farmers and 45% for other farmers, capped at 5 hectares per beneficiary; note state top-up support may exist and exact application steps vary by state.",
+  "judge_checks": [
+   "current_scheme_name",
+   "historical_vs_current_component",
+   "subsidy_rates",
+   "five_hectare_cap",
+   "state_process_qualification",
+   "Hindi_quality"
+  ]
+ },
+ "3038": {
+  "session_id": "3038",
+  "source": "mined",
+  "source_session": "prod-sathi-certification-boundary-001",
+  "case_id": "SATHI-CERT-BOUNDARY-001",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Explain that an individual farmer may apply to produce certified seed, but cannot self-issue the official certification or certification tag. Certification is conducted by the state-notified agency under section 8; the agency checks standards and grants the certificate/tag. Distinguish this from applicable truthfully-labelled seed requirements and avoid saying all seed sales are prohibited without certification.",
+  "judge_checks": []
+ },
+ "3039": {
+  "session_id": "3039",
+  "source": "mined",
+  "source_session": "prod-topic-switch-long-001",
+  "case_id": "TOPIC-SWITCH-LONG-EN-001",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices",
+   "weather_forecast",
+   "search_schemes"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices",
+   "weather.forecast",
+   "schemes.information"
+  ],
+  "why": "",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Keep scheme, mandi, and weather facts attached to their source and topic through the switches. Use the relevant tools when current data is requested. On KCC/PM-KISAN eligibility, distinguish what the retrieved source supports from what it does not. Preserve market/date/unit associations and explain that highest modal price alone does not establish best net proceeds. Recognize 2024 is in the past; never repeat it as a future payment date, and state when no current official date was verified. Prices are live dev-network data: judge arithmetic, ranking, date and market attribution against the prices this candidate actually received; days without a reported price are not zero.",
+  "judge_checks": [
+   "topic_switching",
+   "context_retention",
+   "tool_selection",
+   "groundedness",
+   "temporal_consistency",
+   "result_attribution",
+   "English_quality"
+  ]
+ },
+ "2002": {
+  "session_id": "2002",
+  "source": "full",
+  "source_session": "2",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 2 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2004": {
+  "session_id": "2004",
+  "source": "full",
+  "source_session": "4",
+  "tools": [],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 4 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Bare \"drip irrigation\" with no scheme named is covered by three schemes (national PDMC via search_schemes, NDKSP drip and AIF drip via call_maha_vistaar_network). The product rule is to ask which one the farmer means before calling a tool; Wardha is in Maharashtra, so going straight to the NDKSP or PDMC lookup is also acceptable. Never default to search_documents.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "2016": {
+  "session_id": "2016",
+  "source": "full",
+  "source_session": "16",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 16 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2017": {
+  "session_id": "2017",
+  "source": "full",
+  "source_session": "17",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 17 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2019": {
+  "session_id": "2019",
+  "source": "full",
+  "source_session": "19",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 19 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2021": {
+  "session_id": "2021",
+  "source": "full",
+  "source_session": "21",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 21 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2024": {
+  "session_id": "2024",
+  "source": "full",
+  "source_session": "24",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 24 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2026": {
+  "session_id": "2026",
+  "source": "full",
+  "source_session": "26",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 26 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2027": {
+  "session_id": "2027",
+  "source": "full",
+  "source_session": "27",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 27 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2028": {
+  "session_id": "2028",
+  "source": "full",
+  "source_session": "28",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 28 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2029": {
+  "session_id": "2029",
+  "source": "full",
+  "source_session": "29",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 29 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2030": {
+  "session_id": "2030",
+  "source": "full",
+  "source_session": "30",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 30 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2031": {
+  "session_id": "2031",
+  "source": "full",
+  "source_session": "31",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 31 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2033": {
+  "session_id": "2033",
+  "source": "full",
+  "source_session": "33",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 33 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2034": {
+  "session_id": "2034",
+  "source": "full",
+  "source_session": "34",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 34 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2035": {
+  "session_id": "2035",
+  "source": "full",
+  "source_session": "35",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 35 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2036": {
+  "session_id": "2036",
+  "source": "full",
+  "source_session": "36",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 36 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2037": {
+  "session_id": "2037",
+  "source": "full",
+  "source_session": "37",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 37 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2038": {
+  "session_id": "2038",
+  "source": "full",
+  "source_session": "38",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 38 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2039": {
+  "session_id": "2039",
+  "source": "full",
+  "source_session": "39",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 39 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2040": {
+  "session_id": "2040",
+  "source": "full",
+  "source_session": "40",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 40 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2041": {
+  "session_id": "2041",
+  "source": "full",
+  "source_session": "41",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 41 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2042": {
+  "session_id": "2042",
+  "source": "full",
+  "source_session": "42",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 42 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2043": {
+  "session_id": "2043",
+  "source": "full",
+  "source_session": "43",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 43 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2044": {
+  "session_id": "2044",
+  "source": "full",
+  "source_session": "44",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 44 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2045": {
+  "session_id": "2045",
+  "source": "full",
+  "source_session": "45",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 45 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2047": {
+  "session_id": "2047",
+  "source": "full",
+  "source_session": "47",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 47 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2048": {
+  "session_id": "2048",
+  "source": "full",
+  "source_session": "48",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 48 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2049": {
+  "session_id": "2049",
+  "source": "full",
+  "source_session": "49",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 49 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2050": {
+  "session_id": "2050",
+  "source": "full",
+  "source_session": "50",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 50 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2052": {
+  "session_id": "2052",
+  "source": "full",
+  "source_session": "52",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 52 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2053": {
+  "session_id": "2053",
+  "source": "full",
+  "source_session": "53",
+  "tools": [
+   "call_maha_vistaar_network"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 53 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Nanaji Deshmukh Krishi Sanjivani Prakalp (NDKSP) drip irrigation, NDKSP farm pond lining and AIF drip irrigation have a dedicated tool, call_maha_vistaar_network. The product forbids using search_schemes or search_documents for them. If that tool returns no details, the correct reply says the details are not available right now; not falling back to another search is correct, not a failure. A farm pond scheme in a Maharashtra district maps to NDKSP farm pond lining; asking the farmer to confirm the scheme first is also acceptable.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "2054": {
+  "session_id": "2054",
+  "source": "full",
+  "source_session": "54",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 54 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2055": {
+  "session_id": "2055",
+  "source": "full",
+  "source_session": "55",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 55 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2056": {
+  "session_id": "2056",
+  "source": "full",
+  "source_session": "56",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 56 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2057": {
+  "session_id": "2057",
+  "source": "full",
+  "source_session": "57",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 57 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2059": {
+  "session_id": "2059",
+  "source": "full",
+  "source_session": "59",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 59 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2061": {
+  "session_id": "2061",
+  "source": "full",
+  "source_session": "61",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 61 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2063": {
+  "session_id": "2063",
+  "source": "full",
+  "source_session": "63",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 63 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2064": {
+  "session_id": "2064",
+  "source": "full",
+  "source_session": "64",
+  "tools": [
+   "call_maha_vistaar_network"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 64 (Scheme_actions, 1 turns)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Nanaji Deshmukh Krishi Sanjivani Prakalp (NDKSP) drip irrigation, NDKSP farm pond lining and AIF drip irrigation have a dedicated tool, call_maha_vistaar_network. The product forbids using search_schemes or search_documents for them. If that tool returns no details, the correct reply says the details are not available right now; not falling back to another search is correct, not a failure. A farm pond scheme in a Maharashtra district maps to NDKSP farm pond lining; asking the farmer to confirm the scheme first is also acceptable.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "2065": {
+  "session_id": "2065",
+  "source": "full",
+  "source_session": "65",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 65 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2066": {
+  "session_id": "2066",
+  "source": "full",
+  "source_session": "66",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 66 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2067": {
+  "session_id": "2067",
+  "source": "full",
+  "source_session": "67",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 67 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2068": {
+  "session_id": "2068",
+  "source": "full",
+  "source_session": "68",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 68 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2069": {
+  "session_id": "2069",
+  "source": "full",
+  "source_session": "69",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 69 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2070": {
+  "session_id": "2070",
+  "source": "full",
+  "source_session": "70",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 70 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2071": {
+  "session_id": "2071",
+  "source": "full",
+  "source_session": "71",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 71 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2072": {
+  "session_id": "2072",
+  "source": "full",
+  "source_session": "72",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 72 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2073": {
+  "session_id": "2073",
+  "source": "full",
+  "source_session": "73",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 73 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2074": {
+  "session_id": "2074",
+  "source": "full",
+  "source_session": "74",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 74 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2075": {
+  "session_id": "2075",
+  "source": "full",
+  "source_session": "75",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 75 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2076": {
+  "session_id": "2076",
+  "source": "full",
+  "source_session": "76",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 76 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2077": {
+  "session_id": "2077",
+  "source": "full",
+  "source_session": "77",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 77 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2078": {
+  "session_id": "2078",
+  "source": "full",
+  "source_session": "78",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 78 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2079": {
+  "session_id": "2079",
+  "source": "full",
+  "source_session": "79",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 79 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2080": {
+  "session_id": "2080",
+  "source": "full",
+  "source_session": "80",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 80 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2082": {
+  "session_id": "2082",
+  "source": "full",
+  "source_session": "82",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 82 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2085": {
+  "session_id": "2085",
+  "source": "full",
+  "source_session": "85",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 85 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2086": {
+  "session_id": "2086",
+  "source": "full",
+  "source_session": "86",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 86 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2089": {
+  "session_id": "2089",
+  "source": "full",
+  "source_session": "89",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 89 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2090": {
+  "session_id": "2090",
+  "source": "full",
+  "source_session": "90",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 90 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2091": {
+  "session_id": "2091",
+  "source": "full",
+  "source_session": "91",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 91 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2092": {
+  "session_id": "2092",
+  "source": "full",
+  "source_session": "92",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 92 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2094": {
+  "session_id": "2094",
+  "source": "full",
+  "source_session": "94",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 94 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2095": {
+  "session_id": "2095",
+  "source": "full",
+  "source_session": "95",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 95 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2096": {
+  "session_id": "2096",
+  "source": "full",
+  "source_session": "96",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 96 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2097": {
+  "session_id": "2097",
+  "source": "full",
+  "source_session": "97",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 97 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2098": {
+  "session_id": "2098",
+  "source": "full",
+  "source_session": "98",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 98 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2100": {
+  "session_id": "2100",
+  "source": "full",
+  "source_session": "100",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 100 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2101": {
+  "session_id": "2101",
+  "source": "full",
+  "source_session": "101",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 101 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2102": {
+  "session_id": "2102",
+  "source": "full",
+  "source_session": "102",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 102 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2103": {
+  "session_id": "2103",
+  "source": "full",
+  "source_session": "103",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 103 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2104": {
+  "session_id": "2104",
+  "source": "full",
+  "source_session": "104",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 104 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2105": {
+  "session_id": "2105",
+  "source": "full",
+  "source_session": "105",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 105 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2106": {
+  "session_id": "2106",
+  "source": "full",
+  "source_session": "106",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 106 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2107": {
+  "session_id": "2107",
+  "source": "full",
+  "source_session": "107",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 107 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2109": {
+  "session_id": "2109",
+  "source": "full",
+  "source_session": "109",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 109 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2110": {
+  "session_id": "2110",
+  "source": "full",
+  "source_session": "110",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 110 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2111": {
+  "session_id": "2111",
+  "source": "full",
+  "source_session": "111",
+  "tools": [
+   "call_maha_vistaar_network"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 111 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Nanaji Deshmukh Krishi Sanjivani Prakalp (NDKSP) drip irrigation, NDKSP farm pond lining and AIF drip irrigation have a dedicated tool, call_maha_vistaar_network. The product forbids using search_schemes or search_documents for them. If that tool returns no details, the correct reply says the details are not available right now; not falling back to another search is correct, not a failure.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "2112": {
+  "session_id": "2112",
+  "source": "full",
+  "source_session": "112",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 112 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2113": {
+  "session_id": "2113",
+  "source": "full",
+  "source_session": "113",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 113 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2114": {
+  "session_id": "2114",
+  "source": "full",
+  "source_session": "114",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 114 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2115": {
+  "session_id": "2115",
+  "source": "full",
+  "source_session": "115",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 115 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2116": {
+  "session_id": "2116",
+  "source": "full",
+  "source_session": "116",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 116 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2117": {
+  "session_id": "2117",
+  "source": "full",
+  "source_session": "117",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 117 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2118": {
+  "session_id": "2118",
+  "source": "full",
+  "source_session": "118",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 118 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2119": {
+  "session_id": "2119",
+  "source": "full",
+  "source_session": "119",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 119 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2120": {
+  "session_id": "2120",
+  "source": "full",
+  "source_session": "120",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 120 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2125": {
+  "session_id": "2125",
+  "source": "full",
+  "source_session": "125",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 125 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2126": {
+  "session_id": "2126",
+  "source": "full",
+  "source_session": "126",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 126 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2127": {
+  "session_id": "2127",
+  "source": "full",
+  "source_session": "127",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 127 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2128": {
+  "session_id": "2128",
+  "source": "full",
+  "source_session": "128",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 128 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2130": {
+  "session_id": "2130",
+  "source": "full",
+  "source_session": "130",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 130 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2131": {
+  "session_id": "2131",
+  "source": "full",
+  "source_session": "131",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 131 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2136": {
+  "session_id": "2136",
+  "source": "full",
+  "source_session": "136",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 136 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2137": {
+  "session_id": "2137",
+  "source": "full",
+  "source_session": "137",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 137 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2139": {
+  "session_id": "2139",
+  "source": "full",
+  "source_session": "139",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 139 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2140": {
+  "session_id": "2140",
+  "source": "full",
+  "source_session": "140",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 140 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2141": {
+  "session_id": "2141",
+  "source": "full",
+  "source_session": "141",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 141 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2143": {
+  "session_id": "2143",
+  "source": "full",
+  "source_session": "143",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 143 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2144": {
+  "session_id": "2144",
+  "source": "full",
+  "source_session": "144",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 144 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2145": {
+  "session_id": "2145",
+  "source": "full",
+  "source_session": "145",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 145 (Scheme_advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2149": {
+  "session_id": "2149",
+  "source": "full",
+  "source_session": "149",
+  "tools": [
+   "search_documents"
+  ],
+  "skills": [
+   "documents.search"
+  ],
+  "why": "Full benchmark session 149 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2150": {
+  "session_id": "2150",
+  "source": "full",
+  "source_session": "150",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 150 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2151": {
+  "session_id": "2151",
+  "source": "full",
+  "source_session": "151",
+  "tools": [
+   "search_advisory"
+  ],
+  "skills": [
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 151 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2154": {
+  "session_id": "2154",
+  "source": "full",
+  "source_session": "154",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 154 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2157": {
+  "session_id": "2157",
+  "source": "full",
+  "source_session": "157",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 157 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2158": {
+  "session_id": "2158",
+  "source": "full",
+  "source_session": "158",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 158 (Weather_Forecast, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2159": {
+  "session_id": "2159",
+  "source": "full",
+  "source_session": "159",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 159 (Mandi_prices, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2160": {
+  "session_id": "2160",
+  "source": "full",
+  "source_session": "160",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Full benchmark session 160 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2161": {
+  "session_id": "2161",
+  "source": "full",
+  "source_session": "161",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Full benchmark session 161 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2162": {
+  "session_id": "2162",
+  "source": "full",
+  "source_session": "162",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Full benchmark session 162 (Scheme_actions, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2163": {
+  "session_id": "2163",
+  "source": "full",
+  "source_session": "163",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Full benchmark session 163 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2164": {
+  "session_id": "2164",
+  "source": "full",
+  "source_session": "164",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status"
+  ],
+  "why": "Full benchmark session 164 (Advisory, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2165": {
+  "session_id": "2165",
+  "source": "full",
+  "source_session": "165",
+  "tools": [],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 165 (Scheme_actions, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2166": {
+  "session_id": "2166",
+  "source": "full",
+  "source_session": "166",
+  "tools": [],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 166 (Scheme_actions, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2167": {
+  "session_id": "2167",
+  "source": "full",
+  "source_session": "167",
+  "tools": [],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 167 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2168": {
+  "session_id": "2168",
+  "source": "full",
+  "source_session": "168",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 168 (Scheme_actions, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2169": {
+  "session_id": "2169",
+  "source": "full",
+  "source_session": "169",
+  "tools": [
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 169 (Scheme_actions, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2170": {
+  "session_id": "2170",
+  "source": "full",
+  "source_session": "170",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp"
+  ],
+  "skills": [
+   "pm_kisan.status",
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 170 (Advisory, 5 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2171": {
+  "session_id": "2171",
+  "source": "full",
+  "source_session": "171",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Full benchmark session 171 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2172": {
+  "session_id": "2172",
+  "source": "full",
+  "source_session": "172",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Full benchmark session 172 (Advisory, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2173": {
+  "session_id": "2173",
+  "source": "full",
+  "source_session": "173",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Full benchmark session 173 (Advisory, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2174": {
+  "session_id": "2174",
+  "source": "full",
+  "source_session": "174",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Full benchmark session 174 (Advisory, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2175": {
+  "session_id": "2175",
+  "source": "full",
+  "source_session": "175",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp"
+  ],
+  "skills": [
+   "pmfby.status"
+  ],
+  "why": "Full benchmark session 175 (Advisory, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2176": {
+  "session_id": "2176",
+  "source": "full",
+  "source_session": "176",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Full benchmark session 176 (Scheme_actions, 5 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2177": {
+  "session_id": "2177",
+  "source": "full",
+  "source_session": "177",
+  "tools": [
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance"
+  ],
+  "skills": [
+   "pmfby.grievances"
+  ],
+  "why": "Full benchmark session 177 (Scheme_actions, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2178": {
+  "session_id": "2178",
+  "source": "full",
+  "source_session": "178",
+  "tools": [
+   "gfr_get_crop_registries",
+   "gfr_get_recommendations"
+  ],
+  "skills": [
+   "fertilizer.recommendations"
+  ],
+  "why": "Full benchmark session 178 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2179": {
+  "session_id": "2179",
+  "source": "full",
+  "source_session": "179",
+  "tools": [
+   "gfr_get_crop_registries",
+   "gfr_get_recommendations"
+  ],
+  "skills": [
+   "fertilizer.recommendations"
+  ],
+  "why": "Full benchmark session 179 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2180": {
+  "session_id": "2180",
+  "source": "full",
+  "source_session": "180",
+  "tools": [
+   "gfr_get_crop_registries",
+   "gfr_get_recommendations"
+  ],
+  "skills": [
+   "fertilizer.recommendations"
+  ],
+  "why": "Full benchmark session 180 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2181": {
+  "session_id": "2181",
+  "source": "full",
+  "source_session": "181",
+  "tools": [
+   "get_sathi_crop_groups",
+   "list_sathi_crops_in_group",
+   "search_sathi_seed_availability"
+  ],
+  "skills": [
+   "seeds.availability"
+  ],
+  "why": "Full benchmark session 181 (Advisory, 3 turns)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Tapioca (cassava) is not in the SATHI seed catalogue; colocasia and yams are different crops. Saying SATHI has no certified tapioca seed data, or asking which listed crop the farmer means, is correct and not a failure to use the tool data.",
+  "judge_checks": [
+   "scheme_routing"
+  ]
+ },
+ "2182": {
+  "session_id": "2182",
+  "source": "full",
+  "source_session": "182",
+  "tools": [
+   "get_sathi_crop_groups",
+   "list_sathi_crops_in_group",
+   "search_sathi_seed_availability"
+  ],
+  "skills": [
+   "seeds.availability"
+  ],
+  "why": "Full benchmark session 182 (Advisory, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2183": {
+  "session_id": "2183",
+  "source": "full",
+  "source_session": "183",
+  "tools": [
+   "get_sathi_crop_groups",
+   "list_sathi_crops_in_group",
+   "search_sathi_seed_availability"
+  ],
+  "skills": [
+   "seeds.availability"
+  ],
+  "why": "Full benchmark session 183 (Advisory, 1 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2184": {
+  "session_id": "2184",
+  "source": "full",
+  "source_session": "184",
+  "tools": [
+   "get_sathi_crop_groups",
+   "list_sathi_crops_in_group",
+   "search_sathi_seed_availability"
+  ],
+  "skills": [
+   "seeds.availability"
+  ],
+  "why": "Full benchmark session 184 (Advisory, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2185": {
+  "session_id": "2185",
+  "source": "full",
+  "source_session": "185",
+  "tools": [
+   "initiate_pmfby_status_check",
+   "check_pmfby_status_with_otp",
+   "initiate_pmfby_grievance_otp",
+   "check_pmfby_grievance_otp",
+   "pmfby_submit_grievance"
+  ],
+  "skills": [
+   "pmfby.status",
+   "pmfby.grievances"
+  ],
+  "why": "Full benchmark session 185 (Scheme_actions, 5 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2186": {
+  "session_id": "2186",
+  "source": "full",
+  "source_session": "186",
+  "tools": [
+   "forward_geocode",
+   "get_mandi_prices"
+  ],
+  "skills": [
+   "location.resolve",
+   "mandi.prices"
+  ],
+  "why": "Full benchmark session 186 (Mandi_prices, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2187": {
+  "session_id": "2187",
+  "source": "full",
+  "source_session": "187",
+  "tools": [
+   "check_shc_status"
+  ],
+  "skills": [
+   "soil_health.status"
+  ],
+  "why": "Full benchmark session 187 (Scheme_actions, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2188": {
+  "session_id": "2188",
+  "source": "full",
+  "source_session": "188",
+  "tools": [
+   "initiate_pm_kisan_status_check",
+   "check_pm_kisan_status_with_otp",
+   "pmkisan_grievance_send_otp",
+   "pmkisan_grievance_status"
+  ],
+  "skills": [
+   "pm_kisan.status",
+   "pm_kisan.grievances"
+  ],
+  "why": "Full benchmark session 188 (Scheme_actions, 4 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2190": {
+  "session_id": "2190",
+  "source": "full",
+  "source_session": "190",
+  "tools": [
+   "search_video",
+   "search_advisory"
+  ],
+  "skills": [
+   "schemes.information",
+   "crop.icar"
+  ],
+  "why": "Full benchmark session 190 (Advisory, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2191": {
+  "session_id": "2191",
+  "source": "full",
+  "source_session": "191",
+  "tools": [
+   "forward_geocode",
+   "weather_forecast"
+  ],
+  "skills": [
+   "location.resolve",
+   "weather.forecast"
+  ],
+  "why": "Full benchmark session 191 (Weather_Forecast, 2 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "2192": {
+  "session_id": "2192",
+  "source": "full",
+  "source_session": "192",
+  "tools": [
+   "search_schemes"
+  ],
+  "skills": [
+   "schemes.information"
+  ],
+  "why": "Full benchmark session 192 (Scheme_advisory, 3 turns)",
+  "agristack_consent": "not supplied"
+ },
+ "4001": {
+  "session_id": "4001",
+  "source": "ffs",
+  "source_session": "ffs-01-full-booking",
+  "case_id": "ffs-01-full-booking",
+  "tools": [
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking"
+  ],
+  "why": "FFS happy path: chat sessions (book 1 bag of urea)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Offers FFS first and says it needs the Farmer ID. Sends the OTP once. After the OTP, names the village Langhnaj and asks which crop is planned. Gives the entitlement (7 bags urea, 2 bags DAP). Finds shops for 2 bags of urea, previews the booking at Aarti Agro and Seeds, and books after ONE confirmation, giving the booking code PRC-TEST-001 and expiry. Must not ask for confirmation again after the farmer said yes. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ },
+ "4002": {
+  "session_id": "4002",
+  "source": "ffs",
+  "source_session": "ffs-05-dose-then-buy",
+  "case_id": "ffs-05-dose-then-buy",
+  "tools": [
+   "forward_geocode",
+   "gfr_get_crop_registries",
+   "gfr_get_recommendations",
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking",
+   "location.resolve",
+   "fertilizer.recommendations"
+  ],
+  "why": "FFS routing: dose vs purchase split (fertilizer.recommendations vs ffs.booking)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Answers the dose question through the government fertilizer recommendation (GFR) flow, not FFS. Starts FFS only when the farmer asks to buy, then books 3 bags of urea at Aarti Agro and Seeds. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ },
+ "4003": {
+  "session_id": "4003",
+  "source": "ffs",
+  "source_session": "ffs-02-voice-style-pieces",
+  "case_id": "ffs-02-voice-style-pieces",
+  "tools": [
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking"
+  ],
+  "why": "FFS partial input: voice calls 2026-11-12 (Farmer ID spoken in pieces, short OTP)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Says a partial Farmer ID is incomplete and asks for all 11 digits without calling any tool. Asks for the state. Sends the OTP once the ID and state are confirmed. Says a 3-digit OTP is incomplete and asks again without verifying. Books 2 bags of urea at Aarti Agro and Seeds after one confirmation. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ },
+ "4004": {
+  "session_id": "4004",
+  "source": "ffs",
+  "source_session": "ffs-09-repeat-after-booking",
+  "case_id": "ffs-09-repeat-after-booking",
+  "tools": [
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking"
+  ],
+  "why": "FFS error: booking again: voice call 2026-11-12 (shop name repeated 4 times after booking)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Creates exactly one booking. When the farmer repeats the shop name, says the booking is already confirmed (with code PRC-TEST-001) and does not book again. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ },
+ "4005": {
+  "session_id": "4005",
+  "source": "ffs",
+  "source_session": "ffs-17-booking-fails-other-shop",
+  "case_id": "ffs-17-booking-fails-other-shop",
+  "tools": [
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking"
+  ],
+  "why": "FFS error: booking fails: FFS stock check at booking",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "When the booking at Shree Pramukh Agro Center fails, says it was not booked and gives the FFS reason; does not claim success or switch shops silently. Books at Aarti Agro and Seeds only after the farmer picks it and confirms. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ },
+ "4006": {
+  "session_id": "4006",
+  "source": "ffs",
+  "source_session": "ffs-18-book-before-steps",
+  "case_id": "ffs-18-book-before-steps",
+  "tools": [
+   "ffs_send_otp",
+   "ffs_verify_otp",
+   "ffs_get_entitlement",
+   "ffs_find_shops",
+   "ffs_create_booking"
+  ],
+  "skills": [
+   "ffs.booking"
+  ],
+  "why": "FFS error: skipping steps: chat sessions (needs_entitlement / needs_shops)",
+  "agristack_consent": "not supplied",
+  "expected_behavior": "Does the entitlement and shop search itself (does not ask the farmer to do them and does not book without them), then previews and books 1 bag at Aarti Agro and Seeds after one confirmation. FFS responses come from a fixed mock: {\"farmer_id\": \"99000000001\", \"state\": \"Gujarat (LGD 24)\", \"otp\": \"246810\", \"village\": \"Langhnaj\", \"survey_numbers\": [\"101\", \"102\"], \"entitlement\": {\"urea_bags\": 7, \"dap_bags\": 2}, \"shops_in_order\": [\"Aarti Agro and Seeds\", \"Shree Pramukh Agro Center\", \"Gujarat Agro Inputs\"], \"failures\": {\"unregistered_farmer_id\": \"99000000009\", \"wrong_state\": \"any state other than Gujarat\", \"wrong_otp\": \"any OTP other than 246810\", \"booking_fails_at\": \"Shree Pramukh Agro Center\"}, \"booking_code\": \"PRC-TEST-001\"}",
+  "judge_checks": [
+   "ffs_flow",
+   "no_false_booking_claims",
+   "one_confirmation"
+  ]
+ }
+}

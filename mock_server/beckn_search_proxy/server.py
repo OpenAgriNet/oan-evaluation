@@ -32,7 +32,7 @@ import threading
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, HTTPServer, ThreadingHTTPServer
 from pathlib import Path
 
 from engine import apply_rules, substitute_env
@@ -311,7 +311,7 @@ def _start_grievance_mock() -> None:
 
     g_host = os.environ.get("GRIEVANCE_HOST", "127.0.0.1")
     g_port = int(os.environ.get("GRIEVANCE_PORT", "5691"))
-    httpd = HTTPServer((g_host, g_port), mod.GrievanceHandler)
+    httpd = ThreadingHTTPServer((g_host, g_port), mod.GrievanceHandler)
     print(f"vistaar_grievance_mock  http://{g_host}:{g_port}/{{GrievanceAadhaarToken,LodgeGrievance,GrievanceStatusCheck}}", flush=True)
     httpd.serve_forever()
 
@@ -327,7 +327,7 @@ def _start_sathi_mock() -> None:
 
     s_host = os.environ.get("SATHI_HOST", "127.0.0.1")
     s_port = int(os.environ.get("SATHI_PORT", "5692"))
-    httpd = HTTPServer((s_host, s_port), mod.SATHIHandler)
+    httpd = ThreadingHTTPServer((s_host, s_port), mod.SATHIHandler)
     print(f"vistaar_sathi_mock      http://{s_host}:{s_port}/{{get-crop-group,get-crops-list,search-dealers}}", flush=True)
     httpd.serve_forever()
 
@@ -347,7 +347,7 @@ def main():
 
     host = os.environ.get("PROXY_HOST", "127.0.0.1")
     port = int(os.environ.get("PROXY_PORT", "5689"))
-    httpd = HTTPServer((host, port), Handler)
+    httpd = ThreadingHTTPServer((host, port), Handler)
     up = cfg.get("upstream", {})
     upstream_base = (up.get("base_url") or "").rstrip("/")
     print(f"beckn_search_proxy      http://{host}:{port}/{{search,init,status}}  (/search → {upstream_base} if no rule matches)", flush=True)

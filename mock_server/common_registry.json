@@ -30,6 +30,42 @@
       "query": "Bangalore, Karnataka, India",
       "latitude": 12.9767936,
       "longitude": 77.590082
+    },
+    {
+      "key": "bardhaman",
+      "query": "Bardhaman, West Bengal, India",
+      "latitude": 23.25,
+      "longitude": 87.868
+    },
+    {
+      "key": "malkangiri",
+      "query": "Malkangiri, Odisha, India",
+      "latitude": 18.274,
+      "longitude": 81.952
+    },
+    {
+      "key": "ahmedabad",
+      "query": "Ahmedabad, Gujarat, India",
+      "latitude": 23.022,
+      "longitude": 72.58
+    },
+    {
+      "key": "anantapur",
+      "query": "Anantapur, Andhra Pradesh, India",
+      "latitude": 14.678,
+      "longitude": 77.607
+    },
+    {
+      "key": "thiruvananthapuram",
+      "query": "Thiruvananthapuram, Kerala, India",
+      "latitude": 8.488,
+      "longitude": 76.948
+    },
+    {
+      "key": "khordha",
+      "query": "Khordha, Odisha, India",
+      "latitude": 20.173,
+      "longitude": 85.614
     }
   ],
   "commodities": [
@@ -52,6 +88,41 @@
       "crop": "tapioca",
       "agmkt_code": 85,
       "canonical_name": "Tapioca"
+    },
+    {
+      "crop": "wheat",
+      "agmkt_code": 1,
+      "canonical_name": "Wheat"
+    },
+    {
+      "crop": "paddy",
+      "agmkt_code": 2,
+      "canonical_name": "Paddy(Common)"
+    },
+    {
+      "crop": "rice",
+      "agmkt_code": 3,
+      "canonical_name": "Rice"
+    },
+    {
+      "crop": "maize",
+      "agmkt_code": 4,
+      "canonical_name": "Maize"
+    },
+    {
+      "crop": "mustard",
+      "agmkt_code": 12,
+      "canonical_name": "Mustard"
+    },
+    {
+      "crop": "soyabean",
+      "agmkt_code": 13,
+      "canonical_name": "Soyabean"
+    },
+    {
+      "crop": "sugarcane",
+      "agmkt_code": 122,
+      "canonical_name": "Sugarcane"
     }
   ],
   "farmers": {
@@ -64,7 +135,10 @@
       "village": "Edappally",
       "city_key": "kochi",
       "survey_number": "156/2B",
-      "crops": ["Tapioca", "Cotton"],
+      "crops": [
+        "Tapioca",
+        "Cotton"
+      ],
       "pmkisan": {
         "registration_number": "KL2210000980",
         "registration_date": "15/03/2021",
@@ -106,6 +180,42 @@
             "enrolment_date": "20/11/2024",
             "claim_status": "Not Filed",
             "claim_amount": 0
+          },
+          "Kharif-2025": {
+            "policy_number": "KL2025K004417",
+            "application_no": "PMFBY2025KL004417",
+            "crop": "Tapioca",
+            "area_ha": 0.8,
+            "sum_insured": 62000,
+            "premium_paid": 1240,
+            "policy_status": "Active",
+            "enrolment_date": "12/07/2025",
+            "claim_status": "Approved",
+            "claim_amount": 18400
+          },
+          "Rabi-2025": {
+            "policy_number": "KL2025R002210",
+            "application_no": "PMFBY2025KL002210",
+            "crop": "Cotton",
+            "area_ha": 0.6,
+            "sum_insured": 54000,
+            "premium_paid": 810,
+            "policy_status": "Active",
+            "enrolment_date": "28/11/2025",
+            "claim_status": "No claim reported",
+            "claim_amount": 0
+          },
+          "Kharif-2026": {
+            "policy_number": "KL2026K005983",
+            "application_no": "PMFBY2026KL005983",
+            "crop": "Tapioca",
+            "area_ha": 0.8,
+            "sum_insured": 66000,
+            "premium_paid": 1320,
+            "policy_status": "Active",
+            "enrolment_date": "09/07/2026",
+            "claim_status": "Under survey",
+            "claim_amount": 0
           }
         }
       },
@@ -124,7 +234,7 @@
           "iron": 8.2,
           "manganese": 4.1,
           "copper": 1.8,
-          "boron": 0.30
+          "boron": 0.3
         },
         "2024-25": {
           "report_no": "KL/ERN/2024/0022341",
@@ -141,6 +251,38 @@
           "manganese": 4.3,
           "copper": 1.9,
           "boron": 0.33
+        },
+        "2025-26": {
+          "report_no": "KL/ERN/2025/0031120",
+          "test_date": "18-Nov-2025",
+          "ph": 6.5,
+          "ec": 0.3,
+          "organic_carbon": 0.66,
+          "nitrogen": 224,
+          "phosphorus": 35,
+          "potassium": 203,
+          "sulphur": 14,
+          "zinc": 0.45,
+          "iron": 8.9,
+          "manganese": 4.5,
+          "copper": 2.0,
+          "boron": 0.35
+        },
+        "2026-27": {
+          "report_no": "KL/ERN/2026/0040877",
+          "test_date": "02-Jun-2026",
+          "ph": 6.7,
+          "ec": 0.27,
+          "organic_carbon": 0.71,
+          "nitrogen": 238,
+          "phosphorus": 38,
+          "potassium": 216,
+          "sulphur": 16,
+          "zinc": 0.49,
+          "iron": 9.3,
+          "manganese": 4.8,
+          "copper": 2.1,
+          "boron": 0.38
         }
       }
     }

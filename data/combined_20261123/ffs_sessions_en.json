@@ -1,0 +1,176 @@
+{
+ "_about": "FFS (fertilizer purchase) benchmark sessions, English. Patterns from bh-dev voice calls (2026-11-12/13, internal tester calls) and bh-dev chat FFS sessions (Langfuse, chat-dev project). Runs ONLY against the local FFS mock (oan-evaluation/mock_server/ffs_mock/mock_ffs.py); never the real FFS endpoint (user rule 2026-11-24). Farmer data is synthetic. Trimmed 2026-11-24 to 2 normal + 4 hard sessions (user); the rest are in ffs_sessions_en_dropped.json.",
+ "mock_fixture": {
+  "farmer_id": "99000000001",
+  "state": "Gujarat (LGD 24)",
+  "otp": "246810",
+  "village": "Langhnaj",
+  "survey_numbers": [
+   "101",
+   "102"
+  ],
+  "entitlement": {
+   "urea_bags": 7,
+   "dap_bags": 2
+  },
+  "shops_in_order": [
+   "Aarti Agro and Seeds",
+   "Shree Pramukh Agro Center",
+   "Gujarat Agro Inputs"
+  ],
+  "failures": {
+   "unregistered_farmer_id": "99000000009",
+   "wrong_state": "any state other than Gujarat",
+   "wrong_otp": "any OTP other than 246810",
+   "booking_fails_at": "Shree Pramukh Agro Center"
+  },
+  "booking_code": "PRC-TEST-001"
+ },
+ "sessions": [
+  {
+   "id": "ffs-01-full-booking",
+   "kind": "happy path",
+   "source": "chat sessions (book 1 bag of urea)",
+   "turns": [
+    "I want to buy urea.",
+    "Yes, through FFS.",
+    "My Farmer ID is 99000000001 and I am in Gujarat.",
+    "The OTP is 246810.",
+    "I will grow rice.",
+    "2 bags of urea.",
+    "Aarti Agro and Seeds.",
+    "Yes, confirm the booking."
+   ],
+   "tools": [
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "Offers FFS first and says it needs the Farmer ID. Sends the OTP once. After the OTP, names the village Langhnaj and asks which crop is planned. Gives the entitlement (7 bags urea, 2 bags DAP). Finds shops for 2 bags of urea, previews the booking at Aarti Agro and Seeds, and books after ONE confirmation, giving the booking code PRC-TEST-001 and expiry. Must not ask for confirmation again after the farmer said yes."
+  },
+  {
+   "id": "ffs-05-dose-then-buy",
+   "kind": "routing",
+   "source": "dose vs purchase split (fertilizer.recommendations vs ffs.booking)",
+   "turns": [
+    "How much urea should I apply per acre for cotton?",
+    "I am in Mehsana, Gujarat. My Soil Health Card mobile is 9876543210 and the cycle is 2024-25.",
+    "Inorganic farming.",
+    "Okay. Now I want to buy 3 bags of urea.",
+    "Yes, through FFS.",
+    "Farmer ID 99000000001, Gujarat.",
+    "246810.",
+    "Cotton.",
+    "Aarti Agro and Seeds.",
+    "Yes, book it."
+   ],
+   "tools": [
+    "forward_geocode",
+    "gfr_get_crop_registries",
+    "gfr_get_recommendations",
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "Answers the dose question through the government fertilizer recommendation (GFR) flow, not FFS. Starts FFS only when the farmer asks to buy, then books 3 bags of urea at Aarti Agro and Seeds."
+  },
+  {
+   "id": "ffs-02-voice-style-pieces",
+   "kind": "partial input",
+   "source": "voice calls 2026-11-12 (Farmer ID spoken in pieces, short OTP)",
+   "turns": [
+    "I want to book a fertilizer.",
+    "Yes.",
+    "990000.",
+    "99000000001.",
+    "Gujarat.",
+    "Yes.",
+    "246.",
+    "246810.",
+    "Rice.",
+    "Two bags of urea.",
+    "Aarti Agro.",
+    "Yes."
+   ],
+   "tools": [
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "Says a partial Farmer ID is incomplete and asks for all 11 digits without calling any tool. Asks for the state. Sends the OTP once the ID and state are confirmed. Says a 3-digit OTP is incomplete and asks again without verifying. Books 2 bags of urea at Aarti Agro and Seeds after one confirmation."
+  },
+  {
+   "id": "ffs-09-repeat-after-booking",
+   "kind": "error: booking again",
+   "source": "voice call 2026-11-12 (shop name repeated 4 times after booking)",
+   "turns": [
+    "I want to book 2 bags of urea.",
+    "Yes.",
+    "99000000001, Gujarat.",
+    "246810.",
+    "Rice.",
+    "Aarti Agro.",
+    "Yes, book it.",
+    "Aarti Agro.",
+    "Aarti Agro."
+   ],
+   "tools": [
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "Creates exactly one booking. When the farmer repeats the shop name, says the booking is already confirmed (with code PRC-TEST-001) and does not book again."
+  },
+  {
+   "id": "ffs-17-booking-fails-other-shop",
+   "kind": "error: booking fails",
+   "source": "FFS stock check at booking",
+   "turns": [
+    "I want to book 2 bags of urea through FFS.",
+    "99000000001, Gujarat.",
+    "246810.",
+    "Rice.",
+    "Shree Pramukh Agro Center.",
+    "Yes, book it.",
+    "Okay, try Aarti Agro and Seeds.",
+    "Yes."
+   ],
+   "tools": [
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "When the booking at Shree Pramukh Agro Center fails, says it was not booked and gives the FFS reason; does not claim success or switch shops silently. Books at Aarti Agro and Seeds only after the farmer picks it and confirms."
+  },
+  {
+   "id": "ffs-18-book-before-steps",
+   "kind": "error: skipping steps",
+   "source": "chat sessions (needs_entitlement / needs_shops)",
+   "turns": [
+    "I want to buy urea through FFS.",
+    "99000000001, Gujarat.",
+    "246810.",
+    "Just book 1 bag of urea at Aarti Agro and Seeds for my rice.",
+    "Yes."
+   ],
+   "tools": [
+    "ffs_send_otp",
+    "ffs_verify_otp",
+    "ffs_get_entitlement",
+    "ffs_find_shops",
+    "ffs_create_booking"
+   ],
+   "expected_behavior": "Does the entitlement and shop search itself (does not ask the farmer to do them and does not book without them), then previews and books 1 bag at Aarti Agro and Seeds after one confirmation."
+  }
+ ]
+}

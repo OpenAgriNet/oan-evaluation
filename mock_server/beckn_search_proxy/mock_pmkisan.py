@@ -58,7 +58,10 @@ def build_pmkisan_status_response(body: dict, registry_path: Path) -> dict | Non
         reg = json.load(f)
 
     otp = str(body.get("message", {}).get("order_id", ""))
-    if otp != "1111":
+    # Prod PM-KISAN OTPs are 4 digits; PMFBY's are 6. run_simulated_scenario.py
+    # tells the user simulator to reply "111111", so accept both canonical test
+    # OTPs rather than silently falling through to upstream on the 6-digit one.
+    if not (otp.isdigit() and 4 <= len(otp) <= 6):
         return None
 
     farmers = reg.get("farmers", {})
@@ -75,13 +78,20 @@ def build_pmkisan_status_response(body: dict, registry_path: Path) -> dict | Non
     ekyc = pmkisan.get("ekyc_status", "")
     location = pmkisan.get("location", "")
 
+    # Same sections and wording as production's PM Kisan Portal response (~670 chars formatted).
+    name = farmer.get("name", "Farmer")
+    suffix = {1: "st", 2: "nd", 3: "rd"}.get(int(last_inst) % 10 if int(last_inst) % 100 not in (11, 12, 13) else 0, "th")
     long_desc = (
-        "=== PM KISAN BENEFICIARY STATUS ===\n"
-        f"Registration Number : {reg_no}\n"
-        f"Registration Date   : {reg_date}\n"
-        f"Last Installment No.: {last_inst}\n"
-        f"eKYC Status         : {ekyc}\n"
-        f"Location            : {location}"
+        "=== PM KISAN BENEFICIARY STATUS ===\n\n"
+        f"Beneficiary Name - {name}\n"
+        f"Beneficiary Location - {location}\n"
+        f"Registration Number - {reg_no}\n"
+        f"Registration Date - {reg_date} 10:42:17 AM\n"
+        f"Last Installment Status - {last_inst}{suffix} Installment payment done\n"
+        f"eKYC - {ekyc}\n\n"
+        "=== PAYMENT STATUS & ISSUES ===\n\n"
+        f"{name}, your {last_inst}{suffix} installment has been processed successfully. "
+        f"Registration date: {reg_date}"
     )
 
     ctx = _echo_context(body, "on_status")
@@ -94,12 +104,12 @@ def build_pmkisan_status_response(body: dict, registry_path: Path) -> dict | Non
                 "state": "COMPLETED",
                 "provider": {
                     "id": "pmkisan-bpp",
-                    "descriptor": {"name": "PM-KISAN"},
+                    "descriptor": {"name": "PM Kisan Portal"},
                 },
                 "items": [
                     {
                         "id": "pmkisan-status",
-                        "descriptor": {"name": "PM Kisan Beneficiary Status"},
+                        "descriptor": {"name": "Beneficiary Status"},
                     }
                 ],
                 "fulfillments": [
@@ -110,7 +120,8 @@ def build_pmkisan_status_response(body: dict, registry_path: Path) -> dict | Non
                         },
                         "state": {
                             "descriptor": {
-                                "name": "Beneficiary Status Retrieved",
+                                "name": "Status",
+                                "short_desc": "OTP verified and user data retrieved",
                                 "long_desc": long_desc,
                             },
                             "updated_at": ts,

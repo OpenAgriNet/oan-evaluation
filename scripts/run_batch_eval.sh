@@ -33,6 +33,7 @@ CSV_DIR="$1"
 PYTHON=/mnt/raid/gautam/python_envs/evals/bin/python3
 EVAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 CONFIG=config.pipeline_config_scenario
+RESULTS_CSV="${RESULTS_CSV:-$EVAL_DIR/data/results/all_models.csv}"
 
 cd "$EVAL_DIR"
 
@@ -43,8 +44,10 @@ if [ ${#csvs[@]} -eq 0 ]; then
     exit 1
 fi
 
+model_names=()
 for csv in "${csvs[@]}"; do
     model_name=$(basename "$csv" .csv)
+    model_names+=("$model_name")
 
     echo ""
     echo "═══════════════════════════════════════════════════"
@@ -68,7 +71,7 @@ done
 
 echo ""
 echo "Collating all models..."
-$PYTHON -m data_transformation.collate_all_models
+$PYTHON -m data_transformation.collate_all_models --model-names "${model_names[@]}" --out "$RESULTS_CSV"
 
 echo ""
-echo "All done. Per-model results in $EVAL_DIR/data/models/, combined CSV at $EVAL_DIR/data/results/all_models.csv"
+echo "All done. Per-model results in $EVAL_DIR/data/models/, combined CSV at $RESULTS_CSV"

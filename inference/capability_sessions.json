@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "description": "Additional real-API sessions for the current capability comparison. Synthetic identities; business services must be mocked. Expected tools are coverage targets, not unconditional per-turn gold labels.",
+  "sessions": [
+    {
+      "id": "1001", "repos": ["text"], "category": "AIF interrupted workflow",
+      "tools": ["initiate_aif_otp", "verify_aif_otp", "check_aif_loan_status", "check_aif_grievance_status"],
+      "questions": [
+        "Please check my Agriculture Infrastructure Fund loan status. My beneficiary ID is 45721.",
+        "The OTP for my AIF account is 111111.",
+        "My loan application number is 730015.",
+        "Before we continue, what is tomorrow's weather in Patna?",
+        "Now return to my AIF account and check my grievances. Use the beneficiary ID I already gave.",
+        "Do not file a new complaint. I only wanted the existing AIF grievance status."
+      ]
+    },
+    {
+      "id": "1002", "repos": ["text"], "category": "KCC multiple applications",
+      "tools": ["initiate_kcc_otp", "check_kcc_application_status", "select_kcc_application"],
+      "questions": [
+        "Check my Kisan Credit Card application status. My mobile number is 9876543210.",
+        "My KCC OTP is 111111.",
+        "Please show application 51001 from that list.",
+        "Now show my other application, 51002. Do you need another OTP?"
+      ]
+    },
+    {
+      "id": "1003", "repos": ["text"], "category": "KHC early OTP and interrupted workflow",
+      "tools": ["initiate_khc_otp", "verify_khc_otp", "lookup_khc_reference", "register_khc_grievance", "check_khc_grievance_status"],
+      "questions": [
+        "I want to file a complaint through Kisan Help Center. My bank refused my Agriculture Infrastructure Fund loan. My mobile is 9876543210.",
+        "My Kisan Help Center OTP is 111111.",
+        "For this grievance choose English as my preferred service language. I live in Baluwa village, Maner sub-district, Patna district, Bihar. The bank refused my AIF loan without explaining why.",
+        "The village is Baluwa and the sub-district is Maner. Please use the location and complaint I already gave.",
+        "Yes, I confirm the details you summarized. Submit this Kisan Help Center complaint once.",
+        "Please check Kisan Help Center grievance KHC1001 for the same mobile number."
+      ]
+    },
+    {
+      "id": "1004", "repos": ["text"], "category": "SMAM status",
+      "tools": ["check_smam_scheme_status"],
+      "questions": [
+        "Check my SMAM farm machinery subsidy application status using my mobile number 9876543210.",
+        "Now check the SMAM application reference SMAM202600123 instead."
+      ]
+    },
+    {
+      "id": "1005", "repos": ["text"], "category": "Government fertilizer",
+      "tools": ["gfr_get_crop_registries", "gfr_get_recommendations"],
+      "questions": [
+        "I need the government's official fertilizer dose for rice in Patna district, Bihar. My soil-card mobile is 9876543210 and the cycle is 2026-27.",
+        "I want inorganic farming recommendations. Rice is the crop and Patna in Bihar is the correct place. Use my soil-card details above.",
+        "Please tell me the recommended quantities, without adding any doses that are not in the official result."
+      ]
+    },
+    {
+      "id": "1006", "repos": ["text"], "category": "SATHI seed discovery",
+      "tools": ["get_sathi_crop_groups", "list_sathi_crops_in_group", "search_sathi_seed_availability"],
+      "questions": [
+        "Which groups of crops have certified seeds available through SATHI?",
+        "Show the oilseed crops in that group.",
+        "I want certified soybean seeds near Pune in Maharashtra. Please find dealers with stock.",
+        "Yes, soybean near Pune is correct. Show the available dealers and their listed contact details."
+      ]
+    },
+    {
+      "id": "1007", "repos": ["text"], "category": "Cross-network schemes",
+      "tools": ["call_amul_vistaar_network", "call_maha_vistaar_network", "get_scheme_info"],
+      "questions": [
+        "What dairy farmer assistance schemes does Banas dairy union offer through Amul?",
+        "Switch to Maharashtra: explain the Nanaji Deshmukh Krishi Sanjivani scheme for drip irrigation.",
+        "What are the benefits of the SMAM farm machinery scheme? Please use the scheme information service."
+      ]
+    },
+    {
+      "id": "1008", "repos": ["text"], "category": "AgriStack consent and reuse",
+      "agristack_consent": true,
+      "tools": ["get_agristack_farmer_location", "get_agristack_farmer_crops", "get_agristack_farmer_profile"],
+      "questions": [
+        "I have logged in through AgriStack and consented to sharing my records. What is the weather at my farm?",
+        "What crops are recorded on my land this season? Use my shared records.",
+        "Use my shared farmer profile to check whether I may be eligible for PM-KISAN. Do not assume my land ownership or personal details."
+      ]
+    },
+    {
+      "id": "1009", "repos": ["text"], "category": "AgriStack without consent",
+      "agristack_consent": false, "tools": [],
+      "questions": [
+        "I have not consented to sharing my AgriStack data. Can you tell me the crops on my land?",
+        "Do not access my records. I grow rice near Patna; give me general irrigation advice."
+      ]
+    },
+    {
+      "id": "1010", "repos": ["text"], "category": "Uploaded crop image",
+      "tools": ["analyze_crop_image"],
+      "questions": [
+        "Please identify the problem in this crop photo: http://127.0.0.1:17893/fixtures/crop.png . I am asking about the uploaded image, not a general disease search.",
+        "Please explain only the diagnosis returned for that image."
+      ]
+    },
+    {
+      "id": "1011", "repos": ["text"], "category": "IMD district advisory",
+      "tools": ["imd_agromet_advisory"],
+      "questions": [
+        "Give me the current IMD district agrometeorological advisory for Patna in Bihar, not just a weather forecast.",
+        "Show the rice advice from that bulletin and tell me its validity period."
+      ]
+    },
+    {
+      "id": "1012", "repos": ["text", "voice"], "category": "Coordinates to location",
+      "tools": ["reverse_geocode"],
+      "questions": [
+        "My farm is at latitude 25.60 and longitude 85.10. Please check which place these coordinates identify."
+      ]
+    },
+    {
+      "id": "1013", "repos": ["voice"], "category": "Feedback and closing",
+      "tools": ["submit_feedback"],
+      "questions": [
+        "I want to end the call now.",
+        "Yes, this conversation was helpful. I liked it.",
+        "I have no suggestions for improvement. Thank you, please end the call."
+      ]
+    },
+    {
+      "id": "1014", "repos": ["text", "voice"], "category": "Invalid OTP and recovery",
+      "tools": ["initiate_pmfby_status_check", "check_pmfby_status_with_otp"],
+      "questions": [
+        "Please check my PMFBY policy status for Kharif 2026. My registered mobile number is 9876543210.",
+        "The OTP I received is 000000.",
+        "I gave the wrong OTP. The correct OTP is 111111. Use the same mobile, year and season."
+      ]
+    },
+    {
+      "id": "1015", "repos": ["text"], "category": "KHC confirmed registration and topic return",
+      "tools": ["find_khc_location", "get_khc_grievance_options", "initiate_khc_otp", "verify_khc_otp", "register_khc_grievance", "check_khc_grievance_status"],
+      "questions": [
+        "I want to register a complaint through Kisan Helpline Center about my bank refusing my Agriculture Infrastructure Fund loan without explaining why. I live in Baluwa village, Maner sub-district, Patna district, Bihar. Please use English as the grievance service language.",
+        "Yes, I confirm the summary, location and Bank refused loan sub-category for my AIF complaint. My mobile number is 9876543210. Please send the OTP.",
+        "Before I give the OTP, what is tomorrow's weather in Patna?",
+        "Back to my confirmed Kisan Helpline Center complaint: the OTP is 111111. Please verify it and submit the complaint once.",
+        "My name is Ravi Kumar and my gender is male, if those details are required. Use the details and confirmation already provided.",
+        "Please check KHC grievance KHC1001. Do not register it again."
+      ]
+    }
+  ]
+}

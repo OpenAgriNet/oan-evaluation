@@ -75,7 +75,7 @@ CONFIG = PipelineConfig(
     fail_open=True,
     model_evaluation=ModelEvaluationConfig(
         llm=LLM_PROFILES,
-        default_llm_profile="gpt-5.4-mini",
+        default_llm_profile="vllm",
         metric_classes=[
             # ── Response Usefulness ──────────────────────────────────
             ("metrics.llm_metrics.AccuracyCompletenessMetric",       "vllm"),

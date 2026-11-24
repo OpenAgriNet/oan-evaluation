@@ -35,6 +35,7 @@ ORIGINAL_COLS = [
     "sample_index",
     "session_id",
     "question_id",
+    "configuration",
     "output_language",
     "category",
     "num_turns",
@@ -61,7 +62,8 @@ def _extract_original(idx: int, original: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "sample_index":    idx,
         "session_id":      original.get("session_id", ""),
-        "question_id":     original.get("question_id", ""),
+        "question_id":     original.get("question_id", original.get("id", "")),
+        "configuration":   original.get("configuration", ""),
         "output_language": original.get("output_language", ""),
         "category":        original.get("category", ""),
         "num_turns":       original.get("num_turns", 1),

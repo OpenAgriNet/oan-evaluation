@@ -1,0 +1,207 @@
+{
+  "901": {
+    "skills": [
+      "mandi.prices",
+      "location.resolve",
+      "weather.forecast",
+      "crop.advice",
+      "crop.icar",
+      "documents.search",
+      "schemes.information",
+      "soil_health.status",
+      "pm_kisan.status",
+      "pm_kisan.grievances",
+      "pmfby.status",
+      "pmfby.grievances"
+    ],
+    "why": "Long session: mandi (1), weather (2), crop advice/ICAR/documents (3-4), video and scheme search (5-6), soil health card (7), PM-KISAN status (8-9, 14), PMFBY claim status (10-11), PM-KISAN grievance (12-16; submission is switched off), PMFBY grievance (17-23)."
+  },
+  "902": {
+    "skills": [
+      "mandi.prices",
+      "location.resolve",
+      "weather.forecast",
+      "crop.advice",
+      "crop.icar",
+      "documents.search",
+      "schemes.information",
+      "soil_health.status",
+      "pm_kisan.status",
+      "pm_kisan.grievances",
+      "pmfby.status",
+      "pmfby.grievances"
+    ],
+    "why": "Long session: mandi (1), weather (2), crop advice/ICAR/documents (3-4), video and scheme search (5-6), soil health card (7), PM-KISAN status (8-9, 14), PMFBY claim status (10-11), PM-KISAN grievance (12-16; submission is switched off), PMFBY grievance (17-23)."
+  },
+  "903": {
+    "skills": [
+      "mandi.prices",
+      "location.resolve",
+      "weather.forecast",
+      "crop.advice",
+      "crop.icar",
+      "documents.search",
+      "schemes.information",
+      "soil_health.status",
+      "pm_kisan.status",
+      "pm_kisan.grievances",
+      "pmfby.status",
+      "pmfby.grievances"
+    ],
+    "why": "Long session: mandi (1), weather (2), crop advice/ICAR/documents (3-4), video and scheme search (5-6), soil health card (7), PM-KISAN status (8-9, 14), PMFBY claim status (10-11), PM-KISAN grievance (12-16; submission is switched off), PMFBY grievance (17-23)."
+  },
+  "904": {
+    "skills": [
+      "mandi.prices",
+      "location.resolve",
+      "weather.forecast",
+      "crop.advice",
+      "crop.icar",
+      "documents.search",
+      "schemes.information",
+      "soil_health.status",
+      "pm_kisan.status",
+      "pm_kisan.grievances",
+      "pmfby.status",
+      "pmfby.grievances"
+    ],
+    "why": "Long session: mandi (1), weather (2), crop advice/ICAR/documents (3-4), video and scheme search (5-6), soil health card (7), PM-KISAN status (8-9, 14), PMFBY claim status (10-11), PM-KISAN grievance (12-16; submission is switched off), PMFBY grievance (17-23)."
+  },
+  "905": {
+    "skills": [
+      "mandi.prices",
+      "location.resolve",
+      "weather.forecast",
+      "crop.advice",
+      "crop.icar",
+      "documents.search",
+      "schemes.information",
+      "soil_health.status",
+      "pm_kisan.status",
+      "pm_kisan.grievances",
+      "pmfby.status",
+      "pmfby.grievances"
+    ],
+    "why": "Long session: mandi (1), weather (2), crop advice/ICAR/documents (3-4), video and scheme search (5-6), soil health card (7), PM-KISAN status (8-9, 14), PMFBY claim status (10-11), PM-KISAN grievance (12-16; submission is switched off), PMFBY grievance (17-23)."
+  },
+  "1001": {
+    "skills": [
+      "aif.status",
+      "weather.forecast",
+      "location.resolve"
+    ],
+    "why": "AIF loan and grievance status with a weather interruption."
+  },
+  "1002": {
+    "skills": [
+      "kcc.status"
+    ],
+    "why": "KCC status with several applications."
+  },
+  "1003": {
+    "skills": [
+      "khc.grievances",
+      "location.resolve"
+    ],
+    "why": "KHC complaint registration with location and status check."
+  },
+  "1004": {
+    "skills": [
+      "smam.status"
+    ],
+    "why": "SMAM application status by mobile and reference."
+  },
+  "1005": {
+    "skills": [
+      "fertilizer.recommendations",
+      "location.resolve"
+    ],
+    "why": "Government fertilizer recommendation (GFR)."
+  },
+  "1006": {
+    "skills": [
+      "seeds.availability",
+      "location.resolve"
+    ],
+    "why": "SATHI certified seed groups, crops and dealers."
+  },
+  "1007": {
+    "skills": [
+      "schemes.information"
+    ],
+    "why": "Cross-network scheme information (Amul, Maharashtra, SMAM benefits)."
+  },
+  "1008": {
+    "skills": [
+      "agristack.profile",
+      "weather.forecast",
+      "location.resolve",
+      "schemes.information"
+    ],
+    "why": "AgriStack with consent: weather, crops and PM-KISAN eligibility from shared records."
+  },
+  "1009": {
+    "skills": [
+      "agristack.profile",
+      "crop.advice",
+      "crop.icar",
+      "documents.search"
+    ],
+    "why": "AgriStack without consent, then general irrigation advice."
+  },
+  "1010": {
+    "skills": [
+      "crop.advice"
+    ],
+    "why": "Crop photo diagnosis (NPSS)."
+  },
+  "1011": {
+    "skills": [
+      "weather.agromet",
+      "location.resolve"
+    ],
+    "why": "IMD district agromet advisory."
+  },
+  "1012": {
+    "skills": [
+      "location.resolve"
+    ],
+    "why": "Coordinates to place."
+  },
+  "1014": {
+    "skills": [
+      "pmfby.status"
+    ],
+    "why": "PMFBY policy status with wrong then correct OTP."
+  },
+  "1015": {
+    "skills": [
+      "khc.grievances",
+      "weather.forecast",
+      "location.resolve"
+    ],
+    "why": "KHC registration with a weather interruption and status check."
+  },
+  "1030": {
+    "skills": [
+      "crop.advice",
+      "crop.icar",
+      "documents.search"
+    ],
+    "why": "Intercropping advice and a generic follow-up."
+  },
+  "1031": {
+    "skills": [
+      "crop.advice",
+      "crop.icar",
+      "documents.search"
+    ],
+    "why": "Pesticide advice and a generic follow-up."
+  },
+  "1032": {
+    "skills": [
+      "khc.grievances"
+    ],
+    "why": "KHC grievance status with OTP."
+  }
+}

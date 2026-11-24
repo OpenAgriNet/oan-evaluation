@@ -24,12 +24,14 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 csv.field_size_limit(256 * 1024 * 1024)
 
 
-def collate(models_dir: Path, out_path: Path) -> Dict[str, Any]:
+def collate(models_dir: Path, out_path: Path, model_names: list[str] | None = None) -> Dict[str, Any]:
     all_rows: List[Dict[str, Any]] = []
     metrics_seen: List[str] = []
     models_found: List[str] = []
 
     for model_dir in sorted(p for p in models_dir.iterdir() if p.is_dir()):
+        if model_names is not None and model_dir.name not in model_names:
+            continue
         eval_path = model_dir / "evaluation.json"
         if not eval_path.exists():
             continue
@@ -55,6 +57,8 @@ def collate(models_dir: Path, out_path: Path) -> Dict[str, Any]:
 
         all_rows.extend(wide[i] for i in sorted(wide.keys()))
 
+    if model_names is not None and set(models_found) != set(model_names):
+        raise ValueError(f"Missing evaluations: {sorted(set(model_names) - set(models_found))}")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     metric_cols: List[str] = []
     for name in sorted(metrics_seen):
@@ -75,9 +79,10 @@ def main() -> None:
     p = argparse.ArgumentParser(description="Collate all models' evaluation.json into one comparison CSV.")
     p.add_argument("--models-dir", type=str, default=str(REPO_ROOT / "data" / "models"))
     p.add_argument("--out", type=str, default=str(REPO_ROOT / "data" / "results" / "all_models.csv"))
+    p.add_argument("--model-names", nargs='+', help="Collate only these model directories")
     args = p.parse_args()
 
-    summary = collate(Path(args.models_dir).expanduser().resolve(), Path(args.out).expanduser().resolve())
+    summary = collate(Path(args.models_dir).expanduser().resolve(), Path(args.out).expanduser().resolve(), args.model_names)
 
     print(f"Models  : {', '.join(summary['models'])}")
     print(f"Rows    : {summary['rows']}")

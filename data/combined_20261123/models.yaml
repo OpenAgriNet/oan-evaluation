@@ -1,0 +1,14 @@
+# Example bot model configuration: isolated self-hosted Gemma through the shared bounded gateway.
+models:
+  gemma_vllm:
+    kind: vllm
+    model_name: google/gemma-4-31b-it
+    base_url: http://127.0.0.1:18869/v1
+    api_key: not-required
+
+use_cases:
+  ffs_product_resolution: {default_alias: gemma_vllm, aliases: [gemma_vllm], timeout_seconds: 30}
+  ffs_crop_resolution: {default_alias: gemma_vllm, aliases: [gemma_vllm], timeout_seconds: 30}
+  moderation: {default_alias: gemma_vllm, aliases: [gemma_vllm], timeout_seconds: 30}
+  agrinet: {routing_enabled: false, default_alias: gemma_vllm, aliases: [gemma_vllm], timeout_seconds: 90}
+  suggestions: {default_alias: gemma_vllm, aliases: [gemma_vllm], timeout_seconds: 60}

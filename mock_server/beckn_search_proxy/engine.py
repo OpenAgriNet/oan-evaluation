@@ -69,6 +69,9 @@ def resolve_path(config_dir: Path, p: str) -> Path:
 def get_path(obj: Any, dotted: str) -> Any:
     cur: Any = obj
     for part in dotted.split("."):
+        if isinstance(cur, list) and part.isdigit():  # e.g. message.order.items.0.id
+            cur = cur[int(part)] if int(part) < len(cur) else None
+            continue
         if not isinstance(cur, dict) or part not in cur:
             return None
         cur = cur[part]
@@ -89,11 +92,12 @@ def eval_mandi_nearest_city_in(
     except (KeyError, TypeError, ValueError):
         return False
     reg = load_registry(reg_path)
-    cities, tol = city_tables(reg)
-    hit = nearest_city(lat, lon, cities, tol)
-    if not hit:
-        return False
-    return hit[0] in allowed
+    cities, _tol = city_tables(reg)
+    # Match any mandi price-discovery request that parses. Gating on a distance
+    # tolerance and a city allowlist sent every out-of-window location to the
+    # live BPP (401/404 in eval); mock_catalog now serves the nearest city for
+    # any coordinate, so the rule must not reject first.
+    return nearest_city(lat, lon, cities, float("inf")) is not None
 
 
 def eval_phone_in_registry(body: dict, spec: dict[str, Any], config_dir: Path) -> bool:
@@ -120,7 +124,10 @@ def eval_phone_in_registry(body: dict, spec: dict[str, Any], config_dir: Path) -
 
     digits = "".join(c for c in phone_raw if c.isdigit())
     phone_key = digits[-10:] if len(digits) >= 10 else digits
-    return phone_key in farmers
+    # Any well-formed phone is served. Requiring a registry hit sent every other
+    # number to the live BPP (401/404 in eval); the handlers synthesise a
+    # deterministic farmer for unknown numbers instead.
+    return len(phone_key) == 10 or phone_key in farmers
 
 
 def eval_condition(node: dict[str, Any], body: dict, config_dir: Path) -> bool:
@@ -136,6 +143,12 @@ def eval_condition(node: dict[str, Any], body: dict, config_dir: Path) -> bool:
             return eval_mandi_nearest_city_in(body, node, config_dir)
         if t == "phone_in_registry":
             return eval_phone_in_registry(body, node, config_dir)
+        if t == "path_present":
+            # True when the dotted path resolves to something non-empty. Used to
+            # tell the two PMFBY /status flows apart: the scheme-status check
+            # carries customer.person.tags (season/year/inquiry_type) while the
+            # grievance OTP verify sends phone-only fulfillments.
+            return bool(get_path(body, node["path"]))
         raise ValueError(f"unknown condition type: {t}")
     if "path" in node and "equals" in node:
         return get_path(body, node["path"]) == node["equals"]
@@ -161,6 +174,11 @@ def handle_mock_scheme_info(body: dict, then_cfg: dict[str, Any], config_dir: Pa
     from mock_scheme_info import build_scheme_info_response  # noqa: PLC0415
     reg = resolve_path(config_dir, then_cfg["registry"])
     return build_scheme_info_response(body, reg)
+
+
+def handle_forward_network(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
+    from forward_network import forward  # noqa: PLC0415
+    return forward(body, then_cfg["env_file"])
 
 
 def handle_mock_shc(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
@@ -210,14 +228,45 @@ def handle_mock_sathi_search(body: dict, then_cfg: dict[str, Any], config_dir: P
     return build_sathi_search_response(body)
 
 
+def handle_mock_pmkisan_grievance_submit(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
+    from mock_pmkisan_grievance import build_pmkisan_grievance_submit_response
+    return build_pmkisan_grievance_submit_response(body, resolve_path(config_dir, then_cfg["registry"]))
+
+
+def handle_mock_pmkisan_grievance_status(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
+    from mock_pmkisan_grievance import build_pmkisan_grievance_status_response
+    return build_pmkisan_grievance_status_response(body, resolve_path(config_dir, then_cfg["registry"]))
+
+
+def handle_mock_pmfby_grievance_status(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
+    from mock_pmfby import build_pmfby_grievance_status_response
+    return build_pmfby_grievance_status_response(body, resolve_path(config_dir, then_cfg["registry"]))
+
+
+def handle_current_status(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict:
+    from mock_current_status import build_response
+    return build_response(body, then_cfg, config_dir)
+
+
+def handle_current_search(body: dict, then_cfg: dict[str, Any], config_dir: Path) -> dict | None:
+    from mock_current_search import build_response
+    return build_response(body, then_cfg, config_dir)
+
+
 HANDLERS: dict[str, Any] = {
+    "mock_current_status": handle_current_status,
+    "mock_current_search": handle_current_search,
     "mock_mandi": handle_mock_mandi,
     "mock_scheme_info": handle_mock_scheme_info,
+    "forward_network": handle_forward_network,
     "mock_shc": handle_mock_shc,
     "mock_pmkisan_init": handle_mock_pmkisan_init,
     "mock_pmkisan_status": handle_mock_pmkisan_status,
     "mock_pmfby_init": handle_mock_pmfby_init,
     "mock_pmfby_status": handle_mock_pmfby_status,
+    "mock_pmkisan_grievance_submit": handle_mock_pmkisan_grievance_submit,
+    "mock_pmkisan_grievance_status": handle_mock_pmkisan_grievance_status,
+    "mock_pmfby_grievance_status": handle_mock_pmfby_grievance_status,
     "mock_pmfby_grievance": handle_mock_pmfby_grievance,
     "mock_sathi": handle_mock_sathi,
     "mock_sathi_search": handle_mock_sathi_search,

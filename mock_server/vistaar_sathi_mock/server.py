@@ -72,7 +72,7 @@ DEALERS_BY_DISTRICT = {
             "dealer_name": "KSCB Ltd Kochi",
             "district": "Ernakulam",
             "state": "Kerala",
-            "contact": "8901234567",
+            "contact": "9000002002",
             "crops": ["Tapioca", "Cotton"]
         },
         {
@@ -80,7 +80,7 @@ DEALERS_BY_DISTRICT = {
             "dealer_name": "Kerala Agro Products",
             "district": "Ernakulam",
             "state": "Kerala",
-            "contact": "9876543215",
+            "contact": "9000002005",
             "crops": ["Tapioca", "Cotton"]
         }
     ],
@@ -90,7 +90,7 @@ DEALERS_BY_DISTRICT = {
             "dealer_name": "MSSC LTD PUNE",
             "district": "Pune",
             "state": "Maharashtra",
-            "contact": "8669642774",
+            "contact": "9000002001",
             "crops": ["Soybean", "Cotton", "Sunflower"]
         },
         {
@@ -98,7 +98,7 @@ DEALERS_BY_DISTRICT = {
             "dealer_name": "SHRIBALRAM AGRO FARMERS PRODUCER COM",
             "district": "Pune",
             "state": "Maharashtra",
-            "contact": "9423580655",
+            "contact": "9000002003",
             "crops": ["Soybean", "Cotton", "Groundnut"]
         },
         {
@@ -106,7 +106,7 @@ DEALERS_BY_DISTRICT = {
             "dealer_name": "Pratibha Farmers Producer Co.Ltd",
             "district": "Pune",
             "state": "Maharashtra",
-            "contact": "9767735151",
+            "contact": "9000002004",
             "crops": ["Soybean", "Sunflower", "Safflower"]
         }
     ]

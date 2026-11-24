@@ -21,7 +21,7 @@ DEALERS_BY_DISTRICT = {
             "name": "KSCB Ltd Kochi",
             "district": "Ernakulam",
             "state": "Kerala",
-            "contact": "8901234567",
+            "contact": "9000002002",
             "crops": {
                 "tapioca": ["Sree Athulya", "Sree Surya", "Sree Padma"],
                 "cotton": ["DCH-32", "MCU-5", "AKA-8"],
@@ -33,7 +33,7 @@ DEALERS_BY_DISTRICT = {
             "name": "Kerala Agro Products",
             "district": "Ernakulam",
             "state": "Kerala",
-            "contact": "9876543215",
+            "contact": "9000002005",
             "crops": {
                 "tapioca": ["Sree Athulya", "Sree Avni"],
                 "cotton": ["MCU-5", "AKA-8", "BAJ-92"],

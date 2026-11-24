@@ -221,3 +221,16 @@ data/results/
 inference/output/
 goldenset_full_review_*.csv
 *.xlsx
+# Local connection settings, trace captures and generated benchmark outputs.
+.env.*
+!.env.example
+*.local.json
+*.jsonl
+*.pgid
+/data/*/runs*/
+/data/*/run_*.log
+/data/combined_20261123/run_*/
+/data/combined_20261123/RESULTS_*.md
+*.pid
+/mock_server/**/request_log.txt
+/data/combined_20261123/results_*.json

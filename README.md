@@ -1,5 +1,9 @@
 # oan-evaluation
 
+The current BharatVistaar benchmark package is documented in
+[docs/bv-dev-v0.md](docs/bv-dev-v0.md): 527 questions, 263 judge units, 13 languages,
+simulated farmers, per-unit judging, and local mocks including standalone FFS.
+
 Judge-scored evaluation for OAN chat models. This README covers the scenario-based
 workflow: generate real multi-turn conversations against a live bot, score them, and
 collate results across as many models as you want to compare. (Comparison-mode

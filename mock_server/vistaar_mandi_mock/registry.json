@@ -31,6 +31,42 @@
       "query": "Bangalore, Karnataka, India",
       "latitude": 12.9767936,
       "longitude": 77.590082
+    },
+    {
+      "key": "bardhaman",
+      "query": "Bardhaman, West Bengal, India",
+      "latitude": 23.25,
+      "longitude": 87.868
+    },
+    {
+      "key": "malkangiri",
+      "query": "Malkangiri, Odisha, India",
+      "latitude": 18.274,
+      "longitude": 81.952
+    },
+    {
+      "key": "ahmedabad",
+      "query": "Ahmedabad, Gujarat, India",
+      "latitude": 23.022,
+      "longitude": 72.58
+    },
+    {
+      "key": "anantapur",
+      "query": "Anantapur, Andhra Pradesh, India",
+      "latitude": 14.678,
+      "longitude": 77.607
+    },
+    {
+      "key": "thiruvananthapuram",
+      "query": "Thiruvananthapuram, Kerala, India",
+      "latitude": 8.488,
+      "longitude": 76.948
+    },
+    {
+      "key": "khordha",
+      "query": "Khordha, Odisha, India",
+      "latitude": 20.173,
+      "longitude": 85.614
     }
   ],
   "commodities": [
@@ -53,6 +89,41 @@
       "crop": "tapioca",
       "agmkt_code": 85,
       "canonical_name": "Tapioca"
+    },
+    {
+      "crop": "wheat",
+      "agmkt_code": 1,
+      "canonical_name": "Wheat"
+    },
+    {
+      "crop": "paddy",
+      "agmkt_code": 2,
+      "canonical_name": "Paddy(Common)"
+    },
+    {
+      "crop": "rice",
+      "agmkt_code": 3,
+      "canonical_name": "Rice"
+    },
+    {
+      "crop": "maize",
+      "agmkt_code": 4,
+      "canonical_name": "Maize"
+    },
+    {
+      "crop": "mustard",
+      "agmkt_code": 12,
+      "canonical_name": "Mustard"
+    },
+    {
+      "crop": "soyabean",
+      "agmkt_code": 13,
+      "canonical_name": "Soyabean"
+    },
+    {
+      "crop": "sugarcane",
+      "agmkt_code": 122,
+      "canonical_name": "Sugarcane"
     }
   ]
 }

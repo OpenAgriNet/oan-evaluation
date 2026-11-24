@@ -40,12 +40,34 @@ def nearest_city(
     return best
 
 
+def _code_for_name(name: str) -> int:
+    """AGMKT code for a commodity name, via the bundled master. 0 if unknown."""
+    target = (name or "").strip().lower()
+    for code, nm in agmkt_names().items():
+        if nm.strip().lower() == target:
+            return code
+    return 0
+
+
 def parse_mandi_stop(body: dict) -> tuple[float, float, int]:
-    stop = body["message"]["intent"]["fulfillment"]["stops"][0]
-    lat = float(stop["location"]["lat"])
-    lon = float(stop["location"]["lon"])
-    code = int(stop["commoditycode"])
-    return lat, lon, code
+    """Read lat/lon/commodity from either Beckn mandi shape.
+
+    New (bharat-oan-api, and voice from feat/mandi_tool_match_chat): the commodity
+    is item.descriptor.name and the location is fulfillment.end.location.gps.
+    Old (mh-* voice branches): fulfillment.stops[0] with lat/lon and commoditycode.
+    """
+    intent = body["message"]["intent"]
+    fulfillment = intent.get("fulfillment") or {}
+
+    end = fulfillment.get("end")
+    if end:
+        gps = end["location"]["gps"]
+        lat_s, lon_s = str(gps).split(",")[:2]
+        name = ((intent.get("item") or {}).get("descriptor") or {}).get("name", "")
+        return float(lat_s), float(lon_s), _code_for_name(name)
+
+    stop = fulfillment["stops"][0]
+    return float(stop["location"]["lat"]), float(stop["location"]["lon"]), int(stop["commoditycode"])
 
 
 def prices_for(city_key: str, code: int) -> tuple[int, int, int]:
@@ -88,6 +110,12 @@ STATE_BY_CITY = {
     "bangalore": ("Bengaluru Urban", "Karnataka"),
     "mumbai": ("Mumbai", "Maharashtra"),
     "chandigarh": ("Chandigarh", "Chandigarh"),
+    "bardhaman": ("Purba Bardhaman", "West Bengal"),
+    "malkangiri": ("Malkangiri", "Odisha"),
+    "khordha": ("Khordha", "Odisha"),
+    "ahmedabad": ("Ahmedabad", "Gujarat"),
+    "anantapur": ("Anantapur", "Andhra Pradesh"),
+    "thiruvananthapuram": ("Thiruvananthapuram", "Kerala"),
 }
 
 
@@ -97,7 +125,7 @@ def mock_catalog(
     commodity_name: str,
     cities: dict[str, tuple[float, float, str]],
 ) -> dict:
-    district, state = STATE_BY_CITY[city_key]
+    district, state = STATE_BY_CITY.get(city_key, (city_key.title(), "India"))
     modal, min_p, max_p = prices_for(city_key, code)
     _, _, city_label = cities[city_key]
     market_a = f"{city_label} APMC — Yard 1 (mock)"
@@ -176,8 +204,33 @@ def search_response(req_ctx: dict, catalog: dict | None, bpp_uri_default: str | 
     }
 
 
+_NAMES_PATH = Path(__file__).resolve().parent / "commodity_names.json"
+_AGMKT_NAMES: dict[int, str] | None = None
+
+
+def agmkt_names() -> dict[int, str]:
+    """Full AGMKT code -> name map (543 codes), loaded once.
+
+    search_commodity is not mocked: it fuzzy-matches the real master and can
+    return any of these codes. Without this fallback an unlisted code made the
+    handler return PROXY_FALLTHROUGH and the request left the mock for the live
+    BPP, which answers 401/404 in eval. Keep the mock total instead.
+    """
+    global _AGMKT_NAMES
+    if _AGMKT_NAMES is None:
+        try:
+            raw = json.loads(_NAMES_PATH.read_text(encoding="utf-8"))
+            _AGMKT_NAMES = {int(k): v for k, v in raw.get("names", {}).items()}
+        except (OSError, ValueError):
+            _AGMKT_NAMES = {}
+    return _AGMKT_NAMES
+
+
 def commodity_map(reg: dict[str, Any]) -> dict[int, str]:
-    return {c["agmkt_code"]: c["canonical_name"] for c in reg["commodities"]}
+    """Registry entries win; the AGMKT master backfills everything else."""
+    merged = dict(agmkt_names())
+    merged.update({c["agmkt_code"]: c["canonical_name"] for c in reg["commodities"]})
+    return merged
 
 
 def build_empty_on_search(req_ctx: dict, bpp_uri_fallback: str | None = None) -> dict:
@@ -204,14 +257,20 @@ def try_build_mandi_mock(
     """
     try:
         req_ctx = body["context"]
-        cat_code = body["message"]["intent"]["category"]["descriptor"]["code"]
-        item_code = body["message"]["intent"]["item"]["descriptor"]["code"]
+        intent = body["message"]["intent"]
+        cat_code = intent["category"]["descriptor"]["code"]
+        # old shape identifies the search with item.descriptor.code == "mandi";
+        # the chat-shaped payload puts the commodity name there instead
+        item_desc = (intent.get("item") or {}).get("descriptor") or {}
+        item_code = item_desc.get("code")
     except (KeyError, TypeError):
         return PROXY_FALLTHROUGH
 
     if req_ctx.get("action") != "search":
         return PROXY_FALLTHROUGH
-    if cat_code != "price-discovery" or item_code != "mandi":
+    if cat_code != "price-discovery":
+        return PROXY_FALLTHROUGH
+    if item_code is not None and item_code != "mandi":
         return PROXY_FALLTHROUGH
 
     try:
@@ -223,16 +282,15 @@ def try_build_mandi_mock(
     cities, tol = city_tables(reg)
     commodities = commodity_map(reg)
 
-    hit = nearest_city(lat, lon, cities, tol)
+    # Nearest city unconditionally: a lat/lon outside every tolerance window used
+    # to fall through to the live BPP. Prod queries span all of India, so gate-by
+    # -distance made most realistic questions leave the mock.
+    hit = nearest_city(lat, lon, cities, float("inf"))
     if not hit:
         return PROXY_FALLTHROUGH
     city_key = hit[0]
-    if allowed_city_keys is not None and city_key not in allowed_city_keys:
-        return PROXY_FALLTHROUGH
 
-    name = commodities.get(commodity_code)
-    if not name:
-        return PROXY_FALLTHROUGH
+    name = commodities.get(commodity_code) or f"Commodity {commodity_code}"
 
     catalog = mock_catalog(city_key, commodity_code, name, cities)
     return search_response(req_ctx, catalog, bpp_uri_fallback)

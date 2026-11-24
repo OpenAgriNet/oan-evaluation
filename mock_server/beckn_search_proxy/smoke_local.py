@@ -52,9 +52,16 @@ def main() -> int:
     }
     r = apply_rules(kochi, rules, HERE)
     assert r is not None and r.get("responses"), "expected mock for Kochi mandi cotton"
+    # The mandi mock is deliberately total: any coordinate resolves to the
+    # nearest registry city and any AGMKT code is named from the bundled master.
+    # Falling through here used to send the request to the live BPP, which
+    # answers 401/404 without Beckn signing keys. See verify_no_fallthrough.py.
     kochi["message"]["intent"]["fulfillment"]["stops"][0]["location"] = {"lat": "22.3", "lon": "71.3"}
     r2 = apply_rules(kochi, rules, HERE)
-    assert r2 is None, "expected proxy fallthrough for coords not near listed cities"
+    assert r2 is not None and r2.get("responses"), "far coords must still be served locally"
+    kochi["message"]["intent"]["fulfillment"]["stops"][0]["commoditycode"] = 467
+    r3 = apply_rules(kochi, rules, HERE)
+    assert r3 is not None and r3.get("responses"), "unlisted AGMKT code must still be served"
     print("smoke_local: ok")
     return 0
 
